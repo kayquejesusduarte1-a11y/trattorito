@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Carrinho - Trattorito Elite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cart-wrapper {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: var(--white);
+            color: var(--text-dark);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+        .cart-table th, .cart-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item-img {
+            width: 65px;
+            height: 65px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .qty-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .qty-btn {
+            background-color: var(--dark-burgundy);
+            color: white;
+            border: none;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-remove {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .cart-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 2px solid var(--dark-burgundy);
+        }
+        .empty-msg {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body style="background-color: var(--primary-burgundy);">
+
+    <header>
+        <nav>
+            <div class="logo font-cinzel">
+                <a href="index.html" style="color: var(--cream); text-decoration: none; font-weight: bold; font-size: 1.2rem;">TRATTORITO ELITE</a>
+            </div>
+            <a href="pratos.html" class="btn-header"><i class="fa-solid fa-arrow-left"></i> Voltar ao Cardápio</a>
+        </nav>
+    </header>
+
+    <div class="cart-wrapper">
+        <h1 class="font-cinzel" style="color: var(--dark-burgundy); margin-bottom: 20px; text-align: center;">Resumo do Pedido</h1>
+
+        <div id="cart-content"></div>
+    </div>
+
+    <script>
+        let carrinho = JSON.parse(localStorage.getItem('carrinhoCantina')) || [];
+
+        function renderizarCarrinho() {
+            const container = document.getElementById('cart-content');
+            
+            if (carrinho.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-msg">
+                        <p>Seu carrinho está vazio.</p>
+                        <br>
+                        <a href="pratos.html" class="btn-order" style="text-decoration: none; display: inline-block;">Ver Pratos</a>
+                    </div>
+                `;
+                return;
+            }
+
+            let total = 0;
+            let html = `
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Prato</th>
+                            <th>Nome</th>
+                            <th>Preço</th>
+                            <th>Qtd.</th>
+                            <th>Subtotal</th>
+                            <th>Remover</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            carrinho.forEach((item, index) => {
+                const subtotal = item.preco * item.quantidade;
+                total += subtotal;
+                html += `
+                    <tr>
+                        <td><img src="${item.imagem}" class="cart-item-img" alt="${item.nome}"></td>
+                        <td><strong>${item.nome}</strong></td>
+                        <td>R$ ${item.preco.toFixed(2)}</td>
+                        <td>
+                            <div class="qty-controls">
+                                <button class="qty-btn" onclick="alterarQtd(${index}, -1)">-</button>
+                                <span>${item.quantidade}</span>
+                                <button class="qty-btn" onclick="alterarQtd(${index}, 1)">+</button>
+                            </div>
+                        </td>
+                        <td>R$ ${subtotal.toFixed(2)}</td>
+                        <td><button class="btn-remove" onclick="removerItem(${index})"><i class="fa-solid fa-trash"></i></button></td>
+                    </tr>
+                `;
+            });
+
+            html += `
+                    </tbody>
+                </table>
+                <div class="cart-summary">
+                    <h2>Total: <span style="color: var(--dark-burgundy);">R$ ${total.toFixed(2)}</span></h2>
+                    <button class="btn-order" onclick="finalizarPedido()">FINALIZAR PEDIDO</button>
+                </div>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        function alterarQtd(index, quantidade) {
+            carrinho[index].quantidade += quantidade;
+            if (carrinho[index].quantidade <= 0) {
+                carrinho.splice(index, 1);
+            }
+            salvarERenderizar();
+        }
+
+        function removerItem(index) {
+            carrinho.splice(index, 1);
+            salvarERenderizar();
+        }
+
+        function salvarERenderizar() {
+            localStorage.setItem('carrinhoCantina', JSON.stringify(carrinho));
+            renderizarCarrinho();
+        }
+
+        function finalizarPedido() {
+            alert('Pedido enviado com sucesso!');
+            carrinho = [];
+            localStorage.removeItem('carrinhoCantina');
+            renderizarCarrinho();
+        }
+
+        document.addEventListener('DOMContentLoaded', renderizarCarrinho);
+    </script>
+</body>
+</html>

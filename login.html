@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Trattorito Elite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo font-cinzel">
+                <a href="index.html" style="color: var(--cream); text-decoration: none; font-weight: bold; font-size: 1.2rem;">TRATTORITO ELITE</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pratos.html">Cardápio</a></li>
+            </ul>
+            <div class="user-actions">
+                <a href="carrinho.html" class="cart-icon" style="text-decoration: none;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="auth-container">
+        <div class="auth-card-side">
+            <div class="auth-info-card">
+                <h2 class="font-cinzel" style="margin-bottom: 15px;">Não tem conta?</h2>
+                <p>Cadastre-se no Trattorito Elite para aproveitar nossos pratos artesanais com facilidade.</p>
+                <a href="cadastro.html" class="btn-toggle-auth" style="text-decoration: none; display: block; line-height: 2.2;">Cadastrar-se</a>
+                <a href="index.html" class="btn-toggle-auth secondary" style="text-decoration: none; display: block; line-height: 2.2;">Cancelar</a>
+            </div>
+        </div>
+        <div class="auth-form-side">
+            <h2 class="font-cinzel" style="color: var(--cream); margin-bottom: 30px;">Login</h2>
+            <form onsubmit="realizarLogin(event)">
+                <div class="form-input-group">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="E-mail" required>
+                </div>
+                <div class="form-input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Senha" required>
+                </div>
+                <button type="submit" class="btn-order" style="width: 100%; margin-top: 10px;">ENTRAR</button>
+            </form>
+            <div class="social-login-box">
+                <button class="social-icon-btn"><i class="fa-brands fa-facebook"></i></button>
+                <button class="google-text-btn"><i class="fa-brands fa-google"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function atualizarBadgeCarrinho() {
+            const carrinho = JSON.parse(localStorage.getItem('carrinhoCantina')) || [];
+            const totalItens = carrinho.reduce((sum, item) => sum + item.quantidade, 0);
+            document.getElementById('cart-count').innerText = totalItens;
+        }
+
+        function realizarLogin(event) {
+            event.preventDefault();
+            alert('Login efetuado com sucesso!');
+            window.location.href = 'index.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', atualizarBadgeCarrinho);
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trattorito Elite - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo font-cinzel">
+                <a href="index.html" style="color: var(--cream); text-decoration: none; font-weight: bold; font-size: 1.2rem;">TRATTORITO ELITE</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="pratos.html">Cardápio</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+            </ul>
+            <div class="user-actions">
+                <a href="login.html" class="btn-header">Entrar</a>
+                <a href="cadastro.html" class="btn-header" style="background-color: var(--light-beige); color: var(--dark-burgundy);">Cadastrar</a>
+                <a href="carrinho.html" class="cart-icon" style="text-decoration: none;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-container">
+        <div class="hero-image-side">
+            <div class="hero-badge-logo">
+                <h1>Trattorito</h1>
+                <p>Elite</p>
+            </div>
+        </div>
+        <div class="hero-text-side">
+            <h2>A Verdadeira Culinária Italiana</h2>
+            <p>"Sabores tradicionais feitos com amor, ingredientes selecionados e receitas transmitidas por gerações."</p>
+            <a href="pratos.html" class="btn-order" style="text-decoration: none; text-align: center;">VER CARDÁPIO</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="sobre-nos-container">
+        <div class="cork-banner"></div>
+        <div class="sobre-header-bar">
+            <h1>Nossa História</h1>
+        </div>
+        <div class="tradicao-box">
+            <h2>Tradição & Paixão</h2>
+            <p>Desde 1985, o Trattorito Elite preserva os segredos da autêntica cozinha italiana. Cada prato é preparado artesanalmente com ingredientes selecionados, trazendo à sua mesa a verdadeira experiência de uma refeição em família no coração da Itália.</p>
+        </div>
+    </section>
+
+    <script>
+        function atualizarBadgeCarrinho() {
+            const carrinho = JSON.parse(localStorage.getItem('carrinhoCantina')) || [];
+            const totalItens = carrinho.reduce((sum, item) => sum + item.quantidade, 0);
+            document.getElementById('cart-count').innerText = totalItens;
+        }
+
+        document.addEventListener('DOMContentLoaded', atualizarBadgeCarrinho);
+    </script>
+</body>
+</html>
