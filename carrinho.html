@@ -1,184 +1,146 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+    
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Carrinho - Trattorito Elite</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .cart-wrapper {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: var(--white);
-            color: var(--text-dark);
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-        }
-        .cart-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 25px;
-        }
-        .cart-table th, .cart-table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        .cart-item-img {
-            width: 65px;
-            height: 65px;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-        .qty-controls {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .qty-btn {
-            background-color: var(--dark-burgundy);
-            color: white;
-            border: none;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        .btn-remove {
-            background-color: #e74c3c;
-            color: white;
-            border: none;
-            padding: 6px 10px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        .cart-summary {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 20px;
-            border-top: 2px solid var(--dark-burgundy);
-        }
-        .empty-msg {
-            text-align: center;
-            padding: 40px;
-            font-size: 1.2rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrinho - Trattoria D'Elite</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+--preto:#0b0b0b; --creme:#f7f4ee; --vinho:#6d1620; --malva:#a98aa6;
+--malva-claro:#c9b6c9; --teal:#5fa5a5; --texto:#222; --cinza:#e6e3e6;
+}
+{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{min-width:1100px;
+font-family:'Montserrat',sans-serif;color:var(--texto);
+background:
+radial-gradient(circle at 100% 100%, rgba(196,160,110,.35), transparent 22%),
+radial-gradient(circle at 0 92%, rgba(110,130,110,.28), transparent 14%),
+var(--creme);
+}
+header{background:#500708;display:flex;align-items:center;justify-content:center;position:relative;padding:16px 48px 12px}
+.sair{position:absolute;left:24px;top:50%;transform:translateY(-50%);color:#fff;text-decoration:none;font-size:.9rem}
+.logo{text-align:center;color:#fff;line-height:1}
+.logo small{display:block;font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.3em}
+.logo strong{font-family:'Great Vibes',cursive;font-weight:400;font-size:2.4rem}
+.flag{display:flex;width:70px;height:3px;margin:4px auto 0}
+.flag i{flex:1}.flag i:nth-child(1){background:#2e8b3d}.flag i:nth-child(2){background:#fff}.flag i:nth-child(3){background:#c8202f}
+.container{min-width:1000px;max-width:1280px;margin:50px auto;padding:0 48px;display:grid;grid-template-columns:1fr 340px;gap:60px;align-items:start}
+.item{display:grid;grid-template-columns:140px 1fr auto;gap:32px;align-items:center;margin-bottom:22px}
+.item img,.ph{width:140px;height:160px;border-radius:32px;object-fit:cover;background:var(--malva)}
+.info h3{font-family:'Cinzel',serif;font-size:1.05rem;margin-bottom:4px;color:var(--vinho)}
+.info .lbl{font-size:1rem;margin-bottom:22px}
+.qty{display:flex;align-items:center;gap:22px;font-size:1.4rem}
+.qty button{background:none;border:none;font-size:1.7rem;cursor:pointer;color:var(--texto);line-height:1}
+.preco{font-size:1.3rem;align-self:center;padding-right:10px}
+.remover{background:none;border:none;color:var(--vinho);cursor:pointer;font-size:.8rem;margin-top:6px;text-decoration:underline}
+.btn{display:flex;align-items:center;justify-content:center;gap:14px;border:none;border-radius:40px;cursor:pointer;text-decoration:none;width:100%;max-width:520px}
+.btn-fin{background:var(--vinho);color:#fff;font-family:'Cinzel',serif;font-size:1.5rem;padding:14px 20px;margin:26px 0 20px}
+.btn-cont{background:var(--teal);color:#0b2b2b;font-size:1rem;padding:12px 20px;max-width:560px}
+.pagamento{margin-top:34px;background:var(--cinza);border-radius:40px;padding:16px 28px;display:flex;flex-wrap:wrap;align-items:center;gap:26px;max-width:760px;font-size:.85rem;color:#555}
+.pagamento span{display:flex;align-items:center;gap:10px}
+.pagamento .tit{font-family:'Cinzel',serif;color:var(--vinho);font-size:.95rem}
+.logo-pg{background:#fff;border-radius:14px;padding:8px 14px;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.logo-pg b{color:#32bcad;font-size:1.05rem}
+.resumo{background:var(--malva-claro);border-radius:30px;padding:26px;color:var(--vinho);position:sticky;top:20px;min-height:250px}
+.resumo h2{font-family:'Cinzel',serif;font-size:1.1rem;padding-bottom:14px;border-bottom:2px solid var(--vinho);margin-bottom:22px}
+.linha{display:flex;justify-content:space-between;margin-bottom:18px;font-family:'Cinzel',serif}
+.linha.total{border-top:2px dashed var(--vinho);padding-top:18px;margin-top:26px;font-weight:700;font-size:1.1rem}
+.vazio{padding:40px 0;font-size:1.1rem}
+</style>
 </head>
-<body style="background-color: var(--primary-burgundy);">
-
-    <header>
-        <nav>
-            <div class="logo font-cinzel">
-                <a href="index.html" style="color: var(--cream); text-decoration: none; font-weight: bold; font-size: 1.2rem;">TRATTORITO ELITE</a>
-            </div>
-            <a href="pratos.html" class="btn-header"><i class="fa-solid fa-arrow-left"></i> Voltar ao Cardápio</a>
-        </nav>
-    </header>
-
-    <div class="cart-wrapper">
-        <h1 class="font-cinzel" style="color: var(--dark-burgundy); margin-bottom: 20px; text-align: center;">Resumo do Pedido</h1>
-
-        <div id="cart-content"></div>
-    </div>
-
-    <script>
-        let carrinho = JSON.parse(localStorage.getItem('carrinhoCantina')) || [];
-
-        function renderizarCarrinho() {
-            const container = document.getElementById('cart-content');
-            
-            if (carrinho.length === 0) {
-                container.innerHTML = `
-                    <div class="empty-msg">
-                        <p>Seu carrinho está vazio.</p>
-                        <br>
-                        <a href="pratos.html" class="btn-order" style="text-decoration: none; display: inline-block;">Ver Pratos</a>
-                    </div>
-                `;
-                return;
-            }
-
-            let total = 0;
-            let html = `
-                <table class="cart-table">
-                    <thead>
-                        <tr>
-                            <th>Prato</th>
-                            <th>Nome</th>
-                            <th>Preço</th>
-                            <th>Qtd.</th>
-                            <th>Subtotal</th>
-                            <th>Remover</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-            `;
-
-            carrinho.forEach((item, index) => {
-                const subtotal = item.preco * item.quantidade;
-                total += subtotal;
-                html += `
-                    <tr>
-                        <td><img src="${item.imagem}" class="cart-item-img" alt="${item.nome}"></td>
-                        <td><strong>${item.nome}</strong></td>
-                        <td>R$ ${item.preco.toFixed(2)}</td>
-                        <td>
-                            <div class="qty-controls">
-                                <button class="qty-btn" onclick="alterarQtd(${index}, -1)">-</button>
-                                <span>${item.quantidade}</span>
-                                <button class="qty-btn" onclick="alterarQtd(${index}, 1)">+</button>
-                            </div>
-                        </td>
-                        <td>R$ ${subtotal.toFixed(2)}</td>
-                        <td><button class="btn-remove" onclick="removerItem(${index})"><i class="fa-solid fa-trash"></i></button></td>
-                    </tr>
-                `;
-            });
-
-            html += `
-                    </tbody>
-                </table>
-                <div class="cart-summary">
-                    <h2>Total: <span style="color: var(--dark-burgundy);">R$ ${total.toFixed(2)}</span></h2>
-                    <button class="btn-order" onclick="finalizarPedido()">FINALIZAR PEDIDO</button>
-                </div>
-            `;
-
-            container.innerHTML = html;
-        }
-
-        function alterarQtd(index, quantidade) {
-            carrinho[index].quantidade += quantidade;
-            if (carrinho[index].quantidade <= 0) {
-                carrinho.splice(index, 1);
-            }
-            salvarERenderizar();
-        }
-
-        function removerItem(index) {
-            carrinho.splice(index, 1);
-            salvarERenderizar();
-        }
-
-        function salvarERenderizar() {
-            localStorage.setItem('carrinhoCantina', JSON.stringify(carrinho));
-            renderizarCarrinho();
-        }
-
-        function finalizarPedido() {
-            alert('Pedido enviado com sucesso!');
-            carrinho = [];
-            localStorage.removeItem('carrinhoCantina');
-            renderizarCarrinho();
-        }
-
-        document.addEventListener('DOMContentLoaded', renderizarCarrinho);
-    </script>
+<body>
+<header>
+<a href="pratos.html" class="sair"><i class="fa-solid fa-arrow-left"></i> Sair</a>
+<a href="index.html" style="text-decoration:none">
+<div class="logo"><small>TRATTORIA</small><strong>D'Elite</strong><div class="flag"><i></i><i></i><i></i></div></div>
+</a>
+</header>
+<main class="container">
+<section>
+<div id="itens"></div>
+<button class="btn btn-fin" onclick="finalizarPedido()"><i class="fa-solid fa-bag-shopping"></i> Finalizar Pedido</button>
+<a href="pratos.html" class="btn btn-cont">continuar comprando</a>
+<div class="pagamento">
+<span class="tit">Formas de pagamento</span>
+<span class="logo-pg" title="Pix">
+<svg viewBox="0 0 48 48" width="30" height="30"><g fill="#32bcad"><path d="M12.6 12.6l7.3 7.3a5.7 5.7 0 008.2 0l7.3-7.3-3.4-3.4-7.3 7.3a1 1 0 01-1.4 0L16 9.2z" transform="translate(0 2)"/><path d="M35.4 35.4l-7.3-7.3a5.7 5.7 0 00-8.2 0l-7.3 7.3 3.4 3.4 7.3-7.3a1 1 0 011.4 0l7.3 7.3z" transform="translate(0 -2)"/><path d="M9.2 20.5L6 23.7a1 1 0 000 1.4l3.2 3.2 3.4-3.4-1.9-1.9h.2z" transform="translate(-0.5 0)"/><path d="M38.8 20.5l3.2 3.2a1 1 0 010 1.4l-3.2 3.2-3.4-3.4 1.9-1.9z"/></g></svg>
+<b>Pix</b>
+</span>
+<span class="logo-pg" title="Mastercard">
+<svg viewBox="0 0 48 30" width="44" height="28"><circle cx="17" cy="15" r="12" fill="#eb001b"/><circle cx="31" cy="15" r="12" fill="#f79e1b"/><path d="M24 5.2a12 12 0 010 19.6 12 12 0 010-19.6z" fill="#ff5f00"/></svg>
+</span>
+<span class="logo-pg" title="Visa">
+<svg viewBox="0 0 60 24" width="52" height="22"><text x="0" y="20" font-family="Arial,sans-serif" font-size="24" font-weight="900" font-style="italic" fill="#1a1f71">VISA</text></svg>
+</span>
+<span class="logo-pg" title="Elo">
+<svg viewBox="0 0 60 30" width="48" height="24"><circle cx="15" cy="15" r="12" fill="#000"/><circle cx="15" cy="15" r="6" fill="#ffcb05"/><text x="30" y="21" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#000">elo</text></svg>
+</span>
+</div>
+</section>
+<aside class="resumo">
+<h2>Resumo do Pedido</h2>
+<div class="linha"><span>Subtotal</span><span id="subtotal">R$ 0,00</span></div>
+<div class="linha"><span>Entrega</span><span id="entrega">R$ 0,00</span></div>
+<div class="linha total"><span>Total</span><span id="total">R$ 0,00</span></div>
+</aside>
+</main>
+<script>
+const TAXA_ENTREGA = 0;
+let carrinho = JSON.parse(localStorage.getItem('carrinhoCantina')) || [];
+const brl = v => 'R$ ' + v.toFixed(2).replace('.', ',');
+function renderizarCarrinho(){
+const box = document.getElementById('itens');
+let subtotal = 0;
+if (carrinho.length === 0){
+box.innerHTML = '<p class="vazio">Seu carrinho está vazio.</p>';
+} else {
+box.innerHTML = carrinho.map((it, i) => {
+const sub = it.preco * it.quantidade; subtotal += sub;
+return `
+<div class="item">
+${it.imagem ? `<img src="${it.imagem}" alt="${it.nome}">` : '<div class="ph"></div>'}
+<div class="info">
+<h3>${it.nome}</h3>
+<div class="lbl">Quantidade</div>
+<div class="qty">
+<button onclick="alterarQtd(${i},-1)" aria-label="Diminuir"><i class="fa-regular fa-circle-minus"></i></button>
+<span>${it.quantidade}</span>
+<button onclick="alterarQtd(${i},1)" aria-label="Aumentar"><i class="fa-regular fa-circle-plus"></i></button>
+</div>
+<button class="remover" onclick="removerItem(${i})">Remover</button>
+</div>
+<div class="preco">${brl(sub)}</div>
+</div>`;
+}).join('');
+}
+const entrega = carrinho.length ? TAXA_ENTREGA : 0;
+document.getElementById('subtotal').textContent = brl(subtotal);
+document.getElementById('entrega').textContent = brl(entrega);
+document.getElementById('total').textContent = brl(subtotal + entrega);
+}
+function alterarQtd(i, d){
+carrinho[i].quantidade += d;
+if (carrinho[i].quantidade <= 0) carrinho.splice(i, 1);
+salvarERenderizar();
+}
+function removerItem(i){ carrinho.splice(i, 1); salvarERenderizar(); }
+function salvarERenderizar(){
+localStorage.setItem('carrinhoCantina', JSON.stringify(carrinho));
+renderizarCarrinho();
+}
+function finalizarPedido(){
+if (!carrinho.length){ alert('Seu carrinho está vazio.'); return; }
+alert('Pedido enviado com sucesso!');
+carrinho = [];
+localStorage.removeItem('carrinhoCantina');
+renderizarCarrinho();
+}
+document.addEventListener('DOMContentLoaded', renderizarCarrinho);
+</script>
 </body>
 </html>
