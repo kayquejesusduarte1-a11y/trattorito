@@ -66,6 +66,25 @@
 
         function realizarLogin(event) {
             event.preventDefault();
+
+            const form = event.target;
+            const email = form.querySelector('input[type="email"]').value.trim().toLowerCase();
+            const senha = form.querySelector('input[type="password"]').value;
+
+            const usuario = JSON.parse(localStorage.getItem('usuarioTrattorito'));
+
+            if (!usuario) {
+                alert('Nenhum cadastro encontrado. Cadastre-se primeiro.');
+                window.location.href = 'cadastro.html';
+                return;
+            }
+
+            if (email !== usuario.email || senha !== usuario.senha) {
+                alert('E-mail ou senha incorretos.');
+                return;
+            }
+
+            localStorage.setItem('usuarioLogado', 'true');
             alert('Login efetuado com sucesso!');
             window.location.href = 'index.html';
         }
