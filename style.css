@@ -1,4 +1,4 @@
-\:root {
+:root {
     \--primary-burgundy: #5B0E14;
     \--dark-burgundy: #3D080C;
     \--light-beige: #D9C8B4;
@@ -31,7 +31,7 @@ h1, h2, h3, .font-cinzel {
     font-family: 'Great Vibes', cursive;
 }
 
-/\* HEADER & NAVBAR \*/
+/* HEADER & NAVBAR */
 header {
     background-color: var(--dark-burgundy);
     position: sticky;
@@ -64,7 +64,7 @@ nav {
     transition: color 0.3s;
 }
 
-.nav-links a\:hover, 
+.nav-links a:hover, 
 .nav-links a.active {
     color: var(--light-beige);
     text-decoration: underline;
@@ -88,7 +88,7 @@ nav {
     transition: all 0.3s;
 }
 
-.btn-header\:hover {
+.btn-header:hover {
     background-color: var(--light-beige);
     color: var(--dark-burgundy);
 }
@@ -116,7 +116,7 @@ nav {
     font-weight: bold;
 }
 
-/\* HERO / HOME \*/
+/* HERO / HOME */
 .hero-container {
     display: flex;
     min-height: calc(100vh - 70px);
@@ -127,7 +127,7 @@ nav {
 .hero-image-side {
     flex: 1.2;
     position: relative;
-    background: url('[https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80](https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format\&fit=crop\&w=1200\&q=80)') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -200,12 +200,12 @@ nav {
     transition: all 0.3s;
 }
 
-.btn-order\:hover {
+.btn-order:hover {
     background-color: var(--primary-burgundy);
     transform: translateY(-2px);
 }
 
-/\* CARDÁPIO / CATÁLOGO DE PRATOS \*/
+/* CARDÁPIO / CATÁLOGO DE PRATOS */
 .catalog-page-container, .bg-beige-theme {
     background-color: var(--bg-beige);
     color: var(--dark-burgundy);
@@ -317,18 +317,18 @@ nav {
     transition: background-color 0.2s;
 }
 
-.btn-card-add\:hover {
+.btn-card-add:hover {
     background-color: var(--accent-green-hover);
 }
 
-/\* SOBRE NÓS \*/
+/* SOBRE NÓS */
 .sobre-nos-container {
     background-color: var(--primary-burgundy);
 }
 
 .cork-banner {
     height: 220px;
-    background: url('[https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1500&q=80](https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format\&fit=crop\&w=1500\&q=80)') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
     border-bottom: 5px solid var(--dark-burgundy);
 }
 
@@ -366,7 +366,7 @@ nav {
     color: var(--light-beige);
 }
 
-/\* LOGIN E CADASTRO \*/
+/* LOGIN E CADASTRO */
 .auth-container {
     display: flex;
     min-height: calc(100vh - 70px);
@@ -379,7 +379,7 @@ nav {
     align-items: center;
     justify-content: center;
     padding: 40px;
-    background: url('[https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&w=1000&q=80](https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format\&fit=crop\&w=1000\&q=80)') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
     position: relative;
 }
 
@@ -484,7 +484,7 @@ nav {
     cursor: pointer;
 }
 
-/\* RESPONSIVIDADE \*/
+/* RESPONSIVIDADE */
 @media (max-width: 900px) {
     .hero-container, 
     .auth-container {
