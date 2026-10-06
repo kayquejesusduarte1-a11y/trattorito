@@ -1120,5 +1120,351 @@ nav {
         max-width: none;
         border-radius: 8px !important;
     }
+    /* =========================================
+   CARDÁPIO - TRATTORITO ELITE
+   ========================================= */
+
+.menu-page {
+    background: var(--dark-burgundy);
+    min-height: 100vh;
+    padding-bottom: 70px;
+}
+
+
+/* CABEÇALHO */
+
+.menu-header {
+    text-align: center;
+    padding: 70px 20px 35px;
+    color: var(--cream);
+}
+
+.menu-small-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--light-beige);
+    margin-bottom: 10px;
+}
+
+.menu-header h1 {
+    font-family: "Cinzel", serif;
+    font-size: 48px;
+    margin: 0 0 15px;
+}
+
+.menu-header p {
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.7;
+    color: #e8ddd5;
+}
+
+
+/* ABAS */
+
+.menu-tabs {
+    width: min(1100px, 92%);
+    margin: 0 auto 50px;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.menu-tab {
+    flex: 1;
+
+    padding: 16px 20px;
+
+    border: 1px solid var(--light-beige);
+    background: transparent;
+
+    color: var(--cream);
+
+    font-family: "Cinzel", serif;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.menu-tab:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.menu-tab:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+.menu-tab:hover {
+    background: var(--light-beige);
+    color: var(--dark-burgundy);
+}
+
+.menu-tab.active {
+    background: var(--light-beige);
+    color: var(--dark-burgundy);
+}
+
+
+/* CATEGORIA */
+
+.menu-category {
+    display: none;
+
+    width: min(1100px, 92%);
+    margin: auto;
+}
+
+.menu-category.active {
+    display: block;
+}
+
+
+/* INTRODUÇÃO */
+
+.category-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--cream);
+}
+
+.category-intro span {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--light-beige);
+}
+
+.category-intro h2 {
+    font-family: "Cinzel", serif;
+    font-size: 34px;
+    margin: 8px 0;
+}
+
+.category-intro p {
+    color: #d9cbc3;
+}
+
+
+/* GRID */
+
+.menu-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* CARD */
+
+.menu-card {
+    display: flex;
+
+    min-height: 190px;
+
+    background: var(--cream);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.35);
+}
+
+
+/* IMAGEM */
+
+.menu-card img {
+    width: 43%;
+
+    min-height: 190px;
+
+    object-fit: cover;
+}
+
+
+/* CONTEÚDO */
+
+.menu-card-content {
+    flex: 1;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.menu-card-content h3 {
+    font-family: "Cinzel", serif;
+
+    color: var(--dark-burgundy);
+
+    font-size: 18px;
+
+    margin: 0 0 8px;
+}
+
+
+.menu-card-content p {
+    color: var(--text-dark);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    margin: 0 0 10px;
+}
+
+
+.menu-card-content strong {
+    color: var(--dark-burgundy);
+
+    font-family: "Cinzel", serif;
+
+    font-size: 18px;
+
+    margin-top: auto;
+
+    margin-bottom: 10px;
+}
+
+
+/* BOTÃO */
+
+.buy-button {
+    width: 100%;
+
+    border: none;
+
+    background: var(--accent-green);
+
+    color: white;
+
+    padding: 10px 12px;
+
+    border-radius: 20px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.buy-button:hover {
+    background: var(--accent-green-hover);
+
+    transform: scale(1.02);
+}
+
+
+/* FOOTER */
+
+.footer {
+    background: var(--dark-burgundy);
+
+    color: var(--cream);
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer p {
+    font-family: "Cinzel", serif;
+
+    font-size: 22px;
+
+    margin: 0 0 5px;
+}
+
+.footer span {
+    font-size: 12px;
+
+    color: var(--light-beige);
+}
+
+
+/* =========================================
+   RESPONSIVO
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-tabs {
+        flex-wrap: wrap;
+    }
+
+    .menu-tab {
+        flex: 1 1 45%;
+        border-radius: 8px !important;
+    }
+
+    .menu-header h1 {
+        font-size: 38px;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .menu-card {
+        min-height: 160px;
+    }
+
+    .menu-card img {
+        width: 38%;
+        min-height: 160px;
+    }
+
+    .menu-card-content {
+        padding: 14px;
+    }
+
+    .menu-card-content h3 {
+        font-size: 15px;
+    }
+
+    .menu-card-content p {
+        font-size: 10px;
+    }
+
+    .menu-card-content strong {
+        font-size: 16px;
+    }
+
+    .buy-button {
+        font-size: 9px;
+    }
+
+}
 
 }
