@@ -938,3 +938,104 @@ nav {
     }
 
 }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio - Trattorito Elite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-beige-theme">
+
+    <header>
+        <nav>
+            <div class="logo font-cinzel">
+                <a href="index.html" style="color: var(--cream); text-decoration: none; font-weight: bold; font-size: 1.2rem;">TRATTORITO ELITE</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pratos.html" class="active">Cardápio</a></li>
+            </ul>
+            <div class="user-actions">
+                <a href="login.html" class="btn-header">Entrar</a>
+                <a href="cadastro.html" class="btn-header" style="background-color: var(--light-beige); color: var(--dark-burgundy);">Cadastrar</a>
+                <a href="carrinho.html" class="cart-icon" style="text-decoration: none;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="catalog-header">
+        <a href="index.html" class="btn-back-link"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+        <h1>Cardápio Completo</h1>
+        <div></div>
+    </div>
+
+    <div class="section-title-divider">
+        <h2 style="color: var(--dark-burgundy);">Massas Tradicionais</h2>
+    </div>
+
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1621996346565-e3def6164286?auto=format&fit=crop&w=400&q=80" alt="Fettuccine Alfredo">
+            <div class="product-info">
+                <div>
+                    <h3>Fettuccine Alfredo</h3>
+                    <p>Massa artesanal ao molho cremoso de queijo parmesão e manteiga trufada.</p>
+                </div>
+                <div class="product-card-buttons">
+                    <button class="btn-card-buy">R$ 58,00</button>
+                    <button class="btn-card-add" onclick="adicionarAoCarrinho('Fettuccine Alfredo', 58.00, 'https://images.unsplash.com/photo-1621996346565-e3def6164286?auto=format&fit=crop&w=400&q=80')">
+                        <i class="fa-solid fa-plus"></i> Adicionar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=400&q=80" alt="Spaghetti Bolognese">
+            <div class="product-info">
+                <div>
+                    <h3>Spaghetti Bolognese</h3>
+                    <p>Massa com clássico ragù de carne bovina cozido lentamente por 6 horas.</p>
+                </div>
+                <div class="product-card-buttons">
+                    <button class="btn-card-buy">R$ 52,00</button>
+                    <button class="btn-card-add" onclick="adicionarAoCarrinho('Spaghetti Bolognese', 52.00, 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=400&q=80')">
+                        <i class="fa-solid fa-plus"></i> Adicionar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let carrinho = JSON.parse(localStorage.getItem('carrinhoCantina')) || [];
+
+        function atualizarBadgeCarrinho() {
+            const totalItens = carrinho.reduce((sum, item) => sum + item.quantidade, 0);
+            document.getElementById('cart-count').innerText = totalItens;
+        }
+
+        function adicionarAoCarrinho(nome, preco, imagem) {
+            const itemExistente = carrinho.find(item => item.nome === nome);
+            if (itemExistente) {
+                itemExistente.quantidade += 1;
+            } else {
+                carrinho.push({ nome, preco, imagem, quantidade: 1 });
+            }
+            
+            localStorage.setItem('carrinhoCantina', JSON.stringify(carrinho));
+            atualizarBadgeCarrinho();
+            alert(`${nome} adicionado ao carrinho!`);
+        }
+
+        document.addEventListener('DOMContentLoaded', atualizarBadgeCarrinho);
+    </script>
+</body>
+</html>
