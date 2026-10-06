@@ -7,18 +7,21 @@
 
     <title>Cardápio - Trattorito Elite</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
 
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="menu-page">
+<body class="bg-beige-theme">
 
-    <!-- ================= HEADER ================= -->
-
+    <!-- CABEÇALHO -->
     <header>
         <nav>
 
@@ -56,7 +59,9 @@
 
                     <i class="fa-solid fa-cart-shopping"></i>
 
-                    <span class="cart-badge" id="cart-count">
+                    <span
+                        class="cart-badge"
+                        id="cart-count">
                         0
                     </span>
 
@@ -68,132 +73,102 @@
     </header>
 
 
-    <!-- ================= TÍTULO ================= -->
+    <!-- TÍTULO DO CARDÁPIO -->
+    <div class="catalog-header">
 
-    <section class="menu-title">
-
-        <a href="index.html" class="menu-back">
+        <a href="index.html" class="btn-back-link">
             <i class="fa-solid fa-arrow-left"></i>
             Voltar
         </a>
 
-        <div>
-            <span>TRATTORITO ELITE</span>
-            <h1>Nosso Cardápio</h1>
-        </div>
+        <h1>Cardápio Completo</h1>
 
-        <div class="title-space"></div>
+        <div></div>
 
-    </section>
+    </div>
 
 
-    <!-- ================= ABAS ================= -->
+    <!-- ABAS -->
+    <div class="menu-tabs">
 
-    <div class="category-tabs">
-
-        <button class="category-tab active"
-                onclick="mostrarCategoria('massas', this)">
-
-            <i class="fa-solid fa-utensils"></i>
-
-            <span>Massas</span>
-
+        <button
+            class="menu-tab active"
+            onclick="mostrarCategoria('massas', this)">
+            Massas
         </button>
 
-
-        <button class="category-tab"
-                onclick="mostrarCategoria('especiais', this)">
-
-            <i class="fa-solid fa-star"></i>
-
-            <span>Pratos Especiais</span>
-
+        <button
+            class="menu-tab"
+            onclick="mostrarCategoria('especiais', this)">
+            Pratos Especiais
         </button>
 
-
-        <button class="category-tab"
-                onclick="mostrarCategoria('sobremesas', this)">
-
-            <i class="fa-solid fa-cake-candles"></i>
-
-            <span>Sobremesas</span>
-
+        <button
+            class="menu-tab"
+            onclick="mostrarCategoria('sobremesas', this)">
+            Sobremesas
         </button>
 
-
-        <button class="category-tab"
-                onclick="mostrarCategoria('bebidas', this)">
-
-            <i class="fa-solid fa-wine-glass"></i>
-
-            <span>Bebidas</span>
-
+        <button
+            class="menu-tab"
+            onclick="mostrarCategoria('bebidas', this)">
+            Bebidas
         </button>
 
     </div>
 
 
     <!-- ================================================= -->
-    <!-- ================= MASSAS ========================= -->
+    <!-- MASSAS -->
     <!-- ================================================= -->
 
-    <section id="massas" class="menu-category active-category">
+    <section id="massas" class="categoria ativa">
 
-        <div class="category-banner massas-banner">
-
-            <div class="banner-overlay">
-
-                <span>SABORES QUE ENCANTAM</span>
-
-                <h2>Massas Tradicionais</h2>
-
-                <p>
-                    Receitas italianas preparadas artesanalmente
-                    com ingredientes selecionados.
-                </p>
-
-            </div>
-
+        <div class="section-title-divider">
+            <h2>Massas Tradicionais</h2>
         </div>
 
+        <div class="product-grid">
 
-        <div class="products-grid">
 
+            <!-- PRODUTO 1 -->
 
-            <!-- FETTUCCINE -->
-
-            <article class="menu-product">
+            <div class="product-card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1621996346565-e3def6164286?auto=format&fit=crop&w=600&q=85"
+                    src="https://images.unsplash.com/photo-1621996346565-e3def6164286?auto=format&fit=crop&w=500&q=80"
                     alt="Fettuccine Alfredo"
-                    class="product-image"
                 >
 
-                <div class="product-content">
+                <div class="product-info">
 
-                    <h3>Fettuccine Alfredo</h3>
+                    <div>
 
-                    <p>
-                        Massa artesanal ao molho cremoso de
-                        queijo parmesão e manteiga trufada.
-                    </p>
+                        <h3>Fettuccine Alfredo</h3>
 
-                    <div class="product-bottom">
+                        <p>
+                            Massa artesanal ao molho cremoso
+                            de queijo parmesão e manteiga.
+                        </p>
 
-                        <strong>
+                    </div>
+
+                    <div class="product-card-buttons">
+
+                        <span class="price">
                             R$ 58,00
-                        </strong>
+                        </span>
 
                         <button
+                            class="btn-card-add"
                             onclick="adicionarAoCarrinho(
-                            'Fettuccine Alfredo',
-                            58.00,
-                            'https://images.unsplash.com/photo-1621996346565-e3def6164286?auto=format&fit=crop&w=600&q=85'
+                                'Fettuccine Alfredo',
+                                58.00,
+                                'https://images.unsplash.com/photo-1621996346565-e3def6164286?auto=format&fit=crop&w=500&q=80'
                             )">
 
                             <i class="fa-solid fa-plus"></i>
-                            Adicionar ao carrinho
+                            Adicionar
 
                         </button>
 
@@ -201,43 +176,47 @@
 
                 </div>
 
-            </article>
+            </div>
 
 
-            <!-- SPAGHETTI -->
+            <!-- PRODUTO 2 -->
 
-            <article class="menu-product">
+            <div class="product-card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=85"
+                    src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=500&q=80"
                     alt="Spaghetti Bolognese"
-                    class="product-image"
                 >
 
-                <div class="product-content">
+                <div class="product-info">
 
-                    <h3>Spaghetti Bolognese</h3>
+                    <div>
 
-                    <p>
-                        Massa italiana com clássico ragù de carne
-                        bovina cozido lentamente por 6 horas.
-                    </p>
+                        <h3>Spaghetti Bolognese</h3>
 
-                    <div class="product-bottom">
+                        <p>
+                            Massa italiana com molho de carne
+                            preparado lentamente.
+                        </p>
 
-                        <strong>
+                    </div>
+
+                    <div class="product-card-buttons">
+
+                        <span class="price">
                             R$ 52,00
-                        </strong>
+                        </span>
 
                         <button
+                            class="btn-card-add"
                             onclick="adicionarAoCarrinho(
-                            'Spaghetti Bolognese',
-                            52.00,
-                            'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=85'
+                                'Spaghetti Bolognese',
+                                52.00,
+                                'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=500&q=80'
                             )">
 
                             <i class="fa-solid fa-plus"></i>
-                            Adicionar ao carrinho
+                            Adicionar
 
                         </button>
 
@@ -245,87 +224,47 @@
 
                 </div>
 
-            </article>
+            </div>
 
 
-            <!-- CARBONARA -->
+            <!-- PRODUTO 3 -->
 
-            <article class="menu-product">
-
-                <img
-                    src="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=600&q=85"
-                    alt="Spaghetti Carbonara"
-                    class="product-image"
-                >
-
-                <div class="product-content">
-
-                    <h3>Spaghetti Carbonara</h3>
-
-                    <p>
-                        Receita clássica romana preparada com
-                        parmesão, ovos e pancetta.
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <strong>
-                            R$ 56,00
-                        </strong>
-
-                        <button
-                            onclick="adicionarAoCarrinho(
-                            'Spaghetti Carbonara',
-                            56.00,
-                            'https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=600&q=85'
-                            )">
-
-                            <i class="fa-solid fa-plus"></i>
-                            Adicionar ao carrinho
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- PENNE -->
-
-            <article class="menu-product">
+            <div class="product-card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=600&q=85"
+                    src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=500&q=80"
                     alt="Penne ao Molho"
-                    class="product-image"
                 >
 
-                <div class="product-content">
+                <div class="product-info">
 
-                    <h3>Penne ao Molho Especial</h3>
+                    <div>
 
-                    <p>
-                        Penne artesanal servido com molho de tomate,
-                        ervas frescas e parmesão.
-                    </p>
+                        <h3>Penne ao Molho</h3>
 
-                    <div class="product-bottom">
+                        <p>
+                            Penne artesanal com molho de tomate
+                            e ervas italianas.
+                        </p>
 
-                        <strong>
+                    </div>
+
+                    <div class="product-card-buttons">
+
+                        <span class="price">
                             R$ 49,00
-                        </strong>
+                        </span>
 
                         <button
+                            class="btn-card-add"
                             onclick="adicionarAoCarrinho(
-                            'Penne ao Molho Especial',
-                            49.00,
-                            'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=600&q=85'
+                                'Penne ao Molho',
+                                49.00,
+                                'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=500&q=80'
                             )">
 
                             <i class="fa-solid fa-plus"></i>
-                            Adicionar ao carrinho
+                            Adicionar
 
                         </button>
 
@@ -333,7 +272,55 @@
 
                 </div>
 
-            </article>
+            </div>
+
+
+            <!-- PRODUTO 4 -->
+
+            <div class="product-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1556761223-4c4282c73f77?auto=format&fit=crop&w=500&q=80"
+                    alt="Lasanha Italiana"
+                >
+
+                <div class="product-info">
+
+                    <div>
+
+                        <h3>Lasanha Italiana</h3>
+
+                        <p>
+                            Camadas de massa, molho artesanal,
+                            queijo e carne.
+                        </p>
+
+                    </div>
+
+                    <div class="product-card-buttons">
+
+                        <span class="price">
+                            R$ 62,00
+                        </span>
+
+                        <button
+                            class="btn-card-add"
+                            onclick="adicionarAoCarrinho(
+                                'Lasanha Italiana',
+                                62.00,
+                                'https://images.unsplash.com/photo-1556761223-4c4282c73f77?auto=format&fit=crop&w=500&q=80'
+                            )">
+
+                            <i class="fa-solid fa-plus"></i>
+                            Adicionar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -341,61 +328,100 @@
 
 
     <!-- ================================================= -->
-    <!-- =============== PRATOS ESPECIAIS ================ -->
+    <!-- PRATOS ESPECIAIS -->
     <!-- ================================================= -->
 
-    <section id="especiais" class="menu-category">
+    <section id="especiais" class="categoria">
 
-        <div class="category-banner especiais-banner">
+        <div class="section-title-divider">
+            <h2>Pratos Especiais</h2>
+        </div>
 
-            <div class="banner-overlay">
+        <div class="product-grid">
 
-                <span>EXPERIÊNCIAS ESPECIAIS</span>
 
-                <h2>Pratos Especiais</h2>
+            <div class="product-card">
 
-                <p>
-                    Os pratos escolhidos pelo nosso chef
-                    para uma experiência inesquecível.
-                </p>
+                <img
+                    src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=500&q=80"
+                    alt="Risoto Italiano"
+                >
+
+                <div class="product-info">
+
+                    <div>
+
+                        <h3>Risoto Italiano</h3>
+
+                        <p>
+                            Risoto cremoso preparado com
+                            ingredientes selecionados.
+                        </p>
+
+                    </div>
+
+                    <div class="product-card-buttons">
+
+                        <span class="price">
+                            R$ 68,00
+                        </span>
+
+                        <button
+                            class="btn-card-add"
+                            onclick="adicionarAoCarrinho(
+                                'Risoto Italiano',
+                                68.00,
+                                'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=500&q=80'
+                            )">
+
+                            <i class="fa-solid fa-plus"></i>
+                            Adicionar
+
+                        </button>
+
+                    </div>
+
+                </div>
 
             </div>
 
-        </div>
 
-
-        <div class="products-grid">
-
-
-            <article class="menu-product">
+            <div class="product-card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=600&q=85"
-                    alt="Lasanha à Bolonhesa"
-                    class="product-image"
+                    src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80"
+                    alt="Filé Especial"
                 >
 
-                <div class="product-content">
+                <div class="product-info">
 
-                    <h3>Lasanha à Bolonhesa</h3>
+                    <div>
 
-                    <p>
-                        Camadas de massa artesanal, molho bolonhesa,
-                        queijo e molho branco.
-                    </p>
+                        <h3>Filé Especial</h3>
 
-                    <div class="product-bottom">
+                        <p>
+                            Filé grelhado acompanhado de
+                            legumes e molho especial.
+                        </p>
 
-                        <strong>R$ 65,00</strong>
+                    </div>
 
-                        <button onclick="adicionarAoCarrinho(
-                        'Lasanha à Bolonhesa',
-                        65.00,
-                        'https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=600&q=85'
-                        )">
+                    <div class="product-card-buttons">
+
+                        <span class="price">
+                            R$ 78,00
+                        </span>
+
+                        <button
+                            class="btn-card-add"
+                            onclick="adicionarAoCarrinho(
+                                'Filé Especial',
+                                78.00,
+                                'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80'
+                            )">
 
                             <i class="fa-solid fa-plus"></i>
-                            Adicionar ao carrinho
+                            Adicionar
 
                         </button>
 
@@ -403,38 +429,45 @@
 
                 </div>
 
-            </article>
+            </div>
 
 
-            <article class="menu-product">
+            <div class="product-card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=600&q=85"
-                    alt="Risoto de Camarão"
-                    class="product-image"
+                    src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=500&q=80"
+                    alt="Frango Italiano"
                 >
 
-                <div class="product-content">
+                <div class="product-info">
 
-                    <h3>Risoto de Camarão</h3>
+                    <div>
 
-                    <p>
-                        Arroz arbóreo cremoso com camarões,
-                        parmesão e ervas frescas.
-                    </p>
+                        <h3>Frango Italiano</h3>
 
-                    <div class="product-bottom">
+                        <p>
+                            Frango grelhado com ervas,
+                            legumes e molho artesanal.
+                        </p>
 
-                        <strong>R$ 72,00</strong>
+                    </div>
 
-                        <button onclick="adicionarAoCarrinho(
-                        'Risoto de Camarão',
-                        72.00,
-                        'https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=600&q=85'
-                        )">
+                    <div class="product-card-buttons">
+
+                        <span class="price">
+                            R$ 64,00
+                        </span>
+
+                        <button
+                            class="btn-card-add"
+                            onclick="adicionarAoCarrinho(
+                                'Frango Italiano',
+                                64.00,
+                                'https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=500&q=80'
+                            )">
 
                             <i class="fa-solid fa-plus"></i>
-                            Adicionar ao carrinho
+                            Adicionar
 
                         </button>
 
@@ -442,38 +475,45 @@
 
                 </div>
 
-            </article>
+            </div>
 
 
-            <article class="menu-product">
+            <div class="product-card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=85"
-                    alt="Filé à Parmegiana"
-                    class="product-image"
+                    src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=500&q=80"
+                    alt="Especial da Casa"
                 >
 
-                <div class="product-content">
+                <div class="product-info">
 
-                    <h3>Filé à Parmegiana</h3>
+                    <div>
 
-                    <p>
-                        Filé empanado, molho de tomate artesanal,
-                        queijo gratinado e acompanhamento.
-                    </p>
+                        <h3>Especial da Casa</h3>
 
-                    <div class="product-bottom">
+                        <p>
+                            Uma combinação especial preparada
+                            pelo nosso chef.
+                        </p>
 
-                        <strong>R$ 69,00</strong>
+                    </div>
 
-                        <button onclick="adicionarAoCarrinho(
-                        'Filé à Parmegiana',
-                        69.00,
-                        'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=85'
-                        )">
+                    <div class="product-card-buttons">
+
+                        <span class="price">
+                            R$ 82,00
+                        </span>
+
+                        <button
+                            class="btn-card-add"
+                            onclick="adicionarAoCarrinho(
+                                'Especial da Casa',
+                                82.00,
+                                'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=500&q=80'
+                            )">
 
                             <i class="fa-solid fa-plus"></i>
-                            Adicionar ao carrinho
+                            Adicionar
 
                         </button>
 
@@ -481,46 +521,7 @@
 
                 </div>
 
-            </article>
-
-
-            <article class="menu-product">
-
-                <img
-                    src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=85"
-                    alt="Pollo alla Parmigiana"
-                    class="product-image"
-                >
-
-                <div class="product-content">
-
-                    <h3>Pollo alla Parmigiana</h3>
-
-                    <p>
-                        Frango empanado com molho artesanal,
-                        queijo gratinado e ervas italianas.
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <strong>R$ 62,00</strong>
-
-                        <button onclick="adicionarAoCarrinho(
-                        'Pollo alla Parmigiana',
-                        62.00,
-                        'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=85'
-                        )">
-
-                            <i class="fa-solid fa-plus"></i>
-                            Adicionar ao carrinho
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </article>
+            </div>
 
         </div>
 
@@ -528,61 +529,54 @@
 
 
     <!-- ================================================= -->
-    <!-- ================= SOBREMESAS ==================== -->
+    <!-- SOBREMESAS -->
     <!-- ================================================= -->
 
-    <section id="sobremesas" class="menu-category">
+    <section id="sobremesas" class="categoria">
 
-        <div class="category-banner sobremesas-banner">
-
-            <div class="banner-overlay">
-
-                <span>O FINAL PERFEITO</span>
-
-                <h2>Sobremesas</h2>
-
-                <p>
-                    Doces tradicionais preparados para
-                    finalizar sua experiência italiana.
-                </p>
-
-            </div>
-
+        <div class="section-title-divider">
+            <h2>Sobremesas</h2>
         </div>
 
+        <div class="product-grid">
 
-        <div class="products-grid">
 
-
-            <article class="menu-product">
+            <div class="product-card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=600&q=85"
-                    alt="Tiramisù"
-                    class="product-image"
+                    src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=500&q=80"
+                    alt="Tiramisu"
                 >
 
-                <div class="product-content">
+                <div class="product-info">
 
-                    <h3>Tiramisù</h3>
+                    <div>
 
-                    <p>
-                        Clássica sobremesa italiana com café,
-                        mascarpone e cacau.
-                    </p>
+                        <h3>Tiramisù</h3>
 
-                    <div class="product-bottom">
+                        <p>
+                            Tradicional sobremesa italiana
+                            com café e mascarpone.
+                        </p>
 
-                        <strong>R$ 24,00</strong>
+                    </div>
 
-                        <button onclick="adicionarAoCarrinho(
-                        'Tiramisù',
-                        24.00,
-                        'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=600&q=85'
-                        )">
+                    <div class="product-card-buttons">
+
+                        <span class="price">
+                            R$ 28,00
+                        </span>
+
+                        <button
+                            class="btn-card-add"
+                            onclick="adicionarAoCarrinho(
+                                'Tiramisù',
+                                28.00,
+                                'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=500&q=80'
+                            )">
 
                             <i class="fa-solid fa-plus"></i>
-                            Adicionar ao carrinho
+                            Adicionar
 
                         </button>
 
@@ -590,38 +584,91 @@
 
                 </div>
 
-            </article>
+            </div>
 
 
-            <article class="menu-product">
+            <div class="product-card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=85"
+                    src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=500&q=80"
+                    alt="Torta Italiana"
+                >
+
+                <div class="product-info">
+
+                    <div>
+
+                        <h3>Torta Italiana</h3>
+
+                        <p>
+                            Torta artesanal com recheio
+                            cremoso e frutas.
+                        </p>
+
+                    </div>
+
+                    <div class="product-card-buttons">
+
+                        <span class="price">
+                            R$ 25,00
+                        </span>
+
+                        <button
+                            class="btn-card-add"
+                            onclick="adicionarAoCarrinho(
+                                'Torta Italiana',
+                                25.00,
+                                'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=500&q=80'
+                            )">
+
+                            <i class="fa-solid fa-plus"></i>
+                            Adicionar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=500&q=80"
                     alt="Panna Cotta"
-                    class="product-image"
                 >
 
-                <div class="product-content">
+                <div class="product-info">
 
-                    <h3>Panna Cotta</h3>
+                    <div>
 
-                    <p>
-                        Creme italiano delicado servido com
-                        calda de frutas vermelhas.
-                    </p>
+                        <h3>Panna Cotta</h3>
 
-                    <div class="product-bottom">
+                        <p>
+                            Sobremesa cremosa italiana
+                            acompanhada de frutas vermelhas.
+                        </p>
 
-                        <strong>R$ 22,00</strong>
+                    </div>
 
-                        <button onclick="adicionarAoCarrinho(
-                        'Panna Cotta',
-                        22.00,
-                        'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=85'
-                        )">
+                    <div class="product-card-buttons">
+
+                        <span class="price">
+                            R$ 24,00
+                        </span>
+
+                        <button
+                            class="btn-card-add"
+                            onclick="adicionarAoCarrinho(
+                                'Panna Cotta',
+                                24.00,
+                                'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=500&q=80'
+                            )">
 
                             <i class="fa-solid fa-plus"></i>
-                            Adicionar ao carrinho
+                            Adicionar
 
                         </button>
 
@@ -629,146 +676,108 @@
 
                 </div>
 
-            </article>
+            </div>
 
 
-            <article class="menu-product">
+            <div class="product-card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=85"
-                    alt="Cannoli Italiano"
-                    class="product-image"
+                    src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=500&q=80"
+                    alt="Cannoli"
                 >
 
-                <div class="product-content">
+                <div class="product-info">
 
-                    <h3>Cannoli Italiano</h3>
+                    <div>
 
-                    <p>
-                        Massa crocante recheada com creme de ricota
-                        e finalizada com chocolate.
-                    </p>
+                        <h3>Cannoli Siciliano</h3>
 
-                    <div class="product-bottom">
+                        <p>
+                            Massa crocante recheada com
+                            creme tradicional italiano.
+                        </p>
 
-                        <strong>R$ 20,00</strong>
+                    </div>
 
-                        <button onclick="adicionarAoCarrinho(
-                        'Cannoli Italiano',
-                        20.00,
-                        'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=85'
-                        )">
+                    <div class="product-card-buttons">
+
+                        <span class="price">
+                            R$ 22,00
+                        </span>
+
+                        <button
+                            class="btn-card-add"
+                            onclick="adicionarAoCarrinho(
+                                'Cannoli Siciliano',
+                                22.00,
+                                'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=500&q=80'
+                            )">
 
                             <i class="fa-solid fa-plus"></i>
-                            Adicionar ao carrinho
+                            Adicionar
 
                         </button>
 
                     </div>
 
                 </div>
-
-            </article>
-
-
-            <article class="menu-product">
-
-                <img
-                    src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=85"
-                    alt="Chocolate Italiano"
-                    class="product-image"
-                >
-
-                <div class="product-content">
-
-                    <h3>Chocolate Italiano</h3>
-
-                    <p>
-                        Sobremesa cremosa de chocolate com
-                        toque especial da casa.
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <strong>R$ 26,00</strong>
-
-                        <button onclick="adicionarAoCarrinho(
-                        'Chocolate Italiano',
-                        26.00,
-                        'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=85'
-                        )">
-
-                            <i class="fa-solid fa-plus"></i>
-                            Adicionar ao carrinho
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================================================= -->
-    <!-- ==================== BEBIDAS ==================== -->
-    <!-- ================================================= -->
-
-    <section id="bebidas" class="menu-category">
-
-        <div class="category-banner bebidas-banner">
-
-            <div class="banner-overlay">
-
-                <span>BEBIDAS QUE ENCANTAM</span>
-
-                <h2>Bebidas</h2>
-
-                <p>
-                    Opções selecionadas para acompanhar
-                    cada momento da sua refeição.
-                </p>
 
             </div>
 
         </div>
 
+    </section>
 
-        <div class="products-grid">
+
+    <!-- ================================================= -->
+    <!-- BEBIDAS -->
+    <!-- ================================================= -->
+
+    <section id="bebidas" class="categoria">
+
+        <div class="section-title-divider">
+            <h2>Bebidas</h2>
+        </div>
+
+        <div class="product-grid">
 
 
-            <article class="menu-product">
+            <div class="product-card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=600&q=85"
-                    alt="Coca-Cola"
-                    class="product-image"
+                    src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=500&q=80"
+                    alt="Vinho Italiano"
                 >
 
-                <div class="product-content">
+                <div class="product-info">
 
-                    <h3>Coca-Cola</h3>
+                    <div>
 
-                    <p>
-                        Refrigerante gelado de 350ml.
-                    </p>
+                        <h3>Vinho Italiano</h3>
 
-                    <div class="product-bottom">
+                        <p>
+                            Vinho selecionado para acompanhar
+                            os pratos da casa.
+                        </p>
 
-                        <strong>R$ 8,00</strong>
+                    </div>
 
-                        <button onclick="adicionarAoCarrinho(
-                        'Coca-Cola',
-                        8.00,
-                        'https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=600&q=85'
-                        )">
+                    <div class="product-card-buttons">
+
+                        <span class="price">
+                            R$ 85,00
+                        </span>
+
+                        <button
+                            class="btn-card-add"
+                            onclick="adicionarAoCarrinho(
+                                'Vinho Italiano',
+                                85.00,
+                                'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=500&q=80'
+                            )">
 
                             <i class="fa-solid fa-plus"></i>
-                            Adicionar ao carrinho
+                            Adicionar
 
                         </button>
 
@@ -776,37 +785,45 @@
 
                 </div>
 
-            </article>
+            </div>
 
 
-            <article class="menu-product">
+            <div class="product-card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=600&q=85"
-                    alt="Suco de Laranja"
-                    class="product-image"
+                    src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=500&q=80"
+                    alt="Suco Natural"
                 >
 
-                <div class="product-content">
+                <div class="product-info">
 
-                    <h3>Suco de Laranja</h3>
+                    <div>
 
-                    <p>
-                        Suco natural de laranja preparado na hora.
-                    </p>
+                        <h3>Suco Natural</h3>
 
-                    <div class="product-bottom">
+                        <p>
+                            Suco natural preparado na hora
+                            com frutas selecionadas.
+                        </p>
 
-                        <strong>R$ 12,00</strong>
+                    </div>
 
-                        <button onclick="adicionarAoCarrinho(
-                        'Suco de Laranja',
-                        12.00,
-                        'https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=600&q=85'
-                        )">
+                    <div class="product-card-buttons">
+
+                        <span class="price">
+                            R$ 12,00
+                        </span>
+
+                        <button
+                            class="btn-card-add"
+                            onclick="adicionarAoCarrinho(
+                                'Suco Natural',
+                                12.00,
+                                'https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=500&q=80'
+                            )">
 
                             <i class="fa-solid fa-plus"></i>
-                            Adicionar ao carrinho
+                            Adicionar
 
                         </button>
 
@@ -814,37 +831,90 @@
 
                 </div>
 
-            </article>
+            </div>
 
 
-            <article class="menu-product">
+            <div class="product-card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=600&q=85"
+                    src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=500&q=80"
+                    alt="Refrigerante"
+                >
+
+                <div class="product-info">
+
+                    <div>
+
+                        <h3>Refrigerante</h3>
+
+                        <p>
+                            Refrigerante gelado para
+                            acompanhar sua refeição.
+                        </p>
+
+                    </div>
+
+                    <div class="product-card-buttons">
+
+                        <span class="price">
+                            R$ 8,00
+                        </span>
+
+                        <button
+                            class="btn-card-add"
+                            onclick="adicionarAoCarrinho(
+                                'Refrigerante',
+                                8.00,
+                                'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=500&q=80'
+                            )">
+
+                            <i class="fa-solid fa-plus"></i>
+                            Adicionar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=500&q=80"
                     alt="Água Mineral"
-                    class="product-image"
                 >
 
-                <div class="product-content">
+                <div class="product-info">
 
-                    <h3>Água Mineral</h3>
+                    <div>
 
-                    <p>
-                        Água mineral natural de 500ml.
-                    </p>
+                        <h3>Água Mineral</h3>
 
-                    <div class="product-bottom">
+                        <p>
+                            Água mineral gelada.
+                        </p>
 
-                        <strong>R$ 5,00</strong>
+                    </div>
 
-                        <button onclick="adicionarAoCarrinho(
-                        'Água Mineral',
-                        5.00,
-                        'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=600&q=85'
-                        )">
+                    <div class="product-card-buttons">
+
+                        <span class="price">
+                            R$ 6,00
+                        </span>
+
+                        <button
+                            class="btn-card-add"
+                            onclick="adicionarAoCarrinho(
+                                'Água Mineral',
+                                6.00,
+                                'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=500&q=80'
+                            )">
 
                             <i class="fa-solid fa-plus"></i>
-                            Adicionar ao carrinho
+                            Adicionar
 
                         </button>
 
@@ -852,141 +922,100 @@
 
                 </div>
 
-            </article>
-
-
-            <article class="menu-product">
-
-                <img
-                    src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=600&q=85"
-                    alt="Chá Gelado"
-                    class="product-image"
-                >
-
-                <div class="product-content">
-
-                    <h3>Chá Gelado</h3>
-
-                    <p>
-                        Chá gelado refrescante com limão e hortelã.
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <strong>R$ 10,00</strong>
-
-                        <button onclick="adicionarAoCarrinho(
-                        'Chá Gelado',
-                        10.00,
-                        'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=600&q=85'
-                        )">
-
-                            <i class="fa-solid fa-plus"></i>
-                            Adicionar ao carrinho
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </article>
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- ================= FOOTER ================= -->
-
-    <footer class="menu-footer">
-
-        <h2>Trattorito Elite</h2>
-
-        <p>
-            A verdadeira experiência da culinária italiana.
-        </p>
-
-        <span>
-            © 2026 Trattorito Elite
-        </span>
-
-    </footer>
-
-
-    <!-- ================= JAVASCRIPT ================= -->
-
+    <!-- JAVASCRIPT -->
     <script>
 
         let carrinho =
-            JSON.parse(localStorage.getItem('carrinhoCantina')) || [];
+            JSON.parse(localStorage.getItem("carrinhoCantina")) || [];
 
 
-        /* TROCAR CATEGORIA */
+        /* TROCAR DE CATEGORIA */
 
-        function mostrarCategoria(categoria, botao) {
+        function mostrarCategoria(id, botao) {
 
             const categorias =
-                document.querySelectorAll('.menu-category');
-
-            categorias.forEach(function(secao) {
-
-                secao.classList.remove('active-category');
-
-            });
-
+                document.querySelectorAll(".categoria");
 
             const botoes =
-                document.querySelectorAll('.category-tab');
+                document.querySelectorAll(".menu-tab");
 
-            botoes.forEach(function(btn) {
 
-                btn.classList.remove('active');
+            categorias.forEach(function(categoria) {
+
+                categoria.classList.remove("ativa");
 
             });
 
 
-            document
-                .getElementById(categoria)
-                .classList.add('active-category');
+            botoes.forEach(function(item) {
 
+                item.classList.remove("active");
 
-            botao.classList.add('active');
-
-
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
             });
+
+
+            const categoriaSelecionada =
+                document.getElementById(id);
+
+
+            if (categoriaSelecionada) {
+
+                categoriaSelecionada.classList.add("ativa");
+
+            }
+
+
+            if (botao) {
+
+                botao.classList.add("active");
+
+            }
 
         }
 
 
-        /* ATUALIZAR CONTADOR */
+        /* ATUALIZAR CARRINHO */
 
         function atualizarBadgeCarrinho() {
 
-            const totalItens =
-                carrinho.reduce(
-                    (total, item) =>
-                    total + item.quantidade,
-                    0
-                );
+            const badge =
+                document.getElementById("cart-count");
 
-            document.getElementById('cart-count').innerText =
-                totalItens;
+
+            const total =
+                carrinho.reduce(function(soma, item) {
+
+                    return soma + item.quantidade;
+
+                }, 0);
+
+
+            if (badge) {
+
+                badge.textContent = total;
+
+            }
 
         }
 
 
-        /* ADICIONAR AO CARRINHO */
+        /* ADICIONAR PRODUTO */
 
         function adicionarAoCarrinho(nome, preco, imagem) {
 
             const itemExistente =
-                carrinho.find(
-                    item => item.nome === nome
-                );
+                carrinho.find(function(item) {
+
+                    return item.nome === nome;
+
+                });
 
 
             if (itemExistente) {
@@ -1011,7 +1040,7 @@
 
 
             localStorage.setItem(
-                'carrinhoCantina',
+                "carrinhoCantina",
                 JSON.stringify(carrinho)
             );
 
@@ -1020,18 +1049,30 @@
 
 
             alert(
-                nome + ' foi adicionado ao carrinho!'
+                nome + " foi adicionado ao carrinho!"
             );
 
         }
 
 
+        /* INICIALIZAÇÃO */
+
         document.addEventListener(
-            'DOMContentLoaded',
-            atualizarBadgeCarrinho
+            "DOMContentLoaded",
+            function() {
+
+                atualizarBadgeCarrinho();
+
+                mostrarCategoria(
+                    "massas",
+                    document.querySelector(".menu-tab")
+                );
+
+            }
         );
 
     </script>
 
 </body>
+
 </html>
