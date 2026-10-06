@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobremesas | Trattorito Elite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+*{box-sizing:border-box}
+body.sobremesas-page{margin:0;background:#65070b;color:#2d211b;font-family:"Cormorant Garamond",Georgia,serif}
+.sob-header{height:74px;background:#650507;border-bottom:3px solid #20a9d4;display:flex;align-items:center;justify-content:space-between;padding:0 30px;color:#fff}
+.sob-header a{color:#fff;text-decoration:none;font-size:17px}
+.sob-logo{font-family:Parisienne,cursive;font-size:40px;line-height:1}
+.sob-cart{font-size:28px!important}
+.sob-hero{height:240px;background:linear-gradient(90deg,rgba(45,0,0,.72),rgba(45,0,0,.08)),url("https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=1600") center/cover;display:flex;align-items:center;padding:30px 4.5%;color:#fff;border-bottom:3px solid #20a9d4}
+.sob-hero-text{max-width:520px}
+.sob-hero small{font-size:16px;letter-spacing:3px}
+.sob-hero h1{font-family:Georgia,serif;font-size:58px;margin:3px 0;line-height:.95}
+.sob-hero p{font-size:18px;letter-spacing:1px;margin:8px 0}
+.sob-search{width:38px;height:38px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:10px 0 28px 3%;color:#777;box-shadow:0 1px 5px #3b0000}
+.sob-grid{max-width:1120px;margin:0 auto;padding:0 24px 45px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 45px}
+.sob-card{min-height:145px;background:#fff;border-radius:28px;display:flex;overflow:hidden;box-shadow:4px 5px 2px rgba(0,0,0,.35)}
+.sob-card img{width:165px;height:145px;object-fit:cover;flex-shrink:0}
+.sob-info{padding:11px 13px 9px;display:flex;flex-direction:column;flex:1}
+.sob-info h2{font-size:18px;font-weight:600;margin:0 0 2px}
+.sob-info p{font-size:11px;line-height:1.05;margin:2px 0 5px;flex:1}
+.sob-price{font-size:13px;font-weight:600;margin-bottom:5px}
+.sob-buttons{display:grid;gap:4px}
+.sob-buy,.sob-add{border:0;border-radius:15px;color:#fff;height:23px;cursor:pointer;font-family:inherit;font-size:12px}
+.sob-buy{background:#a40008}
+.sob-add{background:#43a05b}
+.sob-footer{background:#6f1719;border-top:1px solid rgba(255,255,255,.18);padding:20px 3% 28px;min-height:250px;color:#fff}
+.sob-footer h3{text-align:center;color:#e8d8ca;font-weight:400;font-size:22px;margin:0 0 25px}
+.sob-footer p{max-width:700px;font-size:13px;line-height:1.1}
+.sob-footer .terms{float:right;background:#986a5d;color:#fff;padding:9px 22px;border-radius:24px;margin-top:-40px}
+@media(max-width:800px){.sob-grid{grid-template-columns:1fr;gap:18px}.sob-card img{width:145px}.sob-hero h1{font-size:48px}}
+@media(max-width:500px){.sob-header{padding:0 16px}.sob-logo{font-size:32px}.sob-hero{height:210px;padding:20px}.sob-hero h1{font-size:42px}.sob-grid{padding:0 12px 40px}.sob-card{min-height:130px}.sob-card img{width:120px;height:130px}.sob-info h2{font-size:16px}.sob-info p{font-size:10px}}
+</style>
+</head>
+<body class="sobremesas-page">
+<header class="sob-header">
+<a href="pratos.html">&lt; Sair</a>
+<a href="index.html" class="sob-logo">Sobremesas</a>
+<a href="carrinho.html" class="sob-cart" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
+</header>
+
+<section class="sob-hero">
+<div class="sob-hero-text">
+<small>SABORES QUE ENCANTAM</small>
+<h1>Sobremesas</h1>
+<p>O FINAL PERFEITO<br>PARA UMA GRANDE REFEIÇÃO.</p>
+<p style="font-size:13px;max-width:380px">Nossas sobremesas são feitas com ingredientes selecionados e muito carinho, para adoçar os seus melhores momentos.</p>
+</div>
+</section>
+
+<div class="sob-search"><i class="fa-solid fa-magnifying-glass"></i></div>
+
+<main class="sob-grid">
+
+<article class="sob-card">
+<img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=700" alt="Cannoli de limão siciliano">
+<div class="sob-info">
+<h2>Cannoli de limão siciliano</h2>
+<p>Cannoli de massa crocante com recheio cremoso de limão.</p>
+<div class="sob-price">R$ 29,90</div>
+<div class="sob-buttons">
+<button class="sob-buy" onclick="comprarAgora('Cannoli de limão siciliano',29.90,'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=700')">Compre agora</button>
+<button class="sob-add" onclick="adicionar('Cannoli de limão siciliano',29.90,'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=700')">Adicionar ao carrinho</button>
+</div>
+</div>
+</article>
+<article class="sob-card">
+<img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=700" alt="Panna Cotta de Maracujá">
+<div class="sob-info">
+<h2>Panna Cotta de Maracujá</h2>
+<p>Cremosa panna cotta coberta com calda de maracujá.</p>
+<div class="sob-price">R$ 28,90</div>
+<div class="sob-buttons">
+<button class="sob-buy" onclick="comprarAgora('Panna Cotta de Maracujá',28.90,'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=700')">Compre agora</button>
+<button class="sob-add" onclick="adicionar('Panna Cotta de Maracujá',28.90,'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=700')">Adicionar ao carrinho</button>
+</div>
+</div>
+</article>
+<article class="sob-card">
+<img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=700" alt="Cannoli de Pistache">
+<div class="sob-info">
+<h2>Cannoli de Pistache</h2>
+<p>Cannoli crocante com recheio de ricota e pistache.</p>
+<div class="sob-price">R$ 34,90</div>
+<div class="sob-buttons">
+<button class="sob-buy" onclick="comprarAgora('Cannoli de Pistache',34.90,'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=700')">Compre agora</button>
+<button class="sob-add" onclick="adicionar('Cannoli de Pistache',34.90,'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=700')">Adicionar ao carrinho</button>
+</div>
+</div>
+</article>
+<article class="sob-card">
+<img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=700" alt="Panna Cotta de frutas vermelhas">
+<div class="sob-info">
+<h2>Panna Cotta de frutas vermelhas</h2>
+<p>Base cremosa de leite coberta com calda de frutas vermelhas.</p>
+<div class="sob-price">R$ 31,90</div>
+<div class="sob-buttons">
+<button class="sob-buy" onclick="comprarAgora('Panna Cotta de frutas vermelhas',31.90,'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=700')">Compre agora</button>
+<button class="sob-add" onclick="adicionar('Panna Cotta de frutas vermelhas',31.90,'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=700')">Adicionar ao carrinho</button>
+</div>
+</div>
+</article>
+<article class="sob-card">
+<img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=700" alt="Tiramisú">
+<div class="sob-info">
+<h2>Tiramisú</h2>
+<p>Camadas cremosas de mascarpone, café e biscoito, finalizadas com cacau.</p>
+<div class="sob-price">R$ 32,90</div>
+<div class="sob-buttons">
+<button class="sob-buy" onclick="comprarAgora('Tiramisú',32.90,'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=700')">Compre agora</button>
+<button class="sob-add" onclick="adicionar('Tiramisú',32.90,'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=700')">Adicionar ao carrinho</button>
+</div>
+</div>
+</article>
+<article class="sob-card">
+<img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=700" alt="Torta de frutas vermelhas">
+<div class="sob-info">
+<h2>Torta de frutas vermelhas</h2>
+<p>Torta de chocolate com creme e frutas vermelhas.</p>
+<div class="sob-price">R$ 34,90</div>
+<div class="sob-buttons">
+<button class="sob-buy" onclick="comprarAgora('Torta de frutas vermelhas',34.90,'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=700')">Compre agora</button>
+<button class="sob-add" onclick="adicionar('Torta de frutas vermelhas',34.90,'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=700')">Adicionar ao carrinho</button>
+</div>
+</div>
+</article>
+<article class="sob-card">
+<img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=700" alt="Panna Cotta de Café">
+<div class="sob-info">
+<h2>Panna Cotta de Café</h2>
+<p>Creme de leite cozido com aroma intenso de café tostado.</p>
+<div class="sob-price">R$ 29,90</div>
+<div class="sob-buttons">
+<button class="sob-buy" onclick="comprarAgora('Panna Cotta de Café',29.90,'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=700')">Compre agora</button>
+<button class="sob-add" onclick="adicionar('Panna Cotta de Café',29.90,'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=700')">Adicionar ao carrinho</button>
+</div>
+</div>
+</article>
+<article class="sob-card">
+<img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=700" alt="Torta de Maracujá">
+<div class="sob-info">
+<h2>Torta de Maracujá</h2>
+<p>Base de biscoito crocante, mousse de maracujá e cobertura de chantilly.</p>
+<div class="sob-price">R$ 31,90</div>
+<div class="sob-buttons">
+<button class="sob-buy" onclick="comprarAgora('Torta de Maracujá',31.90,'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=700')">Compre agora</button>
+<button class="sob-add" onclick="adicionar('Torta de Maracujá',31.90,'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=700')">Adicionar ao carrinho</button>
+</div>
+</div>
+</article>
+<article class="sob-card">
+<img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=700" alt="Classic Sicilian Cannoli">
+<div class="sob-info">
+<h2>Classic Sicilian Cannoli</h2>
+<p>Massa doce frita, recheada com creme de ricota e pedaços de chocolate.</p>
+<div class="sob-price">R$ 32,90</div>
+<div class="sob-buttons">
+<button class="sob-buy" onclick="comprarAgora('Classic Sicilian Cannoli',32.90,'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=700')">Compre agora</button>
+<button class="sob-add" onclick="adicionar('Classic Sicilian Cannoli',32.90,'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=700')">Adicionar ao carrinho</button>
+</div>
+</div>
+</article>
+<article class="sob-card">
+<img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=700" alt="Babà ao limoncello">
+<div class="sob-info">
+<h2>Babà ao limoncello</h2>
+<p>Massa embebida em licor de limoncello, com delicado creme e raspas de limão siciliano.</p>
+<div class="sob-price">R$ 31,90</div>
+<div class="sob-buttons">
+<button class="sob-buy" onclick="comprarAgora('Babà ao limoncello',31.90,'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=700')">Compre agora</button>
+<button class="sob-add" onclick="adicionar('Babà ao limoncello',31.90,'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=700')">Adicionar ao carrinho</button>
+</div>
+</div>
+</article>
+<article class="sob-card">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=700" alt="Torta caprese">
+<div class="sob-info">
+<h2>Torta caprese</h2>
+<p>Tradicional bolo italiano de chocolate com amêndoas, sem farinha.</p>
+<div class="sob-price">R$ 31,90</div>
+<div class="sob-buttons">
+<button class="sob-buy" onclick="comprarAgora('Torta caprese',31.90,'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=700')">Compre agora</button>
+<button class="sob-add" onclick="adicionar('Torta caprese',31.90,'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=700')">Adicionar ao carrinho</button>
+</div>
+</div>
+</article>
+<article class="sob-card">
+<img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=700" alt="Sfogliatella">
+<div class="sob-info">
+<h2>Sfogliatella</h2>
+<p>Clássico doce napolitano de massa folhada, com recheio cremoso de ricota.</p>
+<div class="sob-price">R$ 31,90</div>
+<div class="sob-buttons">
+<button class="sob-buy" onclick="comprarAgora('Sfogliatella',31.90,'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=700')">Compre agora</button>
+<button class="sob-add" onclick="adicionar('Sfogliatella',31.90,'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=700')">Adicionar ao carrinho</button>
+</div>
+</div>
+</article>
+</main>
+
+<footer class="sob-footer">
+<h3>Trattorie D'elite</h3>
+<p>Sabor italiano, entregue à sua porta.<br>Uma experiência gastronômica inspirada na tradição italiana, preparada com ingredientes selecionados e muito cuidado.<br><br>Navegação<br>• Início<br>• Nosso Menu<br>• Sobre Nós<br>• Promoções<br>• Contato</p>
+<p>Atendimento<br>Horário:<br>Segunda a domingo · 11h às 23h<br>Delivery:<br>Pedidos pelo site</p>
+<p>Fale conosco<br>São Paulo, SP<br>(11) 0000-0000<br>contato@trattoritoelite.com.br</p>
+<span class="terms">Termos de uso</span>
+</footer>
+
+<script>
+let carrinho=JSON.parse(localStorage.getItem("carrinhoCantina"))||[];
+function adicionar(nome,preco,imagem){
+ const existente=carrinho.find(i=>i.nome===nome);
+ if(existente) existente.quantidade++;
+ else carrinho.push({nome,preco,imagem,quantidade:1});
+ localStorage.setItem("carrinhoCantina",JSON.stringify(carrinho));
+ alert(nome+" foi adicionado ao carrinho!");
+}
+function comprarAgora(nome,preco,imagem){
+ adicionar(nome,preco,imagem);
+ window.location.href="carrinho.html";
+}
+</script>
+</body>
+</html>
