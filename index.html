@@ -1,1 +1,71 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Trattorito D’elite</title><link rel="stylesheet" href="style.css?v=20261006"></head><body><header class="site-header"><a class="site-back" href="pratos.html">‹ Cardápio</a><a class="site-logo" href="index.html">Trattorito D’elite</a><a class="site-cart" href="carrinho.html">🛒<span class="cart-badge" id="cart-count">0</span></a></header><main class="home-main"><section class="hero"><div class="hero-content"><p class="hero-kicker">DESDE 1985</p><h1>Trattorito D’elite</h1><p>Uma experiência italiana feita para reunir pessoas e sabores.</p></div></section><section class="home-intro"><h1>Sabores que encantam</h1><p>Um cardápio inspirado nas referências enviadas, com visual elegante em bege, bordô, branco e detalhes azuis.</p><div class="home-actions"><a class="btn btn-buy" href="pratos.html">Pratos Principais</a><a class="btn btn-cart" href="sobremesas.html">Sobremesas</a><a class="btn btn-buy" href="bebidas.html">Bebidas</a></div></section><section id="sobre" class="home-story"><h2>Nossa História</h2><p>O Trattorito D’elite nasceu da paixão pela culinária italiana. Cada receita é preparada com cuidado para trazer uma experiência acolhedora, artesanal e cheia de sabor.</p></section></main><footer class="site-footer"><div class="footer-title">Trattorito D’elite</div><div class="footer-columns"><div><h4>Sobre</h4><div>Sabores italianos preparados com tradição e carinho.</div></div><div><h4>Navegação</h4><div>Home<br>Pratos Principais<br>Sobremesas<br>Bebidas</div></div><div><h4>Atendimento</h4><div>Segunda a domingo<br>11h às 23h</div></div></div><div class="footer-bottom">© 2026 Trattorito D’elite · Todos os direitos reservados.</div></footer><script>const c=JSON.parse(localStorage.getItem('carrinhoCantina'))||[];document.getElementById('cart-count').textContent=c.reduce((s,i)=>s+Number(i.quantidade||0),0)</script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trattoria D'elite</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&display=swap');
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Georgia,'Times New Roman',serif}
+body{background:#777;color:#4a0b0b;padding:30px 20px}
+.home-page{width:min(940px,100%);margin:0 auto;background:#cdbb9f;box-shadow:0 8px 30px #0005}
+.topbar{height:52px;background:#650006;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 25px;font-family:Georgia,serif;font-size:15px}
+.topbar nav{display:flex;gap:45px;align-items:center}
+.topbar a{color:#fff;text-decoration:none;transition:.2s}
+.topbar a:hover{opacity:.75}
+.topbar .register{margin-left:auto}
+.main-panel{display:grid;grid-template-columns:58% 42%;min-height:360px}
+.photo-panel{position:relative;min-height:360px;background:url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1200') center/cover no-repeat}
+.photo-panel:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0003,#0000)}
+.photo-title{position:absolute;left:32px;bottom:30px;color:#fff;z-index:1;text-shadow:0 2px 5px #000}
+.photo-title .small{font-size:13px;letter-spacing:3px}
+.photo-title h1{font-family:'Cinzel',serif;font-size:36px;line-height:1;margin:5px 0}
+.photo-title p{font-size:11px;letter-spacing:2px;margin:0}
+.welcome-panel{display:flex;flex-direction:column;justify-content:center;padding:35px 35px;background:#d7c5a9}
+.welcome-panel h2{font-size:23px;line-height:1.25;font-weight:400;margin:0 0 15px;color:#650006}
+.welcome-panel .line{height:2px;width:100%;background:#650006;margin-bottom:13px}
+.welcome-panel p{font-size:13px;margin:0 0 12px;line-height:1.45;color:#650006}
+.welcome-panel .sub{font-size:11px;border-top:1px solid #8c7160;padding-top:10px}
+.cta{align-self:center;margin-top:28px;background:#650006;color:#fff;text-decoration:none;border-radius:20px;padding:9px 32px;font-size:13px;min-width:115px;text-align:center}
+.cta:hover{background:#480004}
+@media(max-width:700px){
+body{padding:15px 10px}.topbar{padding:0 14px;font-size:12px}.topbar nav{gap:18px}
+.main-panel{grid-template-columns:1fr}.photo-panel{min-height:300px}.welcome-panel{min-height:280px;padding:30px}
+}
+</style>
+</head>
+<body>
+<div class="home-page">
+<header class="topbar">
+<nav>
+<a href="index.html">Início</a>
+<a href="index.html#sobre">Sobre nós</a>
+<a href="pratos.html">Cardápio</a>
+</nav>
+<a class="register" href="cadastro.html">| Cadastre-se</a>
+</header>
+
+<main class="main-panel">
+<section class="photo-panel">
+<div class="photo-title">
+<div class="small">EST. 1997</div>
+<h1>TRATTORIA<br>D'ELITE</h1>
+<p>PASTA • VINO • TRADIZIONE</p>
+</div>
+</section>
+
+<section class="welcome-panel">
+<h2>Benvenuti, dove ogni piatto<br>racconta una storia</h2>
+<div class="line"></div>
+<p class="sub">Sapori autentici, emozioni vere</p>
+<a class="cta" href="pratos.html">Peça já</a>
+</section>
+</main>
+</div>
+
+<script>
+const carrinho=JSON.parse(localStorage.getItem('carrinhoCantina'))||[];
+</script>
+</body>
+</html>
