@@ -1039,3 +1039,86 @@ nav {
     </script>
 </body>
 </html>
+/* =====================================
+   ABAS DO CARDAPIO
+===================================== */
+
+.menu-tabs {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.menu-tab {
+    flex: 1;
+    max-width: 280px;
+
+    padding: 15px 20px;
+
+    border: 1px solid var(--dark-burgundy);
+    background-color: var(--light-beige);
+
+    color: var(--dark-burgundy);
+
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.menu-tab:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+.menu-tab:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+.menu-tab:hover {
+    background-color: var(--dark-burgundy);
+    color: var(--cream);
+}
+
+.menu-tab.active {
+    background-color: var(--dark-burgundy);
+    color: var(--cream);
+}
+
+
+/* =====================================
+   CATEGORIAS
+===================================== */
+
+.menu-category {
+    display: none;
+}
+
+.menu-category.active {
+    display: block;
+}
+
+
+/* =====================================
+   CELULAR
+===================================== */
+
+@media (max-width: 700px) {
+
+    .menu-tabs {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .menu-tab {
+        flex: 1 1 45%;
+        max-width: none;
+        border-radius: 8px !important;
+    }
+
+}
