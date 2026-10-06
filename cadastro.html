@@ -74,6 +74,16 @@
 
         function realizarCadastro(event) {
             event.preventDefault();
+
+            const form = event.target;
+            const nome = form.querySelector('input[type="text"]').value.trim();
+            const email = form.querySelector('input[type="email"]').value.trim().toLowerCase();
+            const telefone = form.querySelector('input[type="tel"]').value.trim();
+            const senha = form.querySelector('input[type="password"]').value;
+
+            const usuario = { nome, email, telefone, senha };
+            localStorage.setItem('usuarioTrattorito', JSON.stringify(usuario));
+
             alert('Cadastro realizado com sucesso! Faça login para continuar.');
             window.location.href = 'login.html';
         }
