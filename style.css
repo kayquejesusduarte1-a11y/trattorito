@@ -1117,3 +1117,53 @@ nav {
     }
 
 }
+
+/* CHECKOUT TRATTORITO ELITE */
+.checkout-body{margin:0;min-height:100vh;background:#f6eee1;color:#351713;font-family:"Poppins",sans-serif}
+.checkout-header{height:125px;background:#65070b;position:relative;display:flex;justify-content:center;align-items:center;color:#f7e9ce}
+.checkout-back{position:absolute;left:28px;top:28px;color:#fff;font-size:25px;text-decoration:none}
+.checkout-logo{text-align:center;line-height:1}
+.checkout-logo small{display:block;font-family:"Cormorant Garamond",serif;font-size:13px;letter-spacing:3px}
+.checkout-logo strong{display:block;font-family:"Parisienne",cursive;font-size:42px;font-weight:400}
+.checkout-logo span{display:block;margin-top:8px;font-size:9px;letter-spacing:5px}
+.checkout-container{max-width:720px;margin:0 auto;padding:25px 22px 70px}
+.checkout-steps{display:flex;align-items:center;justify-content:center;margin-bottom:35px}
+.step{display:flex;flex-direction:column;align-items:center;min-width:75px;color:#9a8d82;font-size:10px}
+.step-icon{width:30px;height:30px;border:1px solid #bdb0a4;border-radius:50%;display:flex;justify-content:center;align-items:center;background:#f7efe2;margin-bottom:5px}
+.step.active{color:#65070b;font-weight:600}
+.step.active .step-icon{background:#65070b;border-color:#65070b;color:#fff}
+.step-line{width:75px;height:1px;background:#cfc1b4;margin-bottom:17px}
+.checkout-section{display:none}
+.checkout-section.active-section{display:block}
+.checkout-section h1{font-family:"Cormorant Garamond",serif;font-size:30px;margin-bottom:5px;color:#471a16}
+.checkout-section h1 i{font-size:23px;margin-right:8px}
+.section-description{font-size:12px;color:#83766c;margin-bottom:25px}
+.payment-choice{display:flex;flex-direction:column;gap:10px}
+.choice-card{position:relative;display:flex;align-items:center;gap:14px;padding:15px;border:1px solid #d8cbbd;border-radius:8px;background:rgba(255,255,255,.35);cursor:pointer;transition:.2s}
+.choice-card:hover{border-color:#65070b}
+.choice-card input{position:absolute;opacity:0}
+.choice-card input:checked~.choice-info strong{color:#65070b}
+.choice-card input:checked~.choice-icon{background:#65070b;color:#fff}
+.choice-icon{width:38px;height:38px;border:1px solid #c9bbb0;border-radius:7px;display:flex;justify-content:center;align-items:center;color:#65070b}
+.choice-info{flex:1}.choice-info strong{display:block;font-family:"Cormorant Garamond",serif;font-size:19px}.choice-info span{display:block;color:#8a7e73;font-size:10px;margin-top:3px}.choice-arrow{color:#9d8d80;font-size:12px}
+.payment-form{margin-top:18px;padding:20px;border:1px solid #d8cbbd;border-radius:8px;background:rgba(255,255,255,.3)}
+.hidden{display:none!important}
+.form-field{margin-bottom:15px}.form-field label{display:block;font-size:10px;margin-bottom:6px;color:#665950}
+.form-field input,.form-field select{width:100%;box-sizing:border-box;padding:12px;border:1px solid #d2c4b6;border-radius:6px;background:#faf6ef;color:#3d2924;font-family:"Poppins",sans-serif;font-size:12px;outline:none}
+.form-field input:focus,.form-field select:focus{border-color:#65070b}
+.input-icon{position:relative}.input-icon i{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#806e62;font-size:13px}.input-icon input{padding-left:38px}
+.two-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pix-payment{text-align:center;padding:25px}.pix-payment i{font-size:40px;color:#16845b}.pix-payment h3{font-family:"Cormorant Garamond",serif;font-size:23px;margin:10px 0 5px}.pix-payment p{font-size:11px;color:#81756d}
+.demo-notice{margin:10px 0 0;font-size:10px;line-height:1.5;color:#75675e}.demo-notice i{color:#65070b;margin-right:4px}
+.save-address{display:flex;align-items:center;gap:7px;font-size:10px;margin:10px 0 20px}.save-address input{accent-color:#65070b}
+.checkout-button{width:100%;border:none;border-radius:5px;padding:14px;margin-top:12px;background:#65070b;color:#fff;font-family:"Cormorant Garamond",serif;font-size:17px;cursor:pointer}.checkout-button:hover{background:#810b10}.checkout-button i{margin-left:8px}
+.back-button{display:block;width:100%;border:1px solid #65070b;border-radius:5px;padding:11px;margin-top:10px;background:transparent;color:#65070b;font-family:"Cormorant Garamond",serif;font-size:15px;cursor:pointer}
+.review-box{border:1px solid #d8cbbd;border-radius:8px;padding:17px;margin-bottom:12px;background:rgba(255,255,255,.3)}.review-box h3{font-family:"Cormorant Garamond",serif;font-size:19px;margin:0 0 8px}.review-box p{font-size:12px;line-height:1.7;margin:0}
+.review-item{display:flex;justify-content:space-between;gap:15px;padding:7px 0;border-bottom:1px solid #e0d5ca;font-size:11px}
+.review-total{display:flex;justify-content:space-between;padding:18px 0;font-family:"Cormorant Garamond",serif;font-size:21px}.review-total strong{color:#65070b}
+.finished-section{display:none;text-align:center}.finished-section.show{display:block}
+.finished-icon{width:78px;height:78px;border:2px solid #65070b;border-radius:50%;display:flex;justify-content:center;align-items:center;margin:15px auto 18px;color:#65070b;font-size:35px}
+.finished-section h1{font-family:"Cormorant Garamond",serif;font-size:40px;color:#65070b;margin:0 0 8px}.finished-section>p{max-width:480px;margin:auto;font-size:12px;line-height:1.7;color:#695b53}
+.thanks{font-family:"Parisienne",cursive;font-size:25px;color:#65070b;margin:22px 0}.thanks strong{display:block;font-weight:normal}
+.order-info{border:1px solid #cfc1b4;border-radius:10px;padding:20px;text-align:left;margin-bottom:20px}.order-info>div{display:flex;gap:14px;align-items:flex-start;padding:9px 0;font-size:10px}.order-info>div+div{border-top:1px solid #ddd2c7}.order-info i{color:#65070b;font-size:19px;width:25px;text-align:center}.order-info span{color:#75675e}.order-info strong{display:block;color:#3e2a24;font-family:"Cormorant Garamond",serif;font-size:16px;margin-top:2px}.order-address strong{line-height:1.4}
+@media(max-width:600px){.checkout-header{height:110px}.checkout-container{padding:20px 16px 50px}.checkout-logo strong{font-size:35px}.checkout-logo small{font-size:11px}.step-line{width:35px}.step{min-width:65px}.checkout-section h1{font-size:27px}.finished-section h1{font-size:34px}}
