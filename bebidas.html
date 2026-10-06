@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bebidas | Trattorito Elite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+*{box-sizing:border-box}
+body.bebidas-page{margin:0;background:#c1ae91;color:#2d211b;font-family:"Cormorant Garamond",Georgia,serif}
+.beb-header{height:74px;background:#650507;border-bottom:3px solid #20a9d4;display:flex;align-items:center;justify-content:space-between;padding:0 30px;color:#fff}
+.beb-header a{color:#fff;text-decoration:none;font-size:17px}
+.beb-logo{font-family:Parisienne,cursive;font-size:40px;line-height:1}
+.beb-cart{font-size:28px!important}
+.beb-hero{height:240px;background:linear-gradient(90deg,rgba(20,5,2,.55),rgba(20,5,2,.08)),url("https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1600") center/cover;display:flex;align-items:center;padding:30px 7%;color:#fff;border-bottom:3px solid #20a9d4}
+.beb-hero-text{max-width:480px}
+.beb-hero small{font-size:16px;letter-spacing:3px}
+.beb-hero h1{font-family:Georgia,serif;font-size:58px;margin:3px 0;line-height:.95}
+.beb-hero p{font-size:18px;letter-spacing:1px;margin:8px 0}
+.beb-search{width:38px;height:38px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:17px 0 28px 5.5%;color:#777;box-shadow:0 1px 5px #8f806b}
+.beb-grid{max-width:1120px;margin:0 auto;padding:0 24px 55px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 55px}
+.beb-card{min-height:145px;background:#fff;border-radius:28px;display:flex;overflow:hidden;box-shadow:4px 5px 2px rgba(40,30,20,.35)}
+.beb-card img{width:165px;height:145px;object-fit:cover;flex-shrink:0}
+.beb-info{padding:13px 14px 10px;display:flex;flex-direction:column;flex:1}
+.beb-info h2{font-size:18px;font-weight:600;margin:0 0 3px}
+.beb-info p{font-size:11px;line-height:1.05;margin:2px 0 6px;flex:1}
+.beb-price{font-size:12px;margin-bottom:4px}
+.beb-old{text-decoration:line-through;color:#9b2929}
+.beb-pix{color:#b11d1d;font-weight:600}
+.beb-buttons{display:grid;gap:4px}
+.beb-buy,.beb-add{border:0;border-radius:15px;color:#fff;height:23px;cursor:pointer;font-family:inherit;font-size:12px}
+.beb-buy{background:#a40008}
+.beb-add{background:#43a05b}
+.beb-footer{background:rgba(255,255,255,.14);border-top:1px solid rgba(255,255,255,.25);padding:20px 5.5% 28px;min-height:250px}
+.beb-footer h3{text-align:center;color:#7c302b;font-weight:400;font-size:22px;margin:0 0 25px}
+.beb-footer p{max-width:620px;color:#fff;font-size:13px;line-height:1.1}
+.beb-footer .terms{float:right;background:#986a5d;color:#fff;padding:9px 22px;border-radius:24px;margin-top:-40px}
+@media(max-width:800px){.beb-grid{grid-template-columns:1fr;gap:20px}.beb-card img{width:145px}.beb-hero h1{font-size:48px}}
+@media(max-width:500px){.beb-header{padding:0 16px}.beb-logo{font-size:32px}.beb-hero{height:210px;padding:20px}.beb-hero h1{font-size:42px}.beb-grid{padding:0 12px 40px}.beb-card{min-height:130px}.beb-card img{width:120px;height:130px}.beb-info h2{font-size:16px}.beb-info p{font-size:10px}}
+</style>
+</head>
+<body class="bebidas-page">
+
+<header class="beb-header">
+<a href="pratos.html">&lt; Sair</a>
+<a href="index.html" class="beb-logo">Trattorito</a>
+<a href="carrinho.html" class="beb-cart" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
+</header>
+
+<section class="beb-hero">
+<div class="beb-hero-text">
+<small>BEBIDAS QUE COMBINAM</small>
+<h1>Bebidas</h1>
+<p>O brinde perfeito<br>para cada momento.</p>
+</div>
+</section>
+
+<div class="beb-search"><i class="fa-solid fa-magnifying-glass"></i></div>
+
+<main class="beb-grid">
+
+<article class="beb-card">
+<img src="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=700" alt="Vinho Brunello Di Montalcino DOCG">
+<div class="beb-info"><h2>Vinho Brunello Di Montalcino DOCG</h2><p>Vinho italiano encorpado, elegante e perfeito para acompanhar pratos especiais.</p><div class="beb-price"><span class="beb-old">R$479,99</span> R$299,99<br><span class="beb-pix">no Pix R$239,99</span> &nbsp; Bebida alcoólica</div><div class="beb-buttons"><button class="beb-buy">Compre agora</button><button class="beb-add" onclick="adicionar('Vinho Brunello Di Montalcino DOCG',299.99,this.previousElementSibling.parentElement.parentElement.parentElement.querySelector('img').src)">Adicionar ao carrinho</button></div></div>
+</article>
+
+<article class="beb-card">
+<img src="https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=700" alt="Vinho Chianti Classico DOCG">
+<div class="beb-info"><h2>Vinho Chianti Classico DOCG Massi del Colle - Riserva</h2><p>Vinho italiano de sabor marcante, ideal para uma experiência gastronômica especial.</p><div class="beb-price"><span class="beb-old">R$479,99</span> R$429,99<br><span class="beb-pix">no Pix R$419,99</span> &nbsp; Bebida alcoólica</div><div class="beb-buttons"><button class="beb-buy">Compre agora</button><button class="beb-add" onclick="adicionar('Vinho Chianti Classico DOCG Massi del Colle - Riserva',429.99,this.previousElementSibling.parentElement.parentElement.parentElement.querySelector('img').src)">Adicionar ao carrinho</button></div></div>
+</article>
+
+<article class="beb-card">
+<img src="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?w=700" alt="Vinho Meleto Chianti Classico DOCG">
+<div class="beb-info"><h2>Vinho Meleto Chianti Classico DOCG</h2><p>Vinho tinto italiano com ótimo equilíbrio e aroma, perfeito para massas e carnes.</p><div class="beb-price"><span class="beb-old">R$479,99</span> R$299,99<br><span class="beb-pix">no Pix R$239,99</span> &nbsp; Bebida alcoólica</div><div class="beb-buttons"><button class="beb-buy">Compre agora</button><button class="beb-add" onclick="adicionar('Vinho Meleto Chianti Classico DOCG',299.99,this.previousElementSibling.parentElement.parentElement.parentElement.querySelector('img').src)">Adicionar ao carrinho</button></div></div>
+</article>
+
+<article class="beb-card">
+<img src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=700" alt="Vinho Rosé Santa Helena">
+<div class="beb-info"><h2>Vinho Rosé Santa Helena</h2><p>Vinho rosé leve e refrescante, uma excelente opção para momentos especiais.</p><div class="beb-price"><span class="beb-old">R$359,99</span> R$299,99<br><span class="beb-pix">no Pix R$239,99</span> &nbsp; Bebida alcoólica</div><div class="beb-buttons"><button class="beb-buy">Compre agora</button><button class="beb-add" onclick="adicionar('Vinho Rosé Santa Helena',299.99,this.previousElementSibling.parentElement.parentElement.parentElement.querySelector('img').src)">Adicionar ao carrinho</button></div></div>
+</article>
+
+<article class="beb-card">
+<img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=700" alt="Tequila Sunrise">
+<div class="beb-info"><h2>Tequila Sunrise</h2><p>Drink refrescante e colorido com toque cítrico e sabor equilibrado.</p><div class="beb-price"><span class="beb-old">R$29,90</span> R$19,90<br><span class="beb-pix">no Pix R$16,90</span> &nbsp; Bebida alcoólica</div><div class="beb-buttons"><button class="beb-buy">Compre agora</button><button class="beb-add" onclick="adicionar('Tequila Sunrise',19.90,this.previousElementSibling.parentElement.parentElement.parentElement.querySelector('img').src)">Adicionar ao carrinho</button></div></div>
+</article>
+
+<article class="beb-card">
+<img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=700" alt="Moscow Mule">
+<div class="beb-info"><h2>Moscow Mule</h2><p>Coquetel refrescante com espuma cremosa e toque cítrico, servido bem gelado.</p><div class="beb-price"><span class="beb-old">R$29,90</span> R$19,90<br><span class="beb-pix">no Pix R$16,90</span> &nbsp; Bebida alcoólica</div><div class="beb-buttons"><button class="beb-buy">Compre agora</button><button class="beb-add" onclick="adicionar('Moscow Mule',19.90,this.previousElementSibling.parentElement.parentElement.parentElement.querySelector('img').src)">Adicionar ao carrinho</button></div></div>
+</article>
+
+<article class="beb-card">
+<img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=700" alt="Margarita">
+<div class="beb-info"><h2>Margarita</h2><p>Clássico coquetel cítrico e refrescante com limão e uma combinação equilibrada.</p><div class="beb-price"><span class="beb-old">R$29,90</span> R$19,90<br><span class="beb-pix">no Pix R$16,90</span> &nbsp; Bebida alcoólica</div><div class="beb-buttons"><button class="beb-buy">Compre agora</button><button class="beb-add" onclick="adicionar('Margarita',19.90,this.previousElementSibling.parentElement.parentElement.parentElement.querySelector('img').src)">Adicionar ao carrinho</button></div></div>
+</article>
+
+<article class="beb-card">
+<img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=700" alt="Negroni">
+<div class="beb-info"><h2>Negroni</h2><p>Coquetel clássico de sabor marcante, equilibrado e servido com toque cítrico.</p><div class="beb-price"><span class="beb-old">R$29,90</span> R$19,90<br><span class="beb-pix">no Pix R$16,90</span> &nbsp; Bebida alcoólica</div><div class="beb-buttons"><button class="beb-buy">Compre agora</button><button class="beb-add" onclick="adicionar('Negroni',19.90,this.previousElementSibling.parentElement.parentElement.parentElement.querySelector('img').src)">Adicionar ao carrinho</button></div></div>
+</article>
+
+<article class="beb-card">
+<img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=700" alt="Limonada rosa">
+<div class="beb-info"><h2>Limonada rosa</h2><p>Limonada refrescante de limão com delicado toque de frutas vermelhas.</p><div class="beb-price"><span class="beb-old">R$25,90</span> R$19,90<br><span class="beb-pix">no Pix R$16,90</span></div><div class="beb-buttons"><button class="beb-buy">Compre agora</button><button class="beb-add" onclick="adicionar('Limonada rosa',19.90,this.previousElementSibling.parentElement.parentElement.parentElement.querySelector('img').src)">Adicionar ao carrinho</button></div></div>
+</article>
+
+<article class="beb-card">
+<img src="https://images.unsplash.com/photo-1523677011781-c91d1bbe2f1d?w=700" alt="Limonada">
+<div class="beb-info"><h2>Limonada</h2><p>Clássica e refrescante, feita com limão e servida bem gelada.</p><div class="beb-price"><span class="beb-old">R$25,90</span> R$19,90<br><span class="beb-pix">no Pix R$16,90</span></div><div class="beb-buttons"><button class="beb-buy">Compre agora</button><button class="beb-add" onclick="adicionar('Limonada',19.90,this.previousElementSibling.parentElement.parentElement.parentElement.querySelector('img').src)">Adicionar ao carrinho</button></div></div>
+</article>
+
+</main>
+
+<footer class="beb-footer">
+<h3>Trattorie D'elite</h3>
+<p>Sobre italiano, entregue à sua porta.<br>Uma experiência gastronômica inspirada na tradição italiana, preparada com ingredientes selecionados e muito cuidado.<br><br>• Navegação<br>• Nosso Menu<br>• Sobre Nós<br>• Promoções<br>• Contato</p>
+<p>Atendimento<br>Horário:<br>Segunda a domingo · 11h às 23h<br>Delivery:<br>Pedidos pelo site</p>
+<p>Fale conosco<br>São Paulo, SP<br>(11) 0000-0000<br>contato@trattoritoelite.com.br</p>
+<span class="terms">Termos de uso</span>
+</footer>
+
+<script>
+let carrinho=JSON.parse(localStorage.getItem("carrinhoCantina"))||[];
+function adicionar(nome,preco,imagem){
+ const existente=carrinho.find(i=>i.nome===nome);
+ if(existente) existente.quantidade++;
+ else carrinho.push({nome,preco,imagem,quantidade:1});
+ localStorage.setItem("carrinhoCantina",JSON.stringify(carrinho));
+ alert(nome+" foi adicionado ao carrinho!");
+}
+</script>
+</body>
+</html>
