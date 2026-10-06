@@ -294,7 +294,7 @@
 
                     <h2>Total: <span style="color: var(--dark-burgundy);">R$ ${total.toFixed(2)}</span></h2> 
 
-                    <button class="btn-order" onclick="finalizarPedido()">FINALIZAR PEDIDO</button> 
+                    <a href="pagamento.html" class="btn-order" style="text-decoration:none; display:inline-block; text-align:center;">FINALIZAR PEDIDO</a> 
 
                 </div> 
 
@@ -339,19 +339,6 @@
             localStorage.setItem('carrinhoCantina', JSON.stringify(carrinho)); 
 
             renderizarCarrinho(); 
-
-        } 
-
-  
-
-        function finalizarPedido() {
-
-            if (carrinho.length === 0) {
-                alert('Seu carrinho está vazio!');
-                return;
-            }
-
-            window.location.href = 'pagamento.html';
 
         } 
 
