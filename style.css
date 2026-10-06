@@ -1167,3 +1167,229 @@ nav {
 .thanks{font-family:"Parisienne",cursive;font-size:25px;color:#65070b;margin:22px 0}.thanks strong{display:block;font-weight:normal}
 .order-info{border:1px solid #cfc1b4;border-radius:10px;padding:20px;text-align:left;margin-bottom:20px}.order-info>div{display:flex;gap:14px;align-items:flex-start;padding:9px 0;font-size:10px}.order-info>div+div{border-top:1px solid #ddd2c7}.order-info i{color:#65070b;font-size:19px;width:25px;text-align:center}.order-info span{color:#75675e}.order-info strong{display:block;color:#3e2a24;font-family:"Cormorant Garamond",serif;font-size:16px;margin-top:2px}.order-address strong{line-height:1.4}
 @media(max-width:600px){.checkout-header{height:110px}.checkout-container{padding:20px 16px 50px}.checkout-logo strong{font-size:35px}.checkout-logo small{font-size:11px}.step-line{width:35px}.step{min-width:65px}.checkout-section h1{font-size:27px}.finished-section h1{font-size:34px}}
+
+
+/* =====================================================
+   IDENTIDADE VISUAL UNIFICADA — BEGE, BORDÔ E DETALHE AZUL
+   Aplicada às páginas principais do Trattorito Elite
+===================================================== */
+:root{
+  --primary-burgundy:#65070b;
+  --dark-burgundy:#480609;
+  --light-beige:#d7c4aa;
+  --bg-beige:#c1ae91;
+  --cream:#fffdf8;
+  --text-dark:#34241d;
+  --accent-green:#3e9656;
+  --accent-green-hover:#2d7942;
+}
+body{
+  background:#c1ae91;
+  color:#34241d;
+}
+body:not(.checkout-body):not(.bebidas-page) > header,
+body:not(.checkout-body):not(.bebidas-page) header.header{
+  background:#65070b;
+  border-bottom:3px solid #20a9d4;
+  box-shadow:0 3px 12px rgba(25,12,8,.2);
+}
+body:not(.checkout-body):not(.bebidas-page) header nav{
+  max-width:1250px;
+  min-height:70px;
+  padding:12px 28px;
+}
+body:not(.checkout-body):not(.bebidas-page) .logo a,
+body:not(.checkout-body):not(.bebidas-page) .logo{
+  color:#fffdf8!important;
+}
+body:not(.checkout-body):not(.bebidas-page) .nav-links a,
+body:not(.checkout-body):not(.bebidas-page) .nav a,
+body:not(.checkout-body):not(.bebidas-page) .cart-icon{
+  color:#fffdf8;
+}
+body:not(.checkout-body):not(.bebidas-page) .nav-links a:hover,
+body:not(.checkout-body):not(.bebidas-page) .nav a:hover,
+body:not(.checkout-body):not(.bebidas-page) .nav-links a.active,
+body:not(.checkout-body):not(.bebidas-page) .nav a.active{
+  color:#f1d9bb;
+}
+body:not(.checkout-body):not(.bebidas-page) .btn-header{
+  border-color:#e0c8ad;
+  color:#fffdf8;
+  border-radius:18px;
+}
+body:not(.checkout-body):not(.bebidas-page) .btn-header:hover{
+  background:#e0c8ad;
+  color:#65070b;
+}
+body:not(.checkout-body):not(.bebidas-page) .cart-badge,
+body:not(.checkout-body):not(.bebidas-page) #cart-count{
+  background:#3e9656;
+  color:white;
+}
+.hero-container{
+  position:relative;
+  min-height:390px!important;
+  background:
+    linear-gradient(90deg,rgba(22,7,4,.82),rgba(22,7,4,.15)),
+    url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1800&q=85') center/cover no-repeat!important;
+  border-bottom:3px solid #20a9d4;
+  align-items:center;
+  padding:45px 7%;
+}
+.hero-image-side{
+  flex:0 0 42%!important;
+  min-height:250px!important;
+  background:transparent!important;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero-badge-logo{
+  background:rgba(35,5,4,.42);
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:50%;
+  padding:25px;
+  color:#fffdf8!important;
+}
+.hero-badge-logo h1{font-size:clamp(35px,5vw,64px)!important}
+.hero-badge-logo p{font-size:clamp(28px,4vw,48px)!important}
+.hero-text-side{
+  flex:1!important;
+  max-width:550px;
+  background:rgba(255,250,242,.93);
+  border-radius:24px;
+  padding:32px;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+.hero-text-side h2{color:#65070b!important;font-size:clamp(25px,3vw,38px)}
+.hero-text-side p{color:#49352b!important;line-height:1.7}
+.btn-order{
+  background:#65070b!important;
+  color:#fffdf8!important;
+  border:0!important;
+  border-radius:18px!important;
+  box-shadow:0 3px 0 rgba(0,0,0,.12);
+}
+.btn-order:hover{background:#840c12!important}
+.sobre-nos-container{background:#c1ae91!important;padding-bottom:35px}
+.cork-banner{border-bottom:3px solid #20a9d4!important}
+.sobre-header-bar{background:#65070b!important}
+.sobre-header-bar h1{color:#fffdf8!important}
+.tradicao-box{
+  background:#fffdf8!important;
+  color:#34241d!important;
+  border:1px solid #e1d1bf!important;
+  border-radius:24px!important;
+  box-shadow:0 7px 20px rgba(50,30,15,.15);
+}
+.tradicao-box h2{color:#65070b!important}
+.tradicao-box p{color:#49352b!important}
+.menu-page{background:#c1ae91!important}
+.menu-header{padding-top:38px!important}
+.menu-header h1{color:#65070b!important}
+.menu-tabs{gap:10px!important}
+.menu-tab{
+  background:#fffdf8!important;
+  color:#65070b!important;
+  border:1px solid #a98775!important;
+  border-radius:18px!important;
+}
+.menu-tab:hover,.menu-tab.active{
+  background:#65070b!important;
+  color:#fffdf8!important;
+}
+.menu-card{
+  background:#fffdf8!important;
+  border-radius:24px!important;
+  box-shadow:4px 5px 2px rgba(40,30,20,.25)!important;
+  border:1px solid rgba(91,14,20,.1)!important;
+}
+.menu-card img{object-fit:cover}
+.menu-card-content h3{color:#34241d!important}
+.menu-card-content strong{color:#65070b!important}
+.buy-button{
+  background:#3e9656!important;
+  color:white!important;
+  border-radius:18px!important;
+}
+.buy-button:hover{background:#2d7942!important}
+.footer{
+  background:#d7c4aa!important;
+  color:#65070b!important;
+  border-top:3px solid #20a9d4!important;
+}
+.footer span{color:#5c4b3e!important}
+body:not(.checkout-body):not(.bebidas-page) .auth-container{
+  min-height:calc(100vh - 70px);
+  background:#c1ae91!important;
+  padding:28px;
+  gap:22px;
+}
+.auth-card-side{
+  border-radius:24px;
+  overflow:hidden;
+  min-height:500px;
+}
+.auth-info-card{
+  background:rgba(255,253,248,.95)!important;
+  color:#34241d!important;
+  border-radius:24px!important;
+  box-shadow:0 8px 24px rgba(35,15,10,.2)!important;
+}
+.auth-info-card h2{color:#65070b!important}
+.auth-info-card p{color:#49352b!important}
+.auth-info-card .btn-toggle-auth,
+.btn-toggle-auth{
+  background:#65070b!important;
+  color:#fffdf8!important;
+  border-radius:18px!important;
+}
+.auth-info-card .btn-toggle-auth.secondary{
+  background:#3e9656!important;
+  color:white!important;
+}
+.auth-form-side{
+  background:#65070b!important;
+  border-radius:24px;
+  min-height:500px;
+}
+.auth-form-side form{gap:16px!important}
+.form-input-group input{
+  background:rgba(255,253,248,.08)!important;
+  border-color:#e0c8ad!important;
+  border-radius:18px!important;
+}
+.form-input-group input::placeholder{color:#e8d7c6}
+.cart-wrapper{
+  background:#fffdf8!important;
+  border:1px solid #e0cfbc;
+  border-radius:24px!important;
+  box-shadow:4px 5px 2px rgba(40,30,20,.25)!important;
+  color:#34241d!important;
+}
+body[style*="background-color"]{background:#c1ae91!important}
+.cart-table th{
+  background:#65070b;
+  color:#fffdf8;
+}
+.cart-table th:first-child{border-radius:8px 0 0 8px}
+.cart-table th:last-child{border-radius:0 8px 8px 0}
+.cart-table td{color:#34241d}
+.cart-summary{border-color:#65070b!important;gap:20px;flex-wrap:wrap}
+.cart-summary h2{color:#34241d}
+.qty-btn{background:#65070b!important}
+.btn-remove{border-radius:15px!important}
+.checkout-body{background:#c1ae91!important}
+.checkout-header{border-bottom:3px solid #20a9d4}
+.checkout-container{background:#fffdf8;border-radius:0 0 24px 24px}
+@media(max-width:800px){
+  body:not(.checkout-body):not(.bebidas-page) header nav{padding:12px 16px;flex-wrap:wrap;gap:12px}
+  .hero-container{flex-direction:column;gap:16px;padding:28px 16px}
+  .hero-image-side{min-height:150px!important;flex-basis:auto!important;width:100%}
+  .hero-text-side{width:100%;padding:24px}
+  body:not(.checkout-body):not(.bebidas-page) .auth-container{padding:14px;gap:14px}
+  .auth-card-side,.auth-form-side{min-height:350px}
+  .cart-wrapper{margin:20px 12px!important;padding:16px!important;overflow-x:auto}
+  .cart-table{min-width:650px}
+}
