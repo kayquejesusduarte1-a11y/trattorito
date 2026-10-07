@@ -29,6 +29,13 @@ body.checkout-page{margin:0;min-height:100vh;background:linear-gradient(180deg,#
 .checkout-art{position:absolute;left:0;right:0;bottom:0;height:112px;background:linear-gradient(180deg,transparent 0,#dfcfb8 100%);pointer-events:none}.checkout-art:before{content:"❦";position:absolute;left:20px;bottom:28px;font-size:55px;color:#5d6942;transform:rotate(-18deg)}.checkout-art:after{content:"Autenticidade em cada detalhe";position:absolute;left:90px;bottom:36px;font-family:'Great Vibes',cursive;font-size:18px;color:#6c4f43;transform:rotate(-7deg)}
 .hidden-payment{display:none!important}
 @media(max-width:460px){.checkout-shell{width:100%;box-shadow:none}.checkout-top{height:110px}.checkout-body{padding-left:17px;padding-right:17px}.page-heading h1{font-size:23px}}
+@media(min-width:800px){
+  body.checkout-page{background:var(--checkout-cream)}
+  .checkout-shell{width:100%;max-width:none;min-height:100vh;margin:0;box-shadow:none}
+  .checkout-top{width:100%;border-radius:0 0 36px 36px}
+  .checkout-body{width:min(100%,760px);margin:0 auto;padding-left:32px;padding-right:32px}
+  .checkout-art{width:100%}
+}
 </style>
 </head>
 <body class="checkout-page">
