@@ -1,1 +1,204 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Finalizar pedido | Trattorito D’elite</title><link rel="stylesheet" href="style.css?v=20261006final"></head><body><header class="site-header"><a class="site-back" href="carrinho.html">‹ Carrinho</a><a class="site-logo" href="index.html">Finalizar pedido</a><a class="site-cart" href="carrinho.html">🛒</a></header><main class="checkout-wrap"><div class="checkout-card"><div class="checkout-steps"><span class="step active">1. Pagamento</span><span class="step">2. Endereço</span><span class="step">3. Revisão</span></div><section id="s1" class="checkout-section active-section"><h1>Pagamento</h1><p>Checkout demonstrativo do projeto escolar.</p><label class="choice-card"><input type="radio" name="p" value="Pix"><div class="choice-info"><strong>Pix</strong><span>Pagamento demonstrativo.</span></div></label><label class="choice-card"><input type="radio" name="p" value="Cartão"><div class="choice-info"><strong>Cartão</strong><span>Pagamento demonstrativo.</span></div></label><button class="checkout-button" onclick="go2()">Continuar →</button></section><section id="s2" class="checkout-section"><h1>Endereço</h1><div class="field"><label>Endereço</label><input id="end" required></div><div class="field"><label>Número</label><input id="num" required></div><div class="field"><label>Cidade</label><input id="city" required></div><button class="checkout-button" onclick="go3()">Continuar →</button><button class="back-button" onclick="show(1)">Voltar</button></section><section id="s3" class="checkout-section"><h1>Revisão</h1><div class="review-box"><h3>Resumo</h3><p id="summary"></p><div id="items"></div></div><button class="checkout-button" onclick="finish()">Finalizar pedido</button><button class="back-button" onclick="show(2)">Voltar</button></section><section id="done" class="finished-section"><h1>Pedido Finalizado!</h1><p>Checkout demonstrativo concluído.</p><a class="btn btn-buy" href="index.html">Voltar ao início</a></section></div></main><footer class="site-footer"><div class="footer-title">Trattorito D’elite</div><div class="footer-bottom">Projeto escolar demonstrativo.</div></footer><script>const cart=JSON.parse(localStorage.getItem('carrinhoCantina'))||[];if(!cart.length){alert('Seu carrinho está vazio.');location.href='pratos.html';}function show(n){document.querySelectorAll('.checkout-section').forEach(x=>x.classList.remove('active-section'));document.getElementById('s'+n).classList.add('active-section')}function go2(){if(!document.querySelector('input[name=p]:checked')){alert('Escolha uma forma de pagamento.');return}show(2)}function go3(){if(!end.value.trim()||!num.value.trim()||!city.value.trim()){alert('Preencha os dados do endereço.');return}summary.textContent='Entrega: '+end.value+', '+num.value+' - '+city.value;items.innerHTML=cart.map(x=>'<div class="review-item">'+x.quantidade+'x '+x.nome+'</div>').join('');show(3)}function finish(){localStorage.removeItem('carrinhoCantina');document.getElementById('s3').style.display='none';document.getElementById('done').classList.add('show')}</script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Finalizar pedido | Trattorito D’elite</title>
+<link rel="stylesheet" href="style.css?v=20261007padraopratos">
+<style>
+:root{--checkout-burgundy:#650006;--checkout-cream:#f4ead8;--checkout-line:#d7c8b5;--checkout-text:#3b241d;--checkout-muted:#8a796d}
+body.checkout-page{margin:0;min-height:100vh;background:linear-gradient(180deg,#5f0006 0,#7a090f 100%);font-family:Georgia,'Times New Roman',serif;color:var(--checkout-text)}
+.checkout-shell{width:min(100%,430px);min-height:100vh;margin:0 auto;background:var(--checkout-cream);box-shadow:0 0 35px #0005;position:relative;overflow:hidden}
+.checkout-top{height:118px;background:var(--checkout-burgundy);color:#fff;display:grid;grid-template-columns:52px 1fr 52px;align-items:center;padding:14px 18px 18px;border-radius:0 0 46% 46%/0 0 18% 18%}
+.checkout-back,.checkout-cart{color:#fff;text-decoration:none;font-size:30px;line-height:1}
+.checkout-cart{text-align:right;font-size:20px}.checkout-brand{text-align:center;line-height:.92}.checkout-brand small{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase}.checkout-brand strong{display:block;font-family:'Great Vibes',cursive;font-size:44px;font-weight:400}.checkout-brand span{font-size:9px;letter-spacing:4px}
+.checkout-body{padding:0 20px 130px}
+.progress{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:start;margin:14px 0 22px;position:relative}
+.progress:before{content:"";position:absolute;left:16%;right:16%;top:16px;border-top:1px solid #b7a696;z-index:0}
+.progress-step{text-align:center;position:relative;z-index:1;font-size:10px;color:#8d7f73}.progress-dot{width:34px;height:34px;border:1px solid #a89584;border-radius:50%;background:var(--checkout-cream);display:grid;place-items:center;margin:0 auto 7px;font-size:14px}.progress-step.active{color:var(--checkout-text);font-weight:700}.progress-step.active .progress-dot{background:var(--checkout-burgundy);border-color:var(--checkout-burgundy);color:#fff}.progress-step.done .progress-dot{border-color:#8c796b;color:var(--checkout-burgundy)}
+.checkout-section{display:none}.checkout-section.active-section{display:block}
+.page-heading{display:flex;gap:12px;align-items:flex-start;margin-bottom:18px}.heading-icon{font-size:26px;line-height:1}.page-heading h1{font-family:Georgia,'Times New Roman',serif;font-size:25px;font-weight:400;margin:0 0 3px;color:var(--checkout-text)}.page-heading p{font-size:11px;color:var(--checkout-muted);margin:0}
+.pay-tabs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-bottom:14px}.pay-tab{border:1px solid var(--checkout-line);background:#f8f0e4;color:var(--checkout-text);border-radius:9px;padding:9px 5px;font-size:10px;cursor:pointer}.pay-tab.active{background:var(--checkout-burgundy);color:#fff;border-color:var(--checkout-burgundy)}
+.field{margin:0 0 10px}.field label{display:block;font-size:10px;margin:0 0 5px}.input-box{position:relative}.input-box .ico{position:absolute;left:11px;top:50%;transform:translateY(-50%);font-size:15px;color:#65483d;pointer-events:none}.input-box input,.input-box select{width:100%;height:45px;border:1px solid var(--checkout-line);border-radius:6px;background:#f7efe3;color:var(--checkout-text);padding:0 12px 0 38px;outline:none;font-family:inherit;font-size:12px}.input-box input:focus,.input-box select:focus{border-color:#87544d;box-shadow:0 0 0 2px #65000613}.input-box input::placeholder{color:#b4a69a}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field-grid.address-small{grid-template-columns:1fr 1.35fr}
+.security-note{display:flex;gap:9px;align-items:flex-start;font-size:9px;color:#8d7f73;margin:13px 0}.security-note b{font-size:17px;color:var(--checkout-text)}
+.primary-btn{width:100%;height:46px;border:0;border-radius:6px;background:var(--checkout-burgundy);color:#fff;font-family:Georgia,'Times New Roman',serif;font-size:13px;cursor:pointer;margin-top:7px}.secondary-btn{width:100%;height:40px;border:0;background:transparent;color:var(--checkout-burgundy);font-family:inherit;cursor:pointer;margin-top:6px}
+.save-address{display:flex;align-items:center;gap:8px;font-size:10px;margin:6px 0 10px}.save-address input{accent-color:var(--checkout-burgundy)}
+.review-card{border:1px solid var(--checkout-line);border-radius:8px;background:#f8f0e4;padding:13px;margin-bottom:11px}.review-card h3{font-size:13px;margin:0 0 8px;color:var(--checkout-burgundy)}.review-line{display:flex;justify-content:space-between;gap:15px;font-size:11px;padding:5px 0;border-bottom:1px dashed #d7c8b5}.review-line:last-child{border:0}.review-total{font-size:16px;font-weight:700;color:var(--checkout-burgundy);margin-top:5px}
+.finished{text-align:center;padding:45px 5px}.finished .check{width:66px;height:66px;border-radius:50%;background:var(--checkout-burgundy);color:#fff;display:grid;place-items:center;margin:0 auto 15px;font-size:28px}.finished h1{font-size:27px;font-weight:400;margin:0 0 8px}.finished p{font-size:12px;color:var(--checkout-muted);line-height:1.5}
+.checkout-art{position:absolute;left:0;right:0;bottom:0;height:112px;background:linear-gradient(180deg,transparent 0,#dfcfb8 100%);pointer-events:none}.checkout-art:before{content:"❦";position:absolute;left:20px;bottom:28px;font-size:55px;color:#5d6942;transform:rotate(-18deg)}.checkout-art:after{content:"Autenticidade em cada detalhe";position:absolute;left:90px;bottom:36px;font-family:'Great Vibes',cursive;font-size:18px;color:#6c4f43;transform:rotate(-7deg)}
+.hidden-payment{display:none!important}
+@media(max-width:460px){.checkout-shell{width:100%;box-shadow:none}.checkout-top{height:110px}.checkout-body{padding-left:17px;padding-right:17px}.page-heading h1{font-size:23px}}
+</style>
+</head>
+<body class="checkout-page">
+<main class="checkout-shell">
+  <header class="checkout-top">
+    <a class="checkout-back" href="carrinho.html" aria-label="Voltar">‹</a>
+    <a class="checkout-brand" href="index.html" style="color:#fff;text-decoration:none">
+      <small>Trattorie</small><strong>D’élite</strong><span>DELIVERY</span>
+    </a>
+    <a class="checkout-cart" href="carrinho.html" aria-label="Carrinho">🛒</a>
+  </header>
+
+  <div class="checkout-body">
+    <div class="progress">
+      <div class="progress-step active" id="step1"><div class="progress-dot">▣</div><span>Pagamento</span></div>
+      <div class="progress-step" id="step2"><div class="progress-dot">⌖</div><span>Endereço</span></div>
+      <div class="progress-step" id="step3"><div class="progress-dot">✓</div><span>Revisão</span></div>
+    </div>
+
+    <section id="s1" class="checkout-section active-section">
+      <div class="page-heading"><div class="heading-icon">▣</div><div><h1 id="paymentTitle">Cartão de Crédito</h1><p id="paymentSubtitle">Pague com segurança e praticidade.</p></div></div>
+
+      <div class="pay-tabs">
+        <button class="pay-tab active" data-method="Crédito" onclick="setPayment('Crédito',this)">Crédito</button>
+        <button class="pay-tab" data-method="Débito" onclick="setPayment('Débito',this)">Débito</button>
+        <button class="pay-tab" data-method="Pix" onclick="setPayment('Pix',this)">Pix</button>
+      </div>
+
+      <div id="cardFields">
+        <div class="field"><label>Número do cartão</label><div class="input-box"><span class="ico">▣</span><input id="cardNumber" inputmode="numeric" maxlength="19" placeholder="0000 0000 0000 0000" autocomplete="off"></div></div>
+        <div class="field-grid">
+          <div class="field"><label>Validade</label><div class="input-box"><span class="ico">▦</span><input id="expiry" inputmode="numeric" maxlength="5" placeholder="MM/AA" autocomplete="off"></div></div>
+          <div class="field"><label>CVV</label><div class="input-box"><span class="ico">♙</span><input id="cvv" inputmode="numeric" maxlength="3" placeholder="000" autocomplete="off"></div></div>
+        </div>
+        <div class="field"><label>Nome no cartão</label><div class="input-box"><span class="ico">♙</span><input id="cardName" placeholder="Como está no cartão" autocomplete="off"></div></div>
+        <div class="field" id="installmentField"><label>Parcelamento</label><div class="input-box"><span class="ico">≡</span><select id="installment"></select></div></div>
+        <div class="field hidden-payment" id="bankField"><label>Banco</label><div class="input-box"><span class="ico">⌂</span><select id="bank"><option value="">Selecione o seu banco</option><option>Banco do Brasil</option><option>Bradesco</option><option>Caixa</option><option>Itaú</option><option>Nubank</option><option>Santander</option><option>Outro</option></select></div></div>
+      </div>
+
+      <div id="pixFields" class="hidden-payment">
+        <div class="review-card"><h3>Pagamento via Pix</h3><div style="font-size:11px;line-height:1.5">A confirmação é demonstrativa para este projeto. Nenhum pagamento real será processado.</div></div>
+      </div>
+
+      <div class="security-note"><b>♙</b><span>Seus dados são protegidos. Este checkout é demonstrativo e não armazena dados do cartão.</span></div>
+      <button class="primary-btn" onclick="go2()">Continuar&nbsp;&nbsp;→</button>
+    </section>
+
+    <section id="s2" class="checkout-section">
+      <div class="page-heading"><div class="heading-icon">⌖</div><div><h1>Endereço de Entrega</h1><p>Informe onde devemos entregar seu pedido.</p></div></div>
+      <div class="field"><label>CEP</label><div class="input-box"><span class="ico">⌖</span><input id="cep" inputmode="numeric" maxlength="9" placeholder="00000-000"></div></div>
+      <div class="field"><label>Endereço</label><div class="input-box"><span class="ico">⌂</span><input id="end" placeholder="Rua, Avenida, etc."></div></div>
+      <div class="field-grid address-small">
+        <div class="field"><label>Número</label><div class="input-box"><span class="ico">№</span><input id="num" inputmode="numeric" placeholder="Nº"></div></div>
+        <div class="field"><label>Complemento (opcional)</label><div class="input-box"><span class="ico">♙</span><input id="comp" placeholder="Apto, bloco, etc."></div></div>
+      </div>
+      <div class="field"><label>Bairro</label><div class="input-box"><span class="ico">▥</span><input id="bairro" placeholder="Bairro"></div></div>
+      <div class="field-grid address-small">
+        <div class="field"><label>Cidade</label><div class="input-box"><span class="ico">♙</span><input id="city" placeholder="Cidade"></div></div>
+        <div class="field"><label>Estado</label><div class="input-box"><span class="ico">⌖</span><select id="estado"><option value="">Estado</option><option>SP</option><option>RJ</option><option>MG</option><option>ES</option><option>PR</option><option>SC</option><option>RS</option><option>BA</option><option>GO</option><option>DF</option><option>Outro</option></select></div></div>
+      </div>
+      <label class="save-address"><input type="checkbox" id="saveAddress"> Salvar este endereço neste navegador</label>
+      <button class="primary-btn" onclick="go3()">Continuar&nbsp;&nbsp;→</button>
+      <button class="secondary-btn" onclick="show(1)">← Voltar ao pagamento</button>
+    </section>
+
+    <section id="s3" class="checkout-section">
+      <div class="page-heading"><div class="heading-icon">✓</div><div><h1>Revisão do Pedido</h1><p>Confira tudo antes de finalizar.</p></div></div>
+      <div class="review-card"><h3>Entrega</h3><div id="addressReview"></div></div>
+      <div class="review-card"><h3>Pagamento</h3><div id="paymentReview"></div></div>
+      <div class="review-card"><h3>Itens do pedido</h3><div id="itemsReview"></div><div class="review-total" id="totalReview"></div></div>
+      <button class="primary-btn" onclick="finish()">Finalizar pedido</button>
+      <button class="secondary-btn" onclick="show(2)">← Voltar ao endereço</button>
+    </section>
+
+    <section id="done" class="checkout-section">
+      <div class="finished"><div class="check">✓</div><h1>Pedido Finalizado!</h1><p>Seu pedido demonstrativo foi concluído com sucesso.</p><a class="primary-btn" href="index.html" style="display:grid;place-items:center;text-decoration:none;margin-top:20px">Voltar ao início</a></div>
+    </section>
+  </div>
+  <div class="checkout-art"></div>
+</main>
+
+<script>
+const cart=JSON.parse(localStorage.getItem('carrinhoCantina'))||[];
+if(!cart.length){alert('Seu carrinho está vazio.');location.href='pratos.html';}
+let paymentMethod='Crédito';
+
+function money(v){return Number(v).toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+function total(){return cart.reduce((s,x)=>s+Number(x.preco)*Number(x.quantidade||1),0)}
+
+function updateInstallments(){
+  const t=total(), s=document.getElementById('installment');
+  s.innerHTML='';
+  for(let i=1;i<=Math.min(6,Math.max(1,Math.floor(t/20)));i++){
+    const o=document.createElement('option');
+    o.value=i;
+    o.textContent=i+'x de '+money(t/i)+(i===1?' (à vista)':'');
+    s.appendChild(o);
+  }
+}
+updateInstallments();
+
+function setPayment(method,btn){
+  paymentMethod=method;
+  document.querySelectorAll('.pay-tab').forEach(x=>x.classList.remove('active'));
+  btn.classList.add('active');
+  const card=document.getElementById('cardFields'), pix=document.getElementById('pixFields');
+  const bank=document.getElementById('bankField'), installment=document.getElementById('installmentField');
+  const title=document.getElementById('paymentTitle'), sub=document.getElementById('paymentSubtitle');
+  if(method==='Pix'){
+    title.textContent='Pix'; sub.textContent='Pague de forma rápida e prática.';
+    card.classList.add('hidden-payment'); pix.classList.remove('hidden-payment');
+  }else{
+    card.classList.remove('hidden-payment'); pix.classList.add('hidden-payment');
+    bank.classList.toggle('hidden-payment',method!=='Débito');
+    installment.classList.toggle('hidden-payment',method==='Débito');
+    title.textContent=method==='Débito'?'Cartão de Débito':'Cartão de Crédito';
+    sub.textContent=method==='Débito'?'Pague direto da sua conta.':'Pague com segurança e praticidade.';
+  }
+}
+
+function show(n){
+  document.querySelectorAll('.checkout-section').forEach(x=>x.classList.remove('active-section'));
+  document.getElementById('s'+n).classList.add('active-section');
+  document.querySelectorAll('.progress-step').forEach((x,i)=>{
+    x.classList.toggle('active',i===n-1);
+    x.classList.toggle('done',i<n-1);
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function go2(){
+  if(paymentMethod!=='Pix'){
+    const vals=['cardNumber','expiry','cvv','cardName'];
+    if(vals.some(id=>!document.getElementById(id).value.trim())){alert('Preencha os dados do cartão para continuar.');return}
+    if(paymentMethod==='Débito'&&!document.getElementById('bank').value){alert('Selecione o seu banco.');return}
+  }
+  show(2);
+}
+
+function go3(){
+  const required=['cep','end','num','bairro','city','estado'];
+  if(required.some(id=>!document.getElementById(id).value.trim())){alert('Preencha os dados principais do endereço.');return}
+  const address=[end.value+', '+num.value,comp.value,bairro.value,city.value+' - '+estado.value,'CEP '+cep.value].filter(Boolean).join('<br>');
+  addressReview.innerHTML='<div style="font-size:11px;line-height:1.55">'+address+'</div>';
+  paymentReview.innerHTML='<div style="font-size:11px">'+paymentMethod+(paymentMethod==='Crédito'?' · '+installment.options[installment.selectedIndex].text:'')+'</div>';
+  itemsReview.innerHTML=cart.map(x=>'<div class="review-line"><span>'+Number(x.quantidade||1)+'x '+x.nome+'</span><strong>'+money(Number(x.preco)*Number(x.quantidade||1))+'</strong></div>').join('');
+  totalReview.textContent='Total: '+money(total());
+  if(saveAddress.checked){
+    localStorage.setItem('trattoritoEndereco',JSON.stringify({cep:cep.value,end:end.value,num:num.value,comp:comp.value,bairro:bairro.value,city:city.value,estado:estado.value}));
+  }
+  show(3);
+}
+
+function finish(){
+  localStorage.removeItem('carrinhoCantina');
+  document.querySelectorAll('.checkout-section').forEach(x=>x.classList.remove('active-section'));
+  document.getElementById('done').classList.add('active-section');
+  document.querySelectorAll('.progress-step').forEach(x=>{x.classList.remove('active');x.classList.add('done')});
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+cardNumber.addEventListener('input',e=>{e.target.value=e.target.value.replace(/\D/g,'').slice(0,16).replace(/(.{4})/g,'$1 ').trim()});
+expiry.addEventListener('input',e=>{let v=e.target.value.replace(/\D/g,'').slice(0,4);e.target.value=v.length>2?v.slice(0,2)+'/'+v.slice(2):v});
+cvv.addEventListener('input',e=>{e.target.value=e.target.value.replace(/\D/g,'').slice(0,3)});
+cep.addEventListener('input',e=>{let v=e.target.value.replace(/\D/g,'').slice(0,8);e.target.value=v.length>5?v.slice(0,5)+'-'+v.slice(5):v});
+
+try{
+ const a=JSON.parse(localStorage.getItem('trattoritoEndereco'));
+ if(a){['cep','end','num','comp','bairro','city','estado'].forEach(id=>{if(a[id]!=null)document.getElementById(id).value=a[id]})}
+}catch(e){}
+</script>
+</body>
+</html>
