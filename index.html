@@ -3,58 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<title>Trattoria D'elite</title>
+<title>Trattoria D'Elite | Culinária Italiana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+:root{--vinho:#650006;--creme:#f4e5ce;--verde:#28452b;--ouro:#ac873d}
 *{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:#000}
-body{font-family:Arial,sans-serif;overflow-x:hidden}
-.home-page{width:100%;max-width:none;margin:0}
-.topbar{height:72px;background:#650006;display:flex;align-items:center;justify-content:space-between;padding:0 28px;font-size:14px}
-.topbar nav{display:flex;align-items:center;gap:45px}
-.topbar a{color:#fff;text-decoration:none;font-weight:400}
-.register{margin-left:auto}
-.main-panel{display:grid;grid-template-columns:58% 42%;height:calc(100vh - 72px);min-height:520px}
-.photo-panel{height:100%;background-image:url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAcFBQYFBAcGBgYIBwcICxILCwoKCxYPEA0SGhYbGhkWGRgcICgiHB4mHhgZIzAkJiorLS4tGyIyNTEsNSgsLSz/2wBDAQcICAsJCxULCxUsHRkdLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCz/wgARCAHgAoADASIAAhEBAxEB/8QAGwAAAgMBAQEAAAAAAAAAAAAAAQIAAwQFBgf/xAAZAQADAQEBAAAAAAAAAAAAAAAAAQIDBAX/2gAMAwEAAhADEAAAAfnOjNZFXyuyKkcy65arEjoJaXakLIU1jBABjAGRitUzTVujCQ6AGUFDCpNtdsVQltdyJCwQkFjABDAEMCRlQIYxjfZnWJ7LWYhdXUiypwZGAJGLFtQy3QQARGjAAaLAMBAGEFDKySQQjsmry6aocEZetpLTWU3pdGl1HZLxVbsYSQsWNBrVdW1QTLmAxAYMEDBNYwajLACMGlhLUhiYhgANAF9fRl5svd5KeaE6RqfOc7luUsKQUoQGmigHCwGAIgGgCGBIYAMgQwpgMAVXWkCIJ7KbJptFGrO8pkaRlNDlBJa9OhPXto1Y3Vh6WVnMr106xVHrpWGu2WosidSaA1mlyUkMDTRSBkKEDBghASRgEaAA0CbsLJ9PmCkRKNSixWjBGGAgI8QksUAQQYhlQjKkFdWFndFFevMyMrgIQmEsSpAYMDJBatWTVhrngNFZBpFXQGvptR0tfO04a6M0RPNWw1zldtYVXU3NV1lKVhVUWCoMtAYFjQIZEItsYqW1iLEgpLJoHgIHVqsOrEDLUiSMkaIUyBdK5LKqaREAFkgWqkBxCnY1RTuz3Kip1lJwbJdVd1NJZBUySBfqzacdKYC2jK7US1E3IZCvU7VgCJk0ip2JWJo3UaB55A50KK02puqaDq7IQUzXbUJWU0msr0RRr0rNUFpSVXrFAI0qujSKwtAMBCGNAx0wHCaR2CmOGkjK1CGGXstzvM1hRW7tLyJoz6TZpy6ZpcuvK5rkmkSQhdpz6MtKCCNHrjVoWJtBAR6zU31AIgdmJLSmt9bzVKwVNtHRUWNd+oXMt6TTXIXs0hzqt6NYWtpoe+i/O9V9WrOsOXo86lKba7lRfGsyX0UpCGgCGjIAnrPJ6ofep6o5Hh5/pKqPG1+u4uy5Q25dUrEj26adGdZFsWXqc2S+Xi6ODSUtqbSbKSAQEVJkgaL6L8tKSrBCWTrFoCtblaplqUlZXCFQi581iq6W3JUPtzivXjxvq4s2lqs5+mOjfMsV1RysiO5iydyo5NfVxhNXNkabMZRkrtqqbGVk682rLcSEMAKUjFjTQFDd1NuFgZtPK30ZcKS8r1N26870dWRMc/0XmdCCoaGyznWp2Zb6aSMrXJVlQgIqZJA0aM+vLWkXySiXgKpbApFoZWtitJZAyKygusbSW3ZOTnoZubScu7nUtdBeYQbXl1y5v5BT61OAtHP2aKSdTiLFbMne5ZOVXUpq7qAsNBaehkadbKwVWFoQgR9PxvonPsmfTh4ul8e/PLqrXKDJ1c7nknr8fSdXHt7Wk+QHd5HTlRbW1zdVYsugwaZkQAFIakkZp15NWGskk0YClJI3BA0AQxUZWjbXuck3cOXZ0OftY2NSEtrgXnKobe75Zk7rua1LbmDIotaNbJlUb9vg3y7snpeKTRT09RXnl9NW15w93Mzn1bMoJD3Q4A9hdDs6V48/ry4bMnPs2nnY+iO9fxOlk9XFfHStpyr051CV75dirnaM6w09fk9GNqrKlEdLgiQFMdiR4h9WTXnoZJFGCCgKMIUsZZBIrSlq6ebPKxASm7L6xPyU1ZhCEMAkagKgJfU1LKr5ZasqmWahZF3c1ncbg+sg86JRa0iozVz5Q1vnOgbfTeU9Zjr0rvOW8m/pceS6XMNyZ6crN3qNp8708T75beX08UVluTZpFNF16KIIx8FrXlzirdOShg5AZQBEakAC/Vl1ZaGExQMARSGQEMAIEujPsqd/B6vMmljCl0vaeX9tlXkuV6jjUuD1+V7FjX9/NlXCyYtWi2ZduQPK+4w+uR8nHofOXLeg8765PL5j23ixL2uOWdLl+m4SWYsKFMIBLLg6PrMy+b1tT0eTnrxMzUd+HV0cjq4Xk1Ucq16LBydzVmu6vLTNc3JuOuvG7KKhyu61n5vQ4W+TMrbZAGAqstSII1JIFl2ZprQc0mtIzllwpAr5RAuFUZd1ed1ZXPyHa3gG/O16H3fiPd8+vnU20g6eX3Uuxl43oA5e6bQwNm47Xa73nepLv8P73lB4b2/k/eWufyPQXS/mkWb5+r4PW52ZhB6FvnTZjAwMj1XM7HQ83qxstSvA++2b52x5Jyeb17eiOJ212RWcrzFFXKg9Pi1dfldPn24O/nTpxsrgaZkuQh3tnrzZ0IHPXoUVOQOumZdHVCSIlqOmKrq2lhDUkga+tzLJMOvEtGxafXy1914r0+GuPr8q+XwuF9DzXPgtfe5FrtzlpD6VOfn0dREQWvNKmU+r8z6mXl6XMMPx+Dq+f6M/Qct6UqNGRbNueqAzLE/WdXynY8zr870eH3Ozn3HnTm39LVqp8/py5ttGq4+Xsczu4tIGZZ8sX0d8dDfkt5OjjAjs54yuhrqWi+ho5VuWvWXC00MltOmedb01yrdHYGEQVm8rCemJvlr1wzkzZirLpzmMToVXmu16DwqzX0TH4YJ+7s+fhr3NvgYH0Gz57ZL9evkWa9Ho8kjPT1ebFL2FHlin7DZ4WSe+yeKLfs/I1RronnhxbQY6WGBJAG/03j/c8PR4T1HK3XObi7cW+fruhxO15fZXl1YYvRl3Afi09V5f1vPWGbZdiLZx9XDknbzCSCJETeygp7Rjku1a5SZZGjfTqilLmaz7s1NCbcmw0TLryOdjYNQWxKSjn6OESyaDPVj1VTtLlzONRrQ00TPpINfP3l2pmuIxaGsadOdY1fTuxzW1KiVdnp2hz9+DRWV2LVzxtozdMmjH0+YUfVeVeJ9rjy9Tzurx/d6mDaNvQ8J7TDQcboLF3JdmiuHzVHs+dDDc9ca+Xx9HPjTs50jwFjkK44BQygIQ1IYD6MhmtzYWitFKq0+zn7zYZb8bizTh2hcIZ3bm6Md4WdLmdpPKummdueImnH0qrK56cYkvlnT5nUjpzZNeS+fpVXU59WKSacnRR1jrFtVqK71oHk15Nd874Ohz1bdXLsRVk30LXnEm+MWIB9jkSJn1vkvTYaU9bkdDi6dLYtnPr4hNuP2/NBLtem8x63x/J0LDOznDLAc1hO8UwLFUNMBAMEASFqSEaklCdLNqnarF0+c5XZj6Qq1u5xfS5u5k6pdQ4y9Ll9QdGLp4nOyu2TrzJJfNOpi1x0UZN+Csd13L3LXI/RgpgbMG6WFXTbg2hh12F5rg6NY9fJ6PPFdryaZ0wDdjvAFrUZ5vsRzfTYexz7VY/QYOTfd5j1GSH40eyf0OXxR9taPD5H2y8+vip7ezoy8GPbRrxI9dY146emDPMjuq1xJ0a6nGLkZXJKRiwGikJJBCGABYgAkBIegHNPbRLjncjeVd9qXLnbI+HD1WcmdLngsPXFx50GHzZ2mS4c62QeQ92kXJm3GME2jpnS6UV57R3ted8HZtsis+qVTWqV2RSXVuFbOydsI57qS6J12RuiKb4yeVNWTKrrbV1kI6tBlgVpajJbQjmostLOLo14qSdvKSIBIKcMid92KKvR18BYrvZeSbhtWXU0+Ho1kauZv54115dYaVrgYNebUxcnQIc3bi3E059ecrQzQnE0sK6LVSVgt6lU67NXLuw16Orl2RVwNgU22MOtrnRS10TpawgjM6Bl2ZsL1JVt0VDWSlUzuFHD7/ABMb36atG0Vi5QpNihVVclKgWo1QtyMqWytrxsk7uQgQDAQkgAwECDExbWwWnXVLWUuNJbE6LWNJRYznn6dNQJLOnL4GpraWSrcgVlrUYuhsbPSut65Y1UdWXzteffLltlk2lj2S0NsBGdgQsULGg0LwEeGXjr6nm8X2bfOvS9CnAzOOny6krHXby5pHor/NNN+ov8uFfpEW2taUuqFXVbXQtd9TXipD28qyRqGQICAkkCSQDIB7tXI6UrEnU5hQdb2NnsvRiJ0tGvbolZNSmO7nW9DJfFzl6GOlb25mw2sotrmi76k9HKu1EPoFka2OLEw4ZEMsBWIQxorT1jHSn0GFWF6audrGvO3qzzVfo13w4Q9DtifIW+l4tTz6t9F55Rvy1Fl+LbFW+k871o1sXXZprzaetU1za9+VnhCp7uQSQDJAgkAhmHWdDyZ7Liq7GK3Ln2MtsrDlN1uVWUsztU7LMmuXZo5rBuKnP0LMtNV8Gi2vdLmVlz0uAvTsobM10beHU+j1hFmOdrCxBKIFyYaordmy1xemukSWdPlepkz4ulXlaNUAsxbcrEm621zaunKmjyfquSPze/q798vO593RfNwn7HOqdtWZ4NPY5lz12SuPTQ2Gujw8k7uSQ2AhveXne0ppABtFIW9HkPN6Ndemerbxxpaz2XXquamd3Jza9Dzx5uohMtpJfNv2M45XYUTWxchm9NFu4rk9bJio6fH19Gaw+jpsyztaZ4lsYpizAuNlg0tbU6SNVsRF1VB1m+RKVGi2hG3HXyZrTsosh5c1MK0aeeghz+hyevi6+7g9RZrXTXa3EUIu0cFLfq68l8dPjrLF7uUCBKQRhkiI6QZgjICRLbXB7ZiCroPzNK2XZU0669HOcrevNUNSZqin6XK0J+iyc+oz2Wc53Nld+6TF0Y0TfWj5ll1FwW02BHMCtjpYpmOihlpDt5ugldm0CTHpqXpndhx8VrsU4sg+rfk7su7jaM+FcLo2a9559Q2p48PevceQ6PR5m/JrRNUzzMOuvdZ20bWq+nTl5unjMk7+dgIEIgERgEMAGQAYyaiRqSQBGACWuPNL+0HFs6tKMZo2hVX1bB+dnZ5rVbW1oa7IE+nt4N+d+ks88Jr004OyK6r4rpYx9Vs75FliYaHpYtLWg4tkPRx9XLbr6dfR1nyA7HQpeZnqGpeZv7vKHu57tzaVGzSLH0reclfVkrVacYms5Kujk35tdeTTeL68VE3rPE2PXlzXn7eVBYrFjxCsIEkIwARQwgsBYQCiSQJJAllcB0kCW1sGqhEHagjUIKIIoMFjNPR40mu/l53RisbrUPZo5Yl9/V5aS/XWePsl+1HjjFernnrVXoz5tkvQW8C2a6WSnRNWSu2XivYsnQ5plHn2aB86zUmiz2i1rm27aWsXN9EumfLTq1N8rpsU/Psk7eTdXnkvVZhgXoloIu3MFIdKUIIGCIEIYYQglWCtmRmzJesul0lJg0BYygYQEBAGLESWUhfowaE80gpPZT6bLTzx7FI+aNFDQALUhICNEwQAslYRpmYD2THA3TDEdBMQa2rjjNy44G4YoGhsoa0rRBWhIxiJUwQhIIBMKJqyqPQKCF+e64MZ7OBGYWK0tyoFspA7K1ZqEEHGnoS+MNFLShlZJAEUgRi9BOjK9bDfVAWCNN6nymvDb2HGp5uV9jmhdYQMGlDFlRchWt6CrjClCsG0WA0WAwAEwEAiRkkAESCgMABowwqTZFA3iECAwgZBkwIdqWDbRXoTzzXkCokUoUAWGt0IwdkeKjU2MJ781MYq6aWq5FESAzq8rdRNLWA1JI1DABEgG6iJ7Bnsi7IImYIEWK1JAwkMiGFNIwaWSMkEFJIEkgCSBAQ1IA0xhECyjkDCjIBtFANIQSwEFeytAtqAbsYuTytsztVSBp3pZNyIBUhkEgCysCdUtHTbbWEpkCAxoQwBDAEMAFgChgDvSU7ggTeKRmCASoCxqoi0VlNgAwwBolSKQQCAGiFjRAIf/8QALRAAAgICAQIFAwUBAQEBAAAAAQIAAwQREhATBRQgITEiIzAyMzRAQSQVQ0L/2gAIAQEAAQUCEHXXqPQfg3+IdD/QAhEAmvUeo6b/AKe4DNzfo10MCzj6z+U/0FEZYBNexH9vXTXXc3N9Wgghm/UfUPWfxqsKQjqkYwTcP9xZr29etxUgSMkKz49JE1/WHzUsZPawdQYWm5v+6kPx/vrQQRvhhG6bm4D01NTjNf0xEbUaz2c79G/6WproPxJD8ercHzX1YRhNTjCIPVqa/pbhb8Wpr8YHQw/jrh+P99Q+Um+hjfPRoOhM3Nzc3+A/1h6xN+gTfQ/jSH4/3oPQIrQPOcLexPv0aDo0AmprqPw/6P6e/wAxHo1CIfSkPoHUdNmBjORnKbgM3Gg6NF6amoRB6TNzfQCah/va6noIBGEPpSH46jqOo9IMJi9Gizc3Nwwek+hZqFJrXUzc3+bXqEVZxmunGcYw6CAwxvSkM/38AM3D6R0aCHr8xarDOzbCjCDoeg6LFnGOOp6n8NOPiX1NgIUrwRo+FHt2YtlasCPSIgmowgirCscQ9NzcPpSH82pqamujRZ2GA1QsW33AzXnkst5/52XPJ5yRvNrO4phSl49FiKsMX4r6WQ/PQTUYfhouNF1PiQuVrbQKs2yuGzliFgyX4D011YtloYcWg+U6NF+UMYyyN+FIeupqamvwbm/R2QsWxt+S4Dv4NM/9S7TZmQ07thnNoLrVieIZST/0uY/4bo+HfRCVYPUQoiGcoxh+Z/o6N+IHRquF87c7ZRh7w8HTIyyYqs5rxHaV4tMtxGqXuQtNwPOcYw/hWH4/CemvQsSsvA08olKtn8QzFylVlkNZFS4xfDEtpVcZ0oGLXQ1tddT2kynItx2TMx8mXYz484rYTtD3Jy6n5HRvxU+F22V/+QsXBuW3y2UoFmlbmLUx8PQ7KI7rxpJUnJDSyll9A6H8K9OM1Neswemusca67Mux8irEFjs7V0myVvXRlrzw/FL8mu7HqzTQf9e5rKntL005aoaG1h4lKnIppsyr5jZlmMTRVlV75BlKN1MHRvw+F4qtLCdEEPyV1RjVbbxcNVSQauB7BEaoWAdsAIjy7FtrHUdD+FPRqampqanGamvTXWONNL5duRlrwhp7C1vXjM/bCu72ei7Hsx/R3XWvCylryMCpDkW0mqVu1b7TNX20VKN0abm4T+DCqN2X7PLAO19K1DTxuNkZTWEP1YtYYMeLsoVbaQorvao1ul63Y3cj1tX0HQ/hT89dfMpW+Vbk5K8Jchx6lufGDMXbU41zjROONqh6Vry7Alidpm4401THA6JYyu5OZfm0142QrFSdZtIHNN9CJqamoB6/C8cVYrW7hb6HQFaq2rLEdpTznapB2qLc3I1P9HcHErsVuUZcgiOO6l1fafofXqaifkPQAkkbGSwxqddK8u+qo+59PxGdm6b66nGITVa23s1KGspuvx1yK+13oMJzPIT/AM9YfDxDgRsNxGosEI954Zji61fDlszavCae7r6maWK2i+pZsjvMpFu5zJrZ9MSGXeizbLkqFO5YSRUxEsq7kZeDj8S/kPSraohGNQTs9GRl/o7m54dkqj5VbUXEgHks+iaSe0DMIHvhayHiRg3Y1FByFC/CjTqatyuvTZD8jyKxgWUHiyXHjZ8Fvq2xYL72r9tF3HQAkKq1WdxMgas/Ev5DFUu1a9y3MtD3dANnxqjtrj0Pk3+uil8i9lKPOLb641Xfy86kUZnTl5rw+wH18mErttL24NTTttipiXWhm8TrR+7VaCSg8zGyA8tuXXk7zDjGlqjzR0BNfvB9I0zGscY55WN+3h/qzPxr+Wv6UU9jG6+H19zxDxZGfw/wJOeXnV9rPmCqAYvhrIluMlUbwzEsh8HpmFh+RyMvD5iivvZHlQ+To8OngqcvEPG6+OV08MtC5WTWVs9fhlPLLG+doFrWoa1e8rN1Ma7LFh95zFbLfWYt6NLMhTMbkLX0Iq8Qyhoi6jLs8YV2qIEmS3J/xLB+T9C5n0Dr4OAfEcysW4fgA1j+NLxzxVY88JFndxLbbMXDORaldgNyeb8tWctrK8zJaqhVbxlVAGRj8PA+ngIInjyDh0DcT4hpw4+r013GqY1pvx2yErs0FlzsQ68zxhExge1kInHZWAlWRN3N9TttgFCTJuFhxSRkXnVS3OpL9wXLzT8Ym5ucpynKcpynKcpubg+pkHd8RybOeVub6eAjeXYR5fwP+B4jUjeJ4niFRrpyasjxD/1sdq/C3y2eu3/pxs7KtuTK8QvtXxTLLL4i4OJkeap8RQ1+FZFWRUh4zwIaxfGx/wAGfi9rw/c3KvveEv8At7m5ub6+GA+TzSz52NimrGZtY5GnXHBC1cDX7JmfAB0iAvwhXiP8ybwyzHOsjL/YiZjrHcs3Tfo4zjOP58X+V4d/KrXuW+UJK4wYPSUr8AH3Rynhi68O8VFnPziFmsquyaMexJ4ar40qwSuT4fT5GI+biHzDVuMQmjENWKtuVULMvKxr62xVng9fDw7xSvvV+LLywenh/wBXh14iryJwWD+W9yNN0wd+QTgkyszsDFu8yg+OKmfpJb3NTXMafo7WgANWOFOUXNXTEG8rN/Y9KrFqnanbnCERhD69Qj1Y368P2oRuFgyilq5LAWM7r4JW9d2tTwzj5E/u+KYyiW1PSv1cKszRos+nuVljlV9t7xca8tMcL4guKDnJc/PDyafZV8NH/FmqCMtf+cXM65IRW8H97W/RW/B/MtO+Nu5ss6Ydpsw0IFWTd37/AAv97IyVpZLqrDYmo/wDoV8hRlN9YMRZl/TT0whvJzB9j0j2i2QNuaBhUaaNNevc36qFYQW2Up0T9WLgOy4NFmPm90WzH1iOliWiypbhf2bMZqUbGbCv5V1eaexPtrVXm1o9VuRb3cSV9wJ9rOnGu5+NqnF4Ya5K+YqysnvY+XivhxtE4l9mJYFbgQV9Xh76yMp+GLPDB9fiP6vC9eaaP8IAZ8tdj827XA92uDKV2t4CyYH8jP8Aj1AwNA0LmEzfQ/l8wbFFsZjY/HZoNGMzX09qzxHG5+dxNHxZaomXzD5mIqjMx1IzMYTzOMIc2lcw5FdPiuS1OHm5pxM+rAz145HZwzdZjZ1C5VWbTjeLhIczFgy8WeexRc3iVSm1udtdxarn722vcfThnWZenNJgr2sXxHW54fe1lDfA+hmPvoy+nvVMpVuvh6Def6tzcBgaFoT+FVQVduNxWBAwZAsuC9voIDN+jU16APRr8m/wV2Gu39QzaeD4Dk0ZR5ZM8NrZIPdvfncPoJg1MnG7o64H7md+3+Dc3NzfUTU1NQicxXQfeH9q39lWKNeUNBqo4rQjxqK1jVaXr2U5StQzCpGhqrWChSOFYbgggqUgrWp7AM4VkmLR7dpAGrSNWVENdGhUjw0osarQnbp4Cuox+POUoLGtRRX0wcnuVui2LXV5bBCOTj4PBrLVRNAD9UzRyoPutriqpc+0Bm5N08P+c5/zr6D1P7Vn7HSr9p/49TcHH27WXi8pH3WDobf10MgL2M5/+F36KrdTvVgM5cvMg/fpuWU/HPipYsa7TWd9t7V7b1fsP/Gqs4MPt22DhbR+hv4/ShCa1HIdAdGnxDlAwddy7KSo2XPc1b93H7nHJtXan4yq+WL6MJOONlneT11NTjOM16xAZym4ep/as/Y6V/tcS9FdfbYfTN76Ur9rud1W96d9B/Gv/R1eZP8AInxVf+joPfHu96Kf2OJehKeDfEPuaP0N/GiqXa1uNbnZvGrOqMUfNU8+nhrf8mY5pusldndr/UhGj1pThjueT9dzc5TlN/g3OU5TlNzc/wDjb+x0q/Z5cKSffIBLxQXbXKV0itl9mZSjwfxr/wBHV5k/yJ81Xj7fRfbGu9qKf2N8Km+cgEtKf0N/GmONRqeamvhS450evwsns+JL7VkW4tFTI3dRDlcfM9Brbe1f9b/43fsdKf2bP42OeUGiCCpxxqZB0+zCeaXjYg/jZH6OrzJ/kSg8gBzVlKNXW1ra5vc/csp/Yf8Aj0HcGmBBVqP0N/GiL215MTS2rR9F");background-size:cover;background-position:center;background-repeat:no-repeat}
-.welcome-panel{height:100%;background:#d8c6aa;color:#6b0909;padding:80px 8vw 50px 6vw;font-family:Georgia,'Times New Roman',serif}
-.welcome-panel h2{margin:0;font-size:clamp(28px,3.2vw,52px);line-height:1.08;font-weight:400}
-.line{width:72px;height:2px;background:#6b0909;margin:24px 0 18px}
-.sub{margin:0;font-family:Arial,sans-serif;font-size:clamp(13px,1.3vw,18px);line-height:1.4;color:#8b1616}
-.cta{display:block;width:130px;margin:70px auto 0;background:#650006;color:#fff;text-align:center;text-decoration:none;border-radius:18px;padding:10px 0;font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:18px}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--creme);color:#38251c;font-family:Montserrat,Arial,sans-serif}
+a{text-decoration:none}
+.topbar{min-height:76px;background:var(--vinho);border-bottom:3px solid var(--ouro);display:flex;justify-content:space-between;align-items:center;padding:12px clamp(18px,4vw,60px);gap:16px}
+.brand{font-family:Cinzel,Georgia,serif;font-weight:700;color:var(--creme);font-size:clamp(13px,1.5vw,19px);white-space:nowrap;letter-spacing:.06em}
+.brand span{color:#eecb81}
+.nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(10px,2.5vw,38px)}
+.nav a{color:var(--creme);font-size:12px;font-weight:600;white-space:nowrap}
+.nav a:hover{color:#efcc89}
+.nav .register{border:1px solid #d5b07e;border-radius:24px;padding:10px 16px}
+.hero{min-height:calc(100vh - 76px);padding:32px 18px 55px;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;background:radial-gradient(ellipse at center,#fff8eb 0%,#f4e5ce 58%,#e7d2af 100%);overflow:hidden}
+.logo-stage{position:relative;width:min(75vw,570px);aspect-ratio:1;max-width:100%;display:grid;place-items:center}
+.logo-backup{position:absolute;inset:10%;border:3px solid var(--verde);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:Cinzel,Georgia,serif;color:var(--vinho);gap:8px}
+.logo-backup .small{font-size:clamp(10px,1.5vw,15px);letter-spacing:3px}
+.logo-backup .large{font-size:clamp(28px,5vw,57px);font-weight:700}
+.logo-backup .mid{font-size:clamp(18px,3vw,34px);color:var(--verde);letter-spacing:3px}
+.logo-art{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;color:transparent;font-size:0}
+.hero h1{font-family:'Great Vibes',cursive;font-size:clamp(28px,3.5vw,42px);color:var(--vinho);font-weight:400;margin:0 0 8px}
+.rule{width:105px;height:3px;background:linear-gradient(90deg,#28783c 0 33%,#fff 33% 66%,#bd3434 66%);margin:0 auto 18px}
+.hero p{font-size:13px;line-height:1.75;color:#6b5749;max-width:600px;margin:0 0 23px}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.cta{display:inline-block;min-width:170px;background:var(--vinho);border:1px solid var(--vinho);border-radius:28px;color:#fff;padding:13px 23px;font-size:12px;font-weight:600}
+.cta.alt{background:transparent;color:var(--vinho)}
+.cta:hover{filter:brightness(1.15)}
+.footer{background:var(--vinho);color:var(--creme);text-align:center;padding:14px;font-size:10px;letter-spacing:.08em}
 @media(max-width:760px){
-  .topbar{height:62px;padding:0 15px;font-size:12px}
-  .topbar nav{gap:18px}
-  .main-panel{grid-template-columns:1fr;height:auto;min-height:0}
-  .photo-panel{height:55vw;min-height:280px}
-  .welcome-panel{height:auto;min-height:330px;padding:42px 25px}
-  .welcome-panel h2{font-size:30px}
-  .cta{margin-top:45px}
+.topbar{flex-direction:column;gap:12px;min-height:73px;padding:15px 10px}
+.nav{justify-content:center;gap:clamp(9px,3vw,22px);width:100%;flex-wrap:wrap}
+.nav a{font-size:10px}
+.nav .register{padding:8px 11px}
+.hero{min-height:calc(100vh - 130px);padding:30px 16px 48px}
+.logo-stage{width:min(94vw,500px)}
+.hero p{font-size:12px}
+.cta{min-width:140px;padding:12px 16px}
 }
+@media(max-width:380px){.nav{gap:8px}.nav a{font-size:9px}.actions{flex-direction:column;width:90%}.cta{width:100%}}
 </style>
 </head>
 <body>
-<div class="home-page">
-  <header class="topbar">
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="sobre.html?v=202610071545">Sobre nós</a>
-      <a href="pratos.html">Cardápio</a>
-    </nav>
-    <a class="register" href="cadastro.html">| Cadastre-se</a>
-  </header>
-  <main class="main-panel">
-    <section class="photo-panel" aria-label="Trattoria D'elite"></section>
-    <section class="welcome-panel">
-      <h2>Benvenuti, dove ogni piatto<br>racconta una storia</h2>
-      <div class="line"></div>
-      <p class="sub">Sapori autentici, emozioni vere</p>
-      <a class="cta" href="pratos.html">Peça já</a>
-    </section>
-  </main>
+<header class="topbar">
+<a href="index.html" class="brand">TRATTORIA <span>D'ELITE</span></a>
+<nav class="nav" aria-label="Navegação principal">
+<a href="index.html">Início</a>
+<a href="sobre.html">Sobre nós</a>
+<a href="pratos.html">Cardápio</a>
+<a href="cadastro.html" class="register">Cadastre-se</a>
+</nav>
+</header>
+<main class="hero">
+<div class="logo-stage">
+<div class="logo-backup" aria-hidden="true"><span class="small">CUCINA ITALIANA</span><span class="large">TRATTORIA</span><span class="mid">D'ELITE</span></div>
+<img class="logo-art" src="trattoria-logo.png" alt="Trattoria D'Elite, Cucina Italiana">
 </div>
-<!-- imagem-home-arquivo-2026-10-06 -->
-<!-- site-refresh-202610071545 -->
+<h1>Sapori autentici, emozioni vere</h1>
+<div class="rule"></div>
+<p>Um pedacinho da Itália em cada detalhe. Conheça nossos pratos e descubra a tradição e o sabor da Trattoria D'Elite.</p>
+<div class="actions"><a class="cta" href="pratos.html">Ver cardápio</a><a class="cta alt" href="sobre.html">Conheça nossa história</a></div>
+</main>
+<footer class="footer">TRATTORIA D'ELITE · TRADIÇÃO E SABOR ITALIANO</footer>
 </body>
 </html>
