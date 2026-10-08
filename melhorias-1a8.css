@@ -1,0 +1,76 @@
+/* Trattoria D'Elite: pacote reversivel 1 a 8 */
+:root{--m8-wine:#650006;--m8-cream:#f6eee2;--m8-gold:#bf9650;--m8-dark:#2f211d}
+.m8-kicker{display:block;letter-spacing:.2em;color:#b58d4a;font:700 10px/1.6 Montserrat,Arial,sans-serif;text-transform:uppercase}
+.m8-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 18px;border-radius:999px;border:1px solid var(--m8-wine);background:var(--m8-wine);color:#fff!important;text-decoration:none!important;font:700 12px Montserrat,Arial,sans-serif;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.m8-btn:hover{transform:translateY(-2px);box-shadow:0 8px 23px #65000626}
+.m8-outline{background:#fff!important;color:var(--m8-wine)!important}
+.m8-spotlight{min-height:390px;background:linear-gradient(95deg,rgba(32,10,9,.93),rgba(39,9,12,.84) 45%,rgba(45,17,12,.1)),url('imagens/pratos/pizza-margherita.webp') center/cover no-repeat;display:flex;align-items:center;padding:60px max(24px,8vw);position:relative;overflow:hidden}
+.m8-spotlight-inner{position:relative;max-width:610px;z-index:1}
+.m8-spotlight h2{font:700 clamp(30px,4.8vw,58px)/1.16 Cinzel,Georgia,serif;letter-spacing:.02em;color:#fff7e6;margin:12px 0 16px}
+.m8-spotlight p{color:#e9dacf;font:400 15px/1.8 Montserrat,Arial,sans-serif;max-width:500px}
+.m8-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.m8-spotlight-label{position:absolute;right:25px;bottom:16px;color:#fff5dc;font:500 11px Montserrat,Arial,sans-serif;background:#12090388;padding:9px 13px;border-radius:22px}
+.m8-home-search,.m8-menu-search{max-width:1050px;margin:16px auto 22px;padding:19px 22px;background:#fffaf3;border:1px solid #e5d4b7;border-radius:20px;box-shadow:0 6px 26px #3d150c15}
+.m8-home-search{margin:-40px auto 34px;position:relative;z-index:2;max-width:850px}
+.m8-home-search h2,.m8-menu-search h2{font:700 clamp(18px,2.3vw,25px) Cinzel,Georgia,serif;color:var(--m8-wine);margin:0 0 12px}
+.m8-home-search input,.m8-menu-search input{width:100%;border:1px solid #decab2;border-radius:12px;padding:14px 18px;outline:none;font:500 13px Montserrat,Arial,sans-serif;color:var(--m8-dark);background:white}
+.m8-home-search input:focus,.m8-menu-search input:focus{border-color:var(--m8-wine);box-shadow:0 0 0 3px #65000619}
+.m8-results{display:grid;gap:6px;max-height:270px;overflow:auto}
+.m8-suggestion{padding:11px 12px;border-radius:9px;background:#f8efe5;color:#5e100e;text-decoration:none;font:600 12px Montserrat,Arial,sans-serif;transition:background .2s}
+.m8-suggestion:hover,.m8-suggestion:focus{background:#f0dcc5}
+.m8-small{font:400 12px/1.7 Montserrat,Arial,sans-serif;color:#796b5b}
+.m8-floating{display:none;position:fixed;bottom:15px;right:15px;background:var(--m8-wine);color:#fff;text-decoration:none;align-items:center;gap:10px;padding:13px 17px;border-radius:40px;box-shadow:0 8px 25px #32040449;font:700 12px Montserrat,Arial,sans-serif;z-index:70}
+.m8-floating strong{border-radius:16px;background:#fff;color:var(--m8-wine);min-width:22px;text-align:center;padding:4px}
+.m8-recommend{padding:40px max(16px,4vw) 56px;background:linear-gradient(110deg,#faf3e8,#efdec5);text-align:center}
+.m8-recommend h2{font:700 clamp(23px,3vw,34px) Cinzel,Georgia,serif;color:var(--m8-wine);margin:8px 0}
+.m8-recommend-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1040px;margin:22px auto 0}
+.m8-rec-item{display:flex;gap:14px;align-items:center;text-align:left;padding:12px 14px;background:white;border:1px solid #eadcc9;border-radius:17px;box-shadow:0 4px 19px #3d150c10;color:var(--m8-dark);text-decoration:none;transition:transform .2s}
+.m8-rec-item:hover{transform:translateY(-4px)}
+.m8-rec-item img{width:76px;height:76px;object-fit:cover;border-radius:13px}
+.m8-rec-item strong{font:700 13px Montserrat,Arial,sans-serif;color:var(--m8-wine)}
+.m8-rec-item small{font:500 10px Montserrat,Arial,sans-serif;white-space:nowrap;color:#8c6d51}
+.m8-rec-icon{display:grid;place-items:center;width:76px;height:76px;background:#f7e3b9;border-radius:12px;font-size:33px}
+.m8-dialog{padding:0;width:min(760px,calc(100% - 28px));border:0;border-radius:24px;box-shadow:0 20px 90px #0008;max-height:90vh;overflow:auto}
+.m8-dialog::backdrop{background:#140505b8;backdrop-filter:blur(4px)}
+.m8-dialog-layout{display:grid;grid-template-columns:43% 57%;background:#fff9f1}
+.m8-photo{min-height:410px;background:#f0e3d2}
+.m8-photo img{width:100%;height:100%;object-fit:cover}
+.m8-dialog-body{padding:28px;display:flex;flex-direction:column;gap:10px;position:relative;font-family:Montserrat,Arial,sans-serif}
+.m8-dialog-body h2{font:700 23px Cinzel,Georgia,serif;color:var(--m8-wine);margin:2px 0}
+.m8-dialog-body p{font:400 12px/1.6 Montserrat,Arial,sans-serif;color:#716354}
+.m8-dialog-body strong{font-size:16px;color:var(--m8-wine)}
+.m8-dialog-body label{font-size:12px;font-weight:700;margin-top:4px}
+.m8-dialog-body input,.m8-dialog-body textarea{padding:11px;border-radius:10px;border:1px solid #dac6ad;max-width:100%;font:500 13px Montserrat,Arial,sans-serif;background:#fff}
+.m8-dialog-body small{color:#856e59;font-size:10px;line-height:1.5}
+.m8-x{align-self:flex-end;border:0;background:transparent;color:#4c2b26;font-size:27px;cursor:pointer}
+.m8-cart-box{margin:20px 0;padding:25px;border-radius:22px;background:#fff9f0;border:1px solid #e2cab3;color:var(--m8-dark);font-family:Montserrat,Arial,sans-serif}
+.m8-cart-box h2,.m8-loyalty h2{font:700 clamp(18px,2.7vw,25px) Cinzel,Georgia,serif;color:var(--m8-wine)}
+.m8-cart-box>p{font-size:12px;line-height:1.65}
+.m8-progress{height:12px;background:#efdfca;border-radius:20px;overflow:hidden;margin:10px 0 16px}
+.m8-progress span{height:100%;width:0;display:block;background:linear-gradient(90deg,#b87a3f,#650006);border-radius:20px;transition:width .4s}
+.m8-progress-label{font-size:12px;font-weight:600;margin-top:15px}
+.m8-coupons{display:flex;flex-wrap:wrap;gap:9px}
+.m8-coupons input{flex:1;min-width:175px;padding:10px 12px;border:1px solid #decab2;border-radius:11px;font:500 13px Montserrat,Arial,sans-serif}
+.m8-warning{font:600 11px/1.7 Montserrat,Arial,sans-serif;color:#7c463f;background:#f7e9dd;border-left:3px solid #b97763;padding:10px 12px}
+.m8-qty-controls{display:flex;align-items:center;gap:9px;justify-content:center;white-space:nowrap}
+.m8-qty-btn{width:29px;height:29px;border-radius:50%;border:1px solid var(--m8-wine);background:#fff;color:var(--m8-wine);cursor:pointer;font-weight:700}
+.m8-qty-btn:hover{background:var(--m8-wine);color:#fff}
+.m8-loyalty{max-width:1040px;margin:26px auto;display:flex;justify-content:space-between;gap:24px;align-items:center;background:linear-gradient(110deg,#4a0008,#790e17);border:1px solid #b78b47;border-radius:23px;color:#fff;padding:25px 30px;text-align:left;box-shadow:0 8px 25px #4e180d23}
+.m8-loyalty h2{color:#fff6e5;margin:8px 0}
+.m8-loyalty p{font:400 12px/1.6 Montserrat,Arial,sans-serif;color:#ebd9ca}
+.m8-loyalty-count{display:grid;min-width:140px;text-align:center;gap:3px;font:600 11px Montserrat,Arial,sans-serif}
+.m8-loyalty-count strong{font:700 49px Cinzel,Georgia,serif;color:#f5d38c}
+.m8-tracker{background:#fffaf5;border:1px solid #e8d4ba;border-radius:16px;padding:18px;margin-bottom:22px;font-family:Montserrat,Arial,sans-serif}
+.m8-tracker-head{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:19px}
+.m8-tracker-head .m8-btn{padding:9px 13px}
+.m8-tracker-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.m8-tracker-step{position:relative;padding:13px 8px;text-align:center;border-radius:10px;background:#f1e8dd;color:#8a7566;font-size:11px;font-weight:700}
+.m8-tracker-step.m8-past{background:#e4f0e5;color:#326d46}
+.m8-tracker-step.m8-current{background:var(--m8-wine);color:#fff}
+.m8-notice{position:fixed;bottom:24px;left:50%;transform:translate(-50%,140px);z-index:200;background:#390c0c;color:#fff;padding:14px 20px;border-radius:15px;box-shadow:0 6px 30px #0006;font:600 12px Montserrat,Arial,sans-serif;transition:transform .3s;max-width:90vw}
+.m8-notice.m8-visible{transform:translate(-50%,0)}
+.m8-responsive .menu-card,.m8-responsive .elite-feature,.m8-responsive .elite-product{transition:transform .2s,box-shadow .2s}
+.m8-responsive .menu-card:hover{transform:translateY(-3px);box-shadow:0 7px 18px #3c1e172c}
+@media(max-width:850px){.m8-recommend-grid{grid-template-columns:1fr 1fr}.m8-spotlight{min-height:330px}.m8-floating{display:inline-flex}}
+@media(max-width:600px){.m8-spotlight{padding:46px 18px;min-height:350px}.m8-spotlight h2{font-size:31px}.m8-spotlight-label{display:none}.m8-home-search{margin:12px 12px 24px}.m8-menu-search{margin:12px}.m8-recommend-grid{grid-template-columns:1fr}.m8-recommend{padding:30px 16px 65px}.m8-rec-item{gap:12px}.m8-dialog-layout{grid-template-columns:1fr}.m8-photo{height:160px;min-height:0}.m8-dialog-body{padding:18px}.m8-dialog-body h2{font-size:19px}.m8-coupons .m8-btn{flex:1}.m8-loyalty{margin:12px;flex-direction:column;align-items:stretch}.m8-loyalty-count{align-self:center}.m8-tracker-steps{gap:3px}.m8-tracker-step{font-size:9px;padding:11px 3px}.m8-tracker-head{flex-wrap:wrap}.m8-floating{bottom:10px;right:10px;padding:10px 13px}.m8-responsive .cart-card{padding:13px 8px}.m8-responsive .cart-table{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.m8-btn,.m8-rec-item,.m8-spotlight,.m8-notice{transition:none!important;animation:none!important}}
