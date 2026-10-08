@@ -1,0 +1,5 @@
+/* Serviço de cache apenas para arquivos públicos; não intercepta API, pedidos ou autenticação. */
+const CACHE="trattoria-static-v1",FILES=["./index.html","./recursos48.html","./recursos48.css","./recursos48.js","./style.css"];
+self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)).catch(()=>{}));self.skipWaiting()});
+self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(x=>x.startsWith("trattoria-static-")&&x!==CACHE).map(x=>caches.delete(x)))));self.clients.claim()});
+self.addEventListener("fetch",event=>{const r=event.request;if(r.method!=="GET"||new URL(r.url).origin!==self.location.origin)return;const u=new URL(r.url);if(u.pathname.includes("/api/")||u.pathname.endsWith(".html")||u.pathname.includes("pagamento")||u.pathname.includes("login")||u.pathname.includes("perfil")||u.pathname.includes("cadastro"))return;if(!/\.(css|js|webp|jpg|png|svg|ico|woff2)$/.test(u.pathname))return;event.respondWith(caches.match(r).then(c=>c||fetch(r).then(a=>{if(a.ok){const clone=a.clone();caches.open(CACHE).then(k=>k.put(r,clone)).catch(()=>{})}return a})))});

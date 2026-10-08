@@ -1,0 +1,19 @@
+{
+  "name": "Trattoria D'Elite — Projeto demonstrativo",
+  "short_name": "Trattoria",
+  "description": "Cardápio e recursos demonstrativos da Trattoria D'Elite",
+  "lang": "pt-BR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4e5ce",
+  "theme_color": "#650006",
+  "icons": [
+    {
+      "src": "trattoria-logo.webp",
+      "sizes": "any",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ]
+}

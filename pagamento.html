@@ -40,6 +40,7 @@ body.checkout-page{margin:0;min-height:100vh;background:linear-gradient(180deg,#
 <link rel="stylesheet" href="melhorias-1a8.css?v=1">
 </head>
 <body class="checkout-page">
+<div style="padding:12px 20px;text-align:center;background:#fff2d8;color:#651914;font:700 12px Montserrat,Arial,sans-serif">Aviso: checkout demonstrativo. Não informe dados reais de cartão ou dados pessoais. Nenhuma cobrança real é feita.</div>
 <main class="checkout-shell">
   <header class="checkout-top">
     <a class="checkout-back" href="carrinho.html" aria-label="Voltar">‹</a>
@@ -191,7 +192,9 @@ function go3(){
   show(3);
 }
 
+let tdFinished=false;
 function finish(){
+  if(tdFinished)return;
   if(!cart.length){alert('Seu carrinho está vazio.');return}
   const id='TD-'+Date.now().toString(36).toUpperCase()+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
   const registro={
@@ -213,6 +216,7 @@ function finish(){
     alert('Não foi possível salvar o pedido neste navegador. Verifique se o armazenamento está habilitado e tente novamente.');
     return;
   }
+  tdFinished=true;
   document.getElementById('pedidoCodigo').textContent='Número do pedido: '+id;
   document.getElementById('verPedido').href='pedido.html?pedido='+encodeURIComponent(id);
   document.querySelectorAll('.checkout-section').forEach(x=>x.classList.remove('active-section'));
