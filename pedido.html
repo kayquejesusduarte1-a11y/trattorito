@@ -239,6 +239,8 @@ function render(){
  products.forEach(p=>{
   const row=document.createElement('div');row.className='item-row';
   const name=document.createElement('span');name.textContent=String(Number(p.quantidade)||1)+'x '+String(p.nome||'Item');
+  const personalized=[p.adicionais,p.observacao].filter(Boolean).join(' · ');
+  if(personalized){const small=document.createElement('small');small.style.cssText='display:block;color:#75695d;margin-top:4px';small.textContent=personalized;name.append(small)}
   const price=document.createElement('strong');price.textContent=money(Number(p.preco)*Number(p.quantidade||1));
   row.append(name,price);items.appendChild(row);
  });
