@@ -1,0 +1,51 @@
+/* Trattoria D'Elite - contas demonstrativas: visual premium, responsivo */
+:root{--ac-vinho:#650006;--ac-vinho2:#390006;--ac-gold:#c69b54;--ac-creme:#f7ede0;--ac-ink:#34231d;--ac-muted:#765d4e}
+.account-page{background:radial-gradient(circle at 15% 15%,#fcefdc,#debe9b 70%);min-height:100vh;font-family:Montserrat,Arial,sans-serif;color:var(--ac-ink)}
+.account-page .site-header{border-bottom-color:var(--ac-gold)}
+.account-page .site-logo{font-family:Cinzel,Georgia,serif;font-size:clamp(13px,2vw,21px);letter-spacing:.07em}
+.account-page .account-nav{font-family:Montserrat,Arial,sans-serif;font-size:12px;font-weight:700;background:#fff4e71e;border:1px solid #d9ae7d;border-radius:20px;padding:9px 14px;color:#fff!important;text-decoration:none;display:inline-block}
+.account-main{padding:45px 18px 75px;max-width:1180px;margin:auto;min-height:calc(100vh - 180px);display:flex;align-items:center}
+.account-layout{display:grid;grid-template-columns:minmax(260px,.88fr) minmax(350px,1fr);background:#fffaf3;min-width:0;width:100%;border-radius:28px;overflow:hidden;box-shadow:0 22px 70px #4c180b33;border:1px solid #e6c7a4}
+.account-aside{padding:clamp(30px,5vw,67px);background:linear-gradient(148deg,#430009 4%,#700912 67%,#882c1d);color:#fff8ea;position:relative;display:flex;flex-direction:column;justify-content:center;isolation:isolate;overflow:hidden}
+.account-aside:after{content:"";position:absolute;inset:auto -80px -115px auto;width:290px;height:290px;border:1px solid #e5c08c4d;border-radius:50%;box-shadow:0 0 0 40px #bc924512,0 0 0 80px #bc924510;z-index:-1}
+.account-aside .account-mark{width:78px;height:78px;border:1px solid #e5c08c;border-radius:50%;display:grid;place-items:center;font:700 27px Cinzel,Georgia,serif;color:#ffdd9b;letter-spacing:-.06em;margin-bottom:30px}
+.account-kicker{font:700 11px Montserrat,Arial,sans-serif;letter-spacing:.22em;color:#dcb678;text-transform:uppercase}
+.account-aside h1{font:600 clamp(27px,3.5vw,43px)/1.19 Cinzel,Georgia,serif;margin:13px 0 16px;color:#fff6e9}
+.account-aside p{font-size:13px;line-height:1.85;color:#e9cec1;margin:0 0 22px}
+.account-aside .account-link{display:inline-flex;align-items:center;gap:9px;border:1px solid #ead1a4;border-radius:30px;padding:12px 18px;font-size:12px;color:#ffe6b8;font-weight:700;text-decoration:none;max-width:max-content}
+.account-aside .account-link:hover{background:#ffffff15}
+.account-aside .account-benefits{padding:0;margin:20px 0 0;list-style:none;display:grid;gap:13px;font-size:12px;color:#f3dfc9}
+.account-aside .account-benefits li:before{content:"✓";color:#e3b978;margin-right:9px;font-weight:700}
+.account-panel{padding:clamp(24px,4.3vw,56px);align-self:center;min-width:0;width:100%}
+.account-panel h2{font:700 clamp(24px,3vw,32px) Cinzel,Georgia,serif;line-height:1.22;color:var(--ac-vinho);margin:7px 0 10px}
+.account-panel .account-lead{font-size:12px;line-height:1.7;color:var(--ac-muted);margin:0 0 25px}
+.account-form{display:grid;gap:15px}
+.account-field{display:grid;gap:7px}
+.account-field label{font-size:12px;font-weight:700;color:#563d32}
+.account-field input{display:block;width:100%;height:46px;padding:12px 15px;border-radius:11px;border:1px solid #d5bfaa;background:#fff;color:#321f1c;font:500 13px Montserrat,Arial,sans-serif}
+.account-field input:focus{outline:2px solid #ac873d;outline-offset:2px;border-color:#ac873d}
+.account-field input[aria-invalid="true"]{border-color:#b12631}
+.account-password-row{position:relative;display:flex;align-items:stretch}
+.account-password-row input{padding-right:85px}
+.account-reveal{position:absolute;right:5px;top:5px;height:36px;padding:0 12px;border:0;background:#f4e5d3;border-radius:8px;color:var(--ac-vinho);font:700 11px Montserrat,Arial,sans-serif;cursor:pointer}
+.account-primary{width:100%;min-height:47px;border:0;background:linear-gradient(110deg,#650006,#8a1420);color:#fff;border-radius:12px;padding:12px 18px;font:700 12px Montserrat,Arial,sans-serif;letter-spacing:.07em;cursor:pointer;box-shadow:0 7px 18px #5b000627;transition:transform .15s}
+.account-primary:hover{transform:translateY(-1px)}
+.account-primary:disabled{opacity:.55;cursor:wait;transform:none}
+.account-switch{text-align:center;font:500 12px/1.7 Montserrat,Arial,sans-serif;margin-top:20px;color:var(--ac-muted)}
+.account-switch a{color:var(--ac-vinho);font-weight:700}
+.account-notice{background:#f9eddf;border-left:3px solid #bd9552;border-radius:8px;padding:12px 14px;font:500 11px/1.7 Montserrat,Arial,sans-serif;color:#765139;margin:10px 0 18px}
+.account-msg{font:600 12px/1.6 Montserrat,Arial,sans-serif;min-height:16px;margin:0}
+.account-msg.error{color:#af182d}
+.account-msg.success{color:#23663c}
+.account-shortcuts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0}
+.account-stat{background:#f8ecde;border:1px solid #e8d5bd;border-radius:13px;padding:16px;display:grid;gap:8px;font-size:11px;color:var(--ac-muted)}
+.account-stat strong{font:700 27px Cinzel,Georgia,serif;color:var(--ac-vinho)}
+.account-profile-head{display:flex;gap:16px;align-items:center;padding-bottom:19px;border-bottom:1px solid #e9d9c5;margin-bottom:20px}
+.account-avatar{display:grid;place-items:center;width:64px;height:64px;flex:none;border-radius:50%;background:var(--ac-vinho);color:#fff7e1;font:600 25px Cinzel,Georgia,serif}
+.account-profile-head strong{display:block;color:var(--ac-vinho);font-size:17px;margin-bottom:7px}
+.account-profile-head small{font-size:12px;color:var(--ac-muted);overflow-wrap:anywhere}
+.account-logout{margin:8px 0 0;background:#fff;border:1px solid #b98d77;color:var(--ac-vinho);border-radius:11px;padding:12px;width:100%;font:700 12px Montserrat,Arial,sans-serif;cursor:pointer}
+.account-safe-link{font:500 11px Montserrat,Arial,sans-serif;color:#85695e;text-align:center;display:block;margin-top:15px}
+@media(max-width:790px){.account-main{padding:20px 12px 45px}.account-layout{grid-template-columns:1fr;border-radius:20px}.account-aside{padding:28px}.account-aside .account-mark{width:55px;height:55px;font-size:19px;margin-bottom:16px}.account-aside h1{font-size:26px}.account-aside p{margin-bottom:10px}.account-benefits{display:none!important}.account-panel{padding:28px 20px}.account-page .site-header{padding:0 12px}.account-page .site-logo{font-size:12px}.account-page .site-back{font-size:11px}}
+@media(max-width:390px){.account-profile-head{flex-direction:column;align-items:flex-start}.account-stat{padding:11px}}
+@media(prefers-reduced-motion:reduce){.account-primary{transition:none}}
