@@ -1,0 +1,73 @@
+/* Recursos opcionais Trattoria D'Elite: preserva os estilos existentes */
+:root{--elite-vinho:#650006;--elite-bege:#f4e5ce;--elite-verde:#28452b;--elite-ouro:#ac873d}
+.elite-section{background:linear-gradient(145deg,#faf2e6,#e7d1b3);padding:55px 22px 62px;color:#38251c;font-family:Montserrat,Arial,sans-serif}
+.elite-container{max-width:1100px;margin:auto}
+.elite-section h2,.elite-main h1{font-family:Cinzel,Georgia,serif;font-weight:600;color:var(--elite-vinho)}
+.elite-section h2{text-align:center;font-size:clamp(22px,3vw,36px);margin:0 0 9px}
+.elite-muted{color:#735d4c;text-align:center;font-size:13px;line-height:1.6;margin:0 auto 26px;max-width:750px}
+.elite-feature-grid,.elite-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.elite-feature,.elite-product,.elite-panel{background:#fffaf2;border:1px solid #decab0;border-radius:18px;box-shadow:0 6px 17px #3e180a12;overflow:hidden}
+.elite-feature{padding:23px;text-align:center}
+.elite-feature .elite-icon{font-size:28px}
+.elite-feature h3,.elite-product h3{font-family:Cinzel,Georgia,serif;color:var(--elite-vinho);font-size:15px;margin:10px 0 9px}
+.elite-feature p,.elite-product p{font-size:12px;line-height:1.6;color:#604c3e}
+.elite-feature a,.elite-btn{display:inline-block;background:var(--elite-vinho);color:#fff!important;border:0;border-radius:22px;padding:10px 17px;text-decoration:none;font:600 12px Montserrat,Arial,sans-serif;cursor:pointer}
+.elite-feature a:hover,.elite-btn:hover{filter:brightness(1.15)}
+.elite-product img{width:100%;height:175px;object-fit:cover;display:block}
+.elite-product-body{padding:18px}
+.elite-product-body h3{margin-top:0}
+.elite-product .elite-price{font-weight:700;font-size:15px;color:var(--elite-vinho)}
+.elite-product .elite-old-price{text-decoration:line-through;font-size:12px;color:#897465;margin-left:9px}
+.elite-product-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+.elite-secondary{display:inline-block;color:var(--elite-vinho)!important;background:#f3e7d6;border:1px solid #d4bca2}
+.elite-page{background:#f5eadb;color:#37251b;min-height:100vh;font-family:Montserrat,Arial,sans-serif;margin:0}
+.elite-top{background:var(--elite-vinho);border-bottom:3px solid var(--elite-ouro);padding:19px clamp(15px,4vw,55px);display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.elite-brand{font:700 19px Cinzel,Georgia,serif;color:#f4e5ce!important;text-decoration:none}
+.elite-top nav{display:flex;gap:13px;flex-wrap:wrap}
+.elite-top nav a{color:#f4e5ce!important;font-size:11px;text-decoration:none}
+.elite-main{max-width:1100px;margin:0 auto;padding:38px 18px 70px;min-height:65vh}
+.elite-main h1{font-size:clamp(22px,3vw,35px);margin:0 0 10px}
+.elite-main .elite-lead{font-size:13px;color:#6b5745;line-height:1.7;margin:0 0 25px}
+.elite-panel{padding:20px;margin-bottom:16px}
+.elite-panel h2{font:600 17px Cinzel,Georgia,serif;color:var(--elite-vinho);margin:0 0 16px}
+.elite-panel label{display:block;font-size:12px;font-weight:700;margin:10px 0 5px}
+.elite-panel input,.elite-panel select,.elite-panel textarea,.elite-dialog input,.elite-dialog select,.elite-dialog textarea{display:block;width:100%;border:1px solid #d7c4af;border-radius:10px;background:#fff;padding:11px 12px;font:12px Montserrat,Arial,sans-serif;color:#36251b;box-sizing:border-box}
+.elite-panel textarea,.elite-dialog textarea{resize:vertical;min-height:78px}
+.elite-panel button{margin-top:11px}
+.elite-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.elite-mini-card{background:#fffaf2;border:1px solid #dfcdb7;border-radius:16px;padding:14px;display:flex;gap:13px;align-items:center;box-shadow:0 3px 12px #3a160b0c}
+.elite-mini-card img{width:95px;height:95px;object-fit:cover;border-radius:14px}
+.elite-mini-card strong{font-size:13px;color:var(--elite-vinho);display:block}
+.elite-mini-card p{font-size:11px;color:#6b5745;line-height:1.6}
+.elite-mini-card .elite-btn{margin-right:6px;margin-bottom:5px;padding:8px 11px;font-size:10px}
+.elite-small{font-size:11px;color:#695849;line-height:1.6}
+.elite-review{margin-top:12px;padding:15px 17px;border:1px solid #e2d0b8;border-radius:13px;background:#fff}
+.elite-review strong{color:var(--elite-vinho);font-size:12px}
+.elite-review p{font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.6}
+.elite-stars{color:#a67928;font-size:20px;letter-spacing:2px}
+.elite-tools{display:flex;gap:6px;margin-top:7px;flex-wrap:wrap}
+.menu-card .elite-small-btn{background:#f6e9df;border:1px solid #d7bea5;border-radius:10px;color:#650006;font:600 10px Montserrat,Arial,sans-serif;cursor:pointer;padding:6px 8px}
+.menu-card .elite-small-btn[aria-pressed="true"]{background:#650006;color:#fff}
+.menu-card .elite-small-btn:hover{filter:brightness(.95)}
+.elite-links{max-width:1050px;margin:0 auto;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:8px 18px 14px}
+.elite-links a{background:#fff3e5;border:1px solid #d6b79d;color:#650006;text-decoration:none;border-radius:999px;padding:9px 13px;font:600 11px Montserrat,Arial,sans-serif}
+.elite-links a:hover{background:#650006;color:white}
+.elite-dialog{border:0;border-radius:18px;box-shadow:0 15px 60px #0007;width:min(450px,calc(100vw - 32px));padding:0;background:#fff8ee;color:#37261c;font-family:Montserrat,Arial,sans-serif}
+.elite-dialog::backdrop{background:#0009}
+.elite-dialog-inner{padding:26px}
+.elite-dialog h2{font:600 20px Cinzel,Georgia,serif;color:#650006;margin:0 0 8px}
+.elite-dialog p{font-size:12px;color:#715b49;line-height:1.6}
+.elite-dialog label{display:block;font-weight:600;font-size:12px;margin:14px 0 5px}
+.elite-dialog .elite-options{display:flex;gap:8px;margin:17px 0}
+.elite-dialog .elite-options button{flex:1}
+.elite-dialog .elite-option{display:flex;gap:9px;align-items:center;font-size:12px;margin:12px 0}
+.elite-dialog .elite-option input{width:auto}
+.elite-footer{background:#650006;color:#f4e5ce;text-align:center;padding:19px 12px;font-size:11px}
+.elite-admin-order{border:1px solid #e2cfb7;border-radius:12px;background:#fff;padding:15px;margin-bottom:12px}
+.elite-admin-order h3{font-size:13px;color:#650006;overflow-wrap:anywhere}
+.elite-admin-order p{font-size:11px;color:#665646;line-height:1.5}
+.elite-admin-order select{margin-top:10px}
+.elite-notice{background:#f7ead5;border-left:4px solid #ac873d;padding:14px;border-radius:10px;font-size:12px;line-height:1.65;margin:15px 0 24px}
+.elite-badge{display:inline-block;background:#e8dfc9;color:#650006;border-radius:99px;font-size:10px;padding:6px 10px}
+@media(max-width:780px){.elite-feature-grid,.elite-card-grid{grid-template-columns:1fr 1fr}.elite-cards{grid-template-columns:1fr}.elite-top{justify-content:center}.elite-top nav{justify-content:center}}
+@media(max-width:530px){.elite-feature-grid,.elite-card-grid{grid-template-columns:1fr}.elite-feature{padding:20px}.elite-product img{height:190px}.elite-mini-card img{width:80px;height:80px}.elite-section{padding:40px 13px}.elite-main{padding:27px 12px 50px}.elite-links{padding:8px 12px 16px}}
