@@ -123,6 +123,7 @@ if(!cart.length){alert('Seu carrinho está vazio.');location.href='pratos.html';
 let paymentMethod='Crédito';
 
 function money(v){return Number(v).toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+function escapeText(v){return String(v==null?'':v).replace(/[&<>"\']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"\'":'&#39;'}[c]))}
 function total(){return cart.reduce((s,x)=>s+Number(x.preco)*Number(x.quantidade||1),0)}
 
 function updateInstallments(){
@@ -181,7 +182,7 @@ function go3(){
   const address=[end.value+', '+num.value,comp.value,bairro.value,city.value+' - '+estado.value,'CEP '+cep.value].filter(Boolean).join('<br>');
   addressReview.innerHTML='<div style="font-size:11px;line-height:1.55">'+address+'</div>';
   paymentReview.innerHTML='<div style="font-size:11px">'+paymentMethod+(paymentMethod==='Crédito'?' · '+installment.options[installment.selectedIndex].text:'')+'</div>';
-  itemsReview.innerHTML=cart.map(x=>'<div class="review-line"><span>'+Number(x.quantidade||1)+'x '+x.nome+'</span><strong>'+money(Number(x.preco)*Number(x.quantidade||1))+'</strong></div>').join('');
+  itemsReview.innerHTML=cart.map(x=>'<div class="review-line"><span>'+Number(x.quantidade||1)+'x '+escapeText(x.nome)+(x.adicionais?'<small style="display:block;color:#786452">'+escapeText(x.adicionais)+'</small>':'')+(x.observacao?'<small style="display:block;color:#786452">Obs.: '+escapeText(x.observacao)+'</small>':'')+'</span><strong>'+money(Number(x.preco)*Number(x.quantidade||1))+'</strong></div>').join('');
   totalReview.textContent='Total: '+money(total());
   if(saveAddress.checked){
     localStorage.setItem('trattoritoEndereco',JSON.stringify({cep:cep.value,end:end.value,num:num.value,comp:comp.value,bairro:bairro.value,city:city.value,estado:estado.value}));
@@ -196,7 +197,7 @@ function finish(){
     id:id,
     createdAt:new Date().toISOString(),
     status:'recebido',
-    items:cart.map(x=>({nome:String(x.nome||'Produto'),quantidade:Number(x.quantidade||1),preco:Number(x.preco)||0})),
+    items:cart.map(x=>({nome:String(x.nome||'Produto'),quantidade:Number(x.quantidade||1),preco:Number(x.preco)||0,observacao:String(x.observacao||''),adicionais:String(x.adicionais||'')})),
     total:Number(total().toFixed(2)),
     paymentMethod:paymentMethod
   };
