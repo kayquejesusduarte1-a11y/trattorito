@@ -1,1 +1,94 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css?v=20261008"><link rel="stylesheet" href="conta-demo.css?v=1"><link rel="stylesheet" href="melhorias-1a8.css?v=1"><title>Meu perfil | Trattoria D'Elite</title></head><body class="account-page"><header class="site-header"><a class="site-back" href="index.html">← Início</a><a class="site-logo" href="index.html">TRATTORIA D'ELITE</a><a class="account-nav" href="index.html">Voltar à loja →</a></header><main class="account-main"><div class="account-layout" id="accountProfile"><aside class="account-aside"><div class="account-mark">TD</div><span class="account-kicker">Área do cliente</span><h1>Seu cantinho na Trattoria.</h1><p>Aqui você pode conferir e atualizar seu perfil demonstrativo neste navegador.</p><a class="account-link" href="pratos.html">Explorar pratos →</a><ul class="account-benefits"><li>Favoritos e pedidos demonstrativos do navegador</li><li>Você pode sair a qualquer momento</li></ul></aside><section class="account-panel"><span class="account-kicker">Meu perfil</span><h2>Bem-vindo!</h2><div class="account-profile-head"><span id="perfilAvatar" class="account-avatar">T</span><div><strong id="perfilNome"></strong><small id="perfilEmail"></small><small style="display:block;margin-top:6px">Perfil criado em <span id="perfilInicio"></span></small></div></div><div class="account-shortcuts"><div class="account-stat"><strong id="perfilFavoritos">0</strong><span>favoritos neste navegador</span></div><div class="account-stat"><strong id="perfilPedidos">0</strong><span>pedidos demonstrativos neste navegador</span></div></div><p class="account-notice">Os dados deste perfil ficam somente neste navegador. O status e os valores de pedidos reais da API local não são alterados aqui.</p><form class="account-form" id="accountProfileForm"><div class="account-field"><label for="nome">Editar nome</label><input id="nome" name="nome" minlength="2" maxlength="80" required></div><button type="submit" class="account-primary">SALVAR ALTERAÇÃO</button><p id="accountMessage" class="account-msg" role="status" aria-live="polite"></p></form><button type="button" id="logout" class="account-logout">Sair do perfil</button><button type="button" id="removeProfile" class="account-logout">Excluir perfil demonstrativo</button><a class="account-safe-link" href="pedido.html">Ver acompanhamento de pedidos →</a></section></div></main><footer class="site-footer"><div class="footer-title">Trattoria D'Elite</div><div class="footer-bottom">Projeto escolar · perfis demonstrativos deste navegador</div></footer><div style="text-align:center;background:#f6ead8;padding:15px;font:600 12px Montserrat,Arial,sans-serif"><a style="color:#650006" href="recursos48.html">Conheça mais novidades da Trattoria →</a></div><script defer src="melhorias-1a8.js?v=1"></script><script defer src="conta-demo.js?v=1"></script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Meu perfil | Trattoria D'Elite</title>
+<link rel="stylesheet" href="style.css?v=20261008">
+<link rel="stylesheet" href="conta-demo.css?v=1">
+<link rel="stylesheet" href="perfil-completo.css?v=1">
+</head>
+<body class="account-page">
+<header class="site-header">
+<a class="site-back" href="index.html">← Início</a>
+<a class="site-logo" href="index.html">TRATTORIA D'ELITE</a>
+<a class="account-nav" href="pratos.html">Voltar ao cardápio →</a>
+</header>
+<main class="pf-wrap">
+<div class="pf-layout">
+<aside class="pf-side">
+<span class="pf-side-label">ÁREA DO CLIENTE</span>
+<h1>Minha conta D'Elite</h1>
+<p>Seus dados, suas compras e as preferências do seu perfil demonstrativo.</p>
+<nav class="pf-tabs" role="tablist" aria-label="Áreas do perfil">
+<button type="button" role="tab" id="pf-tab-dados" aria-controls="pf-dados" data-pf-tab="dados" aria-selected="true">👤 Dados pessoais</button>
+<button type="button" role="tab" id="pf-tab-compras" aria-controls="pf-compras" data-pf-tab="compras" aria-selected="false">🛍️ Minhas compras</button>
+<button type="button" role="tab" id="pf-tab-seguranca" aria-controls="pf-seguranca" data-pf-tab="seguranca" aria-selected="false">🔒 Segurança e acesso</button>
+<button type="button" role="tab" id="pf-tab-preferencias" aria-controls="pf-preferencias" data-pf-tab="preferencias" aria-selected="false">⚙️ Preferências</button>
+</nav>
+<a href="index.html">← Voltar à loja</a>
+</aside>
+<div class="pf-main">
+<span class="pf-kicker">TRATTORIA D'ELITE · MEU PERFIL</span>
+<h2>Bem-vindo à sua conta!</h2>
+<div class="pf-identity">
+<div id="pf-avatar" class="pf-avatar" aria-hidden="true">T</div>
+<div><strong id="pf-name"></strong><small id="pf-email"></small></div>
+</div>
+<div class="pf-stats">
+<div class="pf-stat"><strong id="pf-count">0</strong><small>Compras demonstrativas</small></div>
+<div class="pf-stat"><strong id="pf-favorites">0</strong><small>Favoritos salvos</small></div>
+<div class="pf-stat"><strong id="pf-total">R$ 0,00</strong><small>Total de testes</small></div>
+</div>
+<p class="pf-notice"><strong>Conta demonstrativa:</strong> informações guardadas só neste navegador. Este painel não consulta contas nem compras no SQL Server. Não use senhas reais ou dados pessoais sensíveis.</p>
+<p id="pf-message" class="pf-status" role="status" aria-live="polite"></p>
+<section id="pf-dados" class="pf-panel" role="tabpanel" aria-labelledby="pf-tab-dados">
+<h3>Dados pessoais</h3>
+<p class="pf-subtitle">Consulte suas informações básicas de cadastro e atualize seu nome.</p>
+<div class="pf-row"><span>E-mail cadastrado</span><strong id="pf-email-data"></strong></div>
+<div class="pf-row"><span>Data de cadastro</span><strong id="pf-created"></strong></div>
+<form id="pf-name-form" class="pf-form">
+<label>Nome do perfil <input id="pf-name-input" name="name" type="text" minlength="2" maxlength="80" autocomplete="name" required></label>
+<button type="submit">SALVAR MEU NOME</button>
+</form>
+</section>
+<section id="pf-compras" class="pf-panel" role="tabpanel" aria-labelledby="pf-tab-compras" hidden>
+<h3>Minhas compras</h3>
+<p class="pf-subtitle">Esta lista reúne novos pedidos demonstrativos feitos enquanto você estava conectado a este perfil. Pedidos antigos, sem vínculo com uma conta, continuam disponíveis por número na página de acompanhamento.</p>
+<div id="pf-orders" aria-live="polite"></div>
+<div class="pf-link-grid"><a href="pratos.html">🍝 Fazer pedido de teste</a><a href="pedido.html">📦 Consultar pedido antigo</a></div>
+</section>
+<section id="pf-seguranca" class="pf-panel" role="tabpanel" aria-labelledby="pf-tab-seguranca" hidden>
+<h3>Segurança e acesso</h3>
+<p class="pf-subtitle">Por segurança, o acesso que você criou nunca é exibido. Para alterá-lo, digite o acesso atual e um novo código de teste.</p>
+<div class="pf-row"><span>Última alteração de acesso</span><strong id="pf-access-changed">Não informado</strong></div>
+<div class="pf-row"><span>Tipo de segurança</span><strong>Demonstração local, sem autenticação de servidor</strong></div>
+<form id="pf-password-form" class="pf-form">
+<label>Acesso atual <input id="pf-old" type="password" autocomplete="off" required></label>
+<label>Novo acesso (8 a 64 caracteres) <input id="pf-new" type="password" autocomplete="new-password" minlength="8" maxlength="64" required></label>
+<label>Confirme o novo acesso <input id="pf-new-confirm" type="password" autocomplete="new-password" minlength="8" maxlength="64" required></label>
+<button id="pf-eye" class="pf-eye" type="button">Mostrar o que digitei</button>
+<button type="submit">ALTERAR MEU ACESSO</button>
+</form>
+<div class="pf-danger">
+<h4>Sair ou excluir perfil</h4>
+<p>Você pode sair sem perder o cadastro ou excluir apenas este perfil de teste do navegador. A exclusão exige o acesso atual.</p>
+<button id="pf-logout" type="button" style="margin-bottom:15px">Sair da conta</button>
+<form id="pf-delete-form" class="pf-form" onsubmit="return false">
+<label>Confirme o acesso para excluir <input id="pf-delete-password" type="password" autocomplete="off" placeholder="Acesso atual"></label>
+<button id="pf-delete" class="pf-button alt" type="button">Excluir perfil de teste</button>
+</form>
+</div>
+</section>
+<section id="pf-preferencias" class="pf-panel" role="tabpanel" aria-labelledby="pf-tab-preferencias" hidden>
+<h3>Preferências</h3>
+<p class="pf-subtitle">Personalize a visualização do seu perfil neste navegador.</p>
+<label class="pf-toggle"><input id="pf-large" type="checkbox"> Usar letras maiores no perfil</label>
+<div class="pf-link-grid"><a href="favoritos.html">♡ Meus favoritos</a><a href="recursos48.html">✨ Novidades</a></div>
+</section>
+</div>
+</div>
+</main>
+<footer class="site-footer"><div class="footer-title">Trattoria D'Elite</div><div class="footer-bottom">Projeto escolar demonstrativo · dados locais</div></footer>
+<script defer src="perfil-completo.js?v=1"></script>
+</body></html>
