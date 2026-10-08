@@ -111,7 +111,7 @@ body.checkout-page{margin:0;min-height:100vh;background:linear-gradient(180deg,#
     </section>
 
     <section id="done" class="checkout-section">
-      <div class="finished"><div class="check">✓</div><h1>Pedido Finalizado!</h1><p>Seu pedido demonstrativo foi concluído com sucesso.</p><a class="primary-btn" href="index.html" style="display:grid;place-items:center;text-decoration:none;margin-top:20px">Voltar ao início</a></div>
+      <div class="finished"><div class="check">✓</div><h1>Pedido Registrado!</h1><p>Seu pedido demonstrativo foi salvo neste navegador.</p><p id="pedidoCodigo" style="font-weight:700;color:#650006;font-size:14px"></p><a id="verPedido" class="primary-btn" href="pedido.html" style="display:grid;place-items:center;text-decoration:none;margin-top:20px">Acompanhar pedido →</a><a class="secondary-btn" href="index.html" style="display:grid;place-items:center;text-decoration:none">Voltar ao início</a></div>
     </section>
   </div>
   <div class="checkout-art"></div>
@@ -190,7 +190,29 @@ function go3(){
 }
 
 function finish(){
-  localStorage.removeItem('carrinhoCantina');
+  if(!cart.length){alert('Seu carrinho está vazio.');return}
+  const id='TD-'+Date.now().toString(36).toUpperCase()+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
+  const registro={
+    id:id,
+    createdAt:new Date().toISOString(),
+    status:'recebido',
+    items:cart.map(x=>({nome:String(x.nome||'Produto'),quantidade:Number(x.quantidade||1),preco:Number(x.preco)||0})),
+    total:Number(total().toFixed(2)),
+    paymentMethod:paymentMethod
+  };
+  try{
+    const antigo=JSON.parse(localStorage.getItem('trattoritoPedidos')||'[]');
+    const historico=Array.isArray(antigo)?antigo:[];
+    historico.unshift(registro);
+    localStorage.setItem('trattoritoPedidos',JSON.stringify(historico.slice(0,10)));
+    localStorage.setItem('trattoritoUltimoPedido',id);
+    localStorage.removeItem('carrinhoCantina');
+  }catch(e){
+    alert('Não foi possível salvar o pedido neste navegador. Verifique se o armazenamento está habilitado e tente novamente.');
+    return;
+  }
+  document.getElementById('pedidoCodigo').textContent='Número do pedido: '+id;
+  document.getElementById('verPedido').href='pedido.html?pedido='+encodeURIComponent(id);
   document.querySelectorAll('.checkout-section').forEach(x=>x.classList.remove('active-section'));
   document.getElementById('done').classList.add('active-section');
   document.querySelectorAll('.progress-step').forEach(x=>{x.classList.remove('active');x.classList.add('done')});
