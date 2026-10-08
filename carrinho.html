@@ -1,1 +1,45 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Carrinho | Trattorito D’elite</title><link rel="stylesheet" href="style.css?v=20261006final"></head><body><header class="site-header"><a class="site-back" href="pratos.html">‹ Pratos</a><a class="site-logo" href="index.html">Carrinho</a><a class="site-cart" href="carrinho.html">🛒<span class="cart-badge" id="cart-count">0</span></a></header><main class="cart-wrap"><div class="cart-card"><h1>Seu Carrinho</h1><div id="cart"></div><div class="cart-actions"><a class="btn back-button" href="pratos.html">Continuar comprando</a><a id="checkout" class="btn btn-buy" href="pagamento.html">Finalizar pedido</a></div></div></main><footer class="site-footer"><div class="footer-title">Trattorito D’elite</div><div class="footer-bottom">© 2026 Trattorito D’elite · Todos os direitos reservados.</div></footer><script>const c=JSON.parse(localStorage.getItem('carrinhoCantina'))||[];const box=document.getElementById('cart');const badge=document.getElementById('cart-count');function money(v){return Number(v).toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}function render(){badge.textContent=c.reduce((s,i)=>s+Number(i.quantidade||0),0);if(!c.length){box.innerHTML='<p>Seu carrinho está vazio.</p>';document.getElementById('checkout').style.display='none';return}let t=0;box.innerHTML='<table class="cart-table"><tr><th>Item</th><th>Qtd.</th><th>Subtotal</th><th></th></tr>'+c.map((x,i)=>{t+=Number(x.preco)*Number(x.quantidade);return '<tr><td><img class="cart-img" src="'+x.imagem+'" alt=""> '+x.nome+'</td><td>'+x.quantidade+'</td><td>'+money(x.preco*x.quantidade)+'</td><td><button class="btn btn-buy" onclick="removeItem('+i+')">Remover</button></td></tr>'}).join('')+'</table><p class="total">Total: '+money(t)+'</p>'}function removeItem(i){c.splice(i,1);localStorage.setItem('carrinhoCantina',JSON.stringify(c));render()}render();</script></body></html>
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Carrinho | Trattorito D’elite</title><link rel="stylesheet" href="style.css?v=20261006final"></head><body><header class="site-header"><a class="site-back" href="pratos.html">‹ Pratos</a><a class="site-logo" href="index.html">Carrinho</a><a class="site-cart" href="carrinho.html">🛒<span class="cart-badge" id="cart-count">0</span></a></header><main class="cart-wrap"><div class="cart-card"><h1>Seu Carrinho</h1><div id="cart"></div><div class="cart-actions"><a class="btn back-button" href="pratos.html">Continuar comprando</a><a id="checkout" class="btn btn-buy" href="pagamento.html">Finalizar pedido</a></div></div></main><footer class="site-footer"><div class="footer-title">Trattorito D’elite</div><div class="footer-bottom">© 2026 Trattorito D’elite · Todos os direitos reservados.</div></footer><script>
+const KEY='carrinhoCantina';
+let c;
+try{const saved=JSON.parse(localStorage.getItem(KEY)||'[]');c=Array.isArray(saved)?saved:[]}catch(e){c=[]}
+const box=document.getElementById('cart');
+const badge=document.getElementById('cart-count');
+function money(v){return Number(v||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+function node(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e}
+function render(){
+ box.replaceChildren();
+ const quantity=c.reduce((s,i)=>s+Number(i.quantidade||0),0);
+ badge.textContent=quantity;
+ const checkout=document.getElementById('checkout');
+ if(!c.length){box.append(node('p','','Seu carrinho está vazio.'));checkout.style.display='none';return}
+ checkout.style.display='';
+ const table=node('table','cart-table');
+ const heading=node('tr');
+ ['Item','Qtd.','Subtotal',''].forEach(t=>heading.append(node('th','',t)));
+ table.append(heading);
+ let total=0;
+ c.forEach((item,i)=>{
+  const qtd=Math.max(1,Number(item.quantidade)||1);
+  const value=Number(item.preco||0)*qtd;total+=value;
+  const row=node('tr');
+  const nameCell=node('td');
+  const photo=node('img','cart-img');photo.alt='';photo.src=String(item.imagem||'');
+  nameCell.append(photo,document.createTextNode(' '+String(item.nome||'Item')));
+  const details=[item.adicionais,item.observacao].filter(Boolean).join(' · ');
+  if(details){const small=node('div','',details);small.style.cssText='font-size:10px;color:#75695d;line-height:1.5;margin-top:5px';nameCell.append(small)}
+  const qtyCell=node('td','',String(qtd));
+  const price=node('td','',money(value));
+  const actions=node('td');
+  const remove=node('button','btn btn-buy','Remover');remove.type='button';remove.addEventListener('click',()=>removeItem(i));actions.append(remove);
+  row.append(nameCell,qtyCell,price,actions);
+  table.append(row);
+ });
+ box.append(table,node('p','total','Total: '+money(total)));
+}
+function removeItem(i){
+ c.splice(i,1);
+ try{localStorage.setItem(KEY,JSON.stringify(c))}catch(e){alert('Não foi possível salvar o carrinho neste navegador.')}
+ render();
+}
+render();
+</script></body></html>
