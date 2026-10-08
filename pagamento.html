@@ -199,6 +199,14 @@ function finish(){
   const id='TD-'+Date.now().toString(36).toUpperCase()+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
   const registro={
     id:id,
+    // Compra DE TESTE vinculada somente ao perfil demonstrativo deste navegador.
+    ownerProfileId:(()=>{
+      try{
+        const accountId=localStorage.getItem('trattoriaSessaoDemoV2');
+        const perfis=JSON.parse(localStorage.getItem('trattoriaPerfisDemoV2')||'[]');
+        return accountId&&Array.isArray(perfis)&&perfis.some(x=>x.id===accountId)?accountId:null;
+      }catch{return null}
+    })(),
     createdAt:new Date().toISOString(),
     status:'recebido',
     items:cart.map(x=>({nome:String(x.nome||'Produto'),quantidade:Number(x.quantidade||1),preco:Number(x.preco)||0,observacao:String(x.observacao||''),adicionais:String(x.adicionais||'')})),
