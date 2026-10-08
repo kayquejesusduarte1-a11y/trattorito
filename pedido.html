@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Acompanhar pedido | Trattoria D'Elite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--vinho:#650006;--creme:#f4e5ce;--verde:#28452b;--ouro:#ac873d;--texto:#38251c;--cinza:#776557}
+*{box-sizing:border-box}
+body{margin:0;background:#f8f0e4;color:var(--texto);font-family:Montserrat,Arial,sans-serif}
+a{text-decoration:none}
+.topbar{min-height:76px;background:var(--vinho);border-bottom:3px solid var(--ouro);display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px clamp(18px,4vw,60px)}
+.brand{font-family:Cinzel,Georgia,serif;font-weight:700;color:var(--creme);font-size:clamp(14px,1.5vw,19px);white-space:nowrap}.brand span{color:#eecb81}
+.nav{display:flex;align-items:center;gap:clamp(10px,2.5vw,38px);flex-wrap:wrap}
+.nav a{color:var(--creme);font-size:12px;font-weight:600;white-space:nowrap}.nav .current{color:#eecb81}
+.banner{background:radial-gradient(ellipse at 80% 0,#882025 0,transparent 53%),linear-gradient(115deg,#580005,#710c10);color:#fff;text-align:center;padding:47px 18px 55px}
+.banner small{color:#e6c38b;letter-spacing:.22em;text-transform:uppercase}
+.banner h1{font-family:Cinzel,Georgia,serif;font-size:clamp(23px,3.2vw,39px);line-height:1.3;font-weight:600;margin:13px 0}
+.banner p{font-size:13px;line-height:1.65;margin:0;color:#fae9d9}
+.flag{height:3px;width:94px;margin:19px auto 0;background:linear-gradient(90deg,#2b8e50 0 33%,#fff 33% 66%,#bc3a37 66%)}
+.wrap{max-width:1100px;width:calc(100% - 36px);margin:-28px auto 56px;position:relative}
+.card{border-radius:22px;background:#fffaf2;border:1px solid #e8d7c3;box-shadow:0 12px 32px #421a0c12}
+.lookup{padding:22px 26px;margin-bottom:20px}.lookup label{display:block;font-weight:700;font-size:12px;color:var(--vinho);margin-bottom:10px}
+.lookup-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lookup input,.lookup select{height:43px;border:1px solid #d6c4ad;background:#fff;border-radius:10px;padding:0 13px;font-family:inherit;color:#37251c;font-size:12px;min-width:0}
+.lookup input{flex:1;min-width:160px}.lookup select{min-width:168px;max-width:100%}
+button,.button{cursor:pointer;border:0;background:var(--vinho);color:#fff;border-radius:10px;padding:13px 19px;font-family:Montserrat,Arial,sans-serif;font-size:12px;font-weight:700;display:inline-flex;justify-content:center;align-items:center}
+button:hover,.button:hover{filter:brightness(1.13)}button:disabled{opacity:.5;cursor:not-allowed}
+.help{color:var(--cinza);line-height:1.6;font-size:11px;margin:10px 0 0}.message{font-size:12px;margin:12px 0 0;color:#9c2629}
+.empty{padding:48px 20px;text-align:center}.empty .symbol{font-size:40px}
+.empty h2{font-family:Cinzel,Georgia,serif;color:var(--vinho);font-size:20px}
+.empty p{max-width:550px;margin:0 auto 24px;line-height:1.7;color:var(--cinza);font-size:13px}
+.content{display:none}
+.order-meta{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+.order-meta h2{font-family:Cinzel,Georgia,serif;font-weight:600;font-size:18px;color:var(--vinho);margin:0 0 6px}
+.order-meta p{color:var(--cinza);font-size:12px;margin:0}
+.tag{background:#e9eee5;color:var(--verde);font-size:11px;border:1px solid #afc1a8;border-radius:999px;padding:9px 14px;font-weight:700}
+.columns{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}
+.timeline-card,.details-card{padding:27px}
+.section-title{font-family:Cinzel,Georgia,serif;font-size:16px;font-weight:600;color:var(--vinho);margin:0 0 22px}
+.timeline{list-style:none;margin:0;padding:0}
+.timeline li{position:relative;display:grid;grid-template-columns:47px 1fr;gap:13px;padding:0 0 31px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li:not(:last-child):before{content:"";position:absolute;left:20px;top:43px;bottom:2px;width:2px;background:#dfd2c2}
+.timeline .dot{width:42px;height:42px;border-radius:50%;background:#f1e7da;border:2px solid #e2d4c0;color:#937e69;display:grid;place-items:center;font-size:19px;position:relative;z-index:1}
+.timeline li.passed:not(:last-child):before{background:#47794a}
+.timeline li.passed .dot{background:var(--verde);border-color:var(--verde);color:#fff}
+.timeline li.current .dot{background:var(--vinho);border-color:var(--vinho);color:#fff;box-shadow:0 0 0 4px #65000618}
+.step-copy h3{font-size:14px;margin:2px 0 5px}.step-copy p{font-size:11px;line-height:1.65;margin:0;color:var(--cinza)}
+.step-status{display:inline-block;margin-top:7px;font-size:10px;font-weight:700;color:var(--vinho)}
+.item-row{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #e8d9c8;font-size:12px;line-height:1.5}
+.item-row strong{white-space:nowrap}
+.summary-total{display:flex;justify-content:space-between;gap:12px;margin-top:19px;padding-top:13px;border-top:2px solid #d8b997;font-size:15px;color:var(--vinho);font-weight:700}
+.section-subtitle{margin:29px 0 10px;font-size:12px;color:var(--vinho);font-weight:700}
+.local-note{margin:20px 0 0;padding:14px;border-radius:12px;background:#f1e7d9;border-left:3px solid var(--ouro);color:#5b4535;font-size:11px;line-height:1.8}
+.demo-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.demo-actions button{background:var(--verde);font-size:11px;padding:11px 14px}.demo-actions .outline{background:transparent;border:1px solid var(--vinho);color:var(--vinho)}
+.footer{background:var(--vinho);color:var(--creme);text-align:center;padding:20px 12px;font-size:10px;letter-spacing:.08em}
+@media(max-width:760px){.topbar{flex-direction:column;padding:15px 12px}.nav{justify-content:center;gap:14px}.nav a{font-size:10px}.banner{padding:36px 18px 48px}.wrap{width:calc(100% - 22px);margin-top:-23px}.lookup{padding:18px}.lookup-row input{flex-basis:100%}.lookup-row button,.lookup-row select{flex:1}.columns{grid-template-columns:1fr;gap:14px}.timeline-card,.details-card{padding:20px}.order-meta{padding:0 4px}.card{border-radius:17px}}
+@media(max-width:380px){.nav{gap:9px}.nav a{font-size:9px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+<a class="brand" href="index.html">TRATTORIA <span>D'ELITE</span></a>
+<nav class="nav" aria-label="Navegação principal">
+<a href="index.html">Início</a><a href="sobre.html">Sobre nós</a><a href="pratos.html">Cardápio</a><a href="cadastro.html">Cadastre-se</a><a class="current" href="pedido.html" aria-current="page">Acompanhar pedido</a>
+</nav>
+</header>
+<section class="banner">
+<small>Trattoria D'Elite Delivery</small><h1>Acompanhe seu pedido</h1>
+<p>Consulte seus itens, o total e as etapas da entrega em um só lugar.</p>
+<div class="flag"></div>
+</section>
+<main class="wrap">
+<section class="card lookup" aria-label="Buscar pedido">
+<label for="orderSearch">Número do pedido</label>
+<div class="lookup-row">
+<input id="orderSearch" placeholder="Ex.: TD-..." maxlength="40" autocomplete="off" spellcheck="false">
+<button id="findBtn" type="button">Consultar</button>
+<select id="historySelect" aria-label="Pedidos salvos neste navegador"><option value="">Pedidos neste aparelho</option></select>
+</div>
+<p class="help">Seus pedidos de demonstração ficam salvos somente neste navegador. Não é necessário entrar na conta.</p>
+<p class="message" id="searchMessage" role="status" aria-live="polite"></p>
+</section>
+<section class="card empty" id="empty">
+<div class="symbol" aria-hidden="true">🍝</div><h2>Nenhum pedido selecionado</h2>
+<p>Finalize um pedido no carrinho para acompanhar suas etapas. Pedidos feitos em outro aparelho não aparecem nesta versão de demonstração.</p>
+<a href="pratos.html" class="button">Escolher pratos</a>
+</section>
+<div class="content" id="content">
+<div class="order-meta"><div><h2 id="orderNumber"></h2><p id="orderDate"></p></div><span class="tag" id="orderStatus"></span></div>
+<div class="columns">
+<section class="card timeline-card">
+<h2 class="section-title">Andamento do pedido</h2><ol class="timeline" id="timeline"></ol>
+<div class="local-note"><strong>Modo demonstração.</strong> Esta página não está conectada à cozinha ou ao entregador. As etapas são simuladas neste navegador e não representam atualizações reais.
+<div class="demo-actions"><button type="button" id="advanceBtn">Simular próxima etapa</button><button type="button" id="resetBtn" class="outline">Reiniciar simulação</button></div>
+</div>
+</section>
+<section class="card details-card">
+<h2 class="section-title">Resumo do pedido</h2><div id="itemsList"></div>
+<div class="summary-total"><span>Total</span><span id="totalValue"></span></div>
+<div class="section-subtitle">Forma de pagamento</div><p id="paymentLabel" style="font-size:12px;line-height:1.5;margin:0;color:#776557"></p>
+<div class="section-subtitle">Precisa de mais alguma coisa?</div><a class="button" href="pratos.html">Voltar ao cardápio</a>
+</section>
+</div>
+</div>
+</main>
+<footer class="footer">TRATTORIA D'ELITE · TRADIÇÃO E SABOR ITALIANO</footer>
+<script>
+(function(){
+'use strict';
+const KEY='trattoritoPedidos',LAST='trattoritoUltimoPedido';
+const steps=[
+ {code:'recebido',name:'Pedido recebido',desc:'Seu pedido foi registrado na demonstração.',symbol:'✓'},
+ {code:'preparo',name:'Em preparo',desc:'Etapa ilustrativa: os pratos estão sendo preparados.',symbol:'♨'},
+ {code:'entrega',name:'Saiu para entrega',desc:'Etapa ilustrativa: o pedido está a caminho.',symbol:'➜'},
+ {code:'entregue',name:'Pedido entregue',desc:'Etapa ilustrativa: pedido finalizado.',symbol:'✓'}
+];
+const $=id=>document.getElementById(id);
+let chosen='';
+function load(){
+ try{const list=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(list)?list.filter(x=>x&&typeof x.id==='string'):[]}catch(e){return []}
+}
+function save(list){try{localStorage.setItem(KEY,JSON.stringify(list));return true}catch(e){$('searchMessage').textContent='Não foi possível salvar a etapa neste navegador.';return false}}
+function money(n){return (Number(n)||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+function stateIndex(o){return Math.max(0,steps.findIndex(s=>s.code===o.status))}
+function fillHistory(list){
+ const select=$('historySelect');select.replaceChildren();
+ const def=document.createElement('option');def.value='';def.textContent='Pedidos neste aparelho';select.appendChild(def);
+ list.forEach(o=>{const opt=document.createElement('option');opt.value=o.id;opt.textContent=o.id;select.appendChild(opt)});
+}
+function render(){
+ const list=load();fillHistory(list);
+ if(!chosen){chosen=new URLSearchParams(location.search).get('pedido')||localStorage.getItem(LAST)||''}
+ const o=list.find(x=>x.id.toUpperCase()===chosen.toUpperCase());
+ if(!o){
+  $('content').style.display='none';$('empty').style.display='block';
+  $('searchMessage').textContent=chosen?'Pedido não encontrado neste navegador. Confira o número ou escolha um pedido salvo.':'';
+  return;
+ }
+ chosen=o.id;$('searchMessage').textContent='';
+ $('empty').style.display='none';$('content').style.display='block';
+ $('orderSearch').value=o.id;$('historySelect').value=o.id;
+ $('orderNumber').textContent='Pedido nº '+o.id;
+ const dt=new Date(o.createdAt);
+ $('orderDate').textContent='Criado em '+(Number.isFinite(dt.getTime())?dt.toLocaleString('pt-BR'):'data indisponível');
+ const current=stateIndex(o);
+ $('orderStatus').textContent=steps[current].name;
+ const timeline=$('timeline');timeline.replaceChildren();
+ steps.forEach((s,i)=>{
+  const li=document.createElement('li');li.className=i<current?'passed':i===current?'current':'future';
+  if(i===current)li.setAttribute('aria-current','step');
+  const dot=document.createElement('div');dot.className='dot';dot.textContent=i<current?'✓':s.symbol;
+  const copy=document.createElement('div');copy.className='step-copy';
+  const h=document.createElement('h3');h.textContent=s.name;copy.appendChild(h);
+  const d=document.createElement('p');d.textContent=s.desc;copy.appendChild(d);
+  const state=document.createElement('span');state.className='step-status';state.textContent=i<current?'Concluído':i===current?'Etapa atual':'Aguardando';copy.appendChild(state);
+  li.append(dot,copy);timeline.appendChild(li);
+ });
+ const items=$('itemsList');items.replaceChildren();
+ const products=Array.isArray(o.items)?o.items:[];
+ products.forEach(p=>{
+  const row=document.createElement('div');row.className='item-row';
+  const name=document.createElement('span');name.textContent=String(Number(p.quantidade)||1)+'x '+String(p.nome||'Item');
+  const price=document.createElement('strong');price.textContent=money(Number(p.preco)*Number(p.quantidade||1));
+  row.append(name,price);items.appendChild(row);
+ });
+ $('totalValue').textContent=money(o.total);
+ $('paymentLabel').textContent=o.paymentMethod||'Não informado';
+ $('advanceBtn').disabled=current===steps.length-1;
+ $('advanceBtn').textContent=current===steps.length-1?'Simulação concluída':'Simular próxima etapa';
+}
+function pick(value){chosen=value.trim().toUpperCase();render()}
+$('findBtn').addEventListener('click',() => pick($('orderSearch').value));
+$('orderSearch').addEventListener('keydown',e=>{if(e.key==='Enter')pick($('orderSearch').value)});
+$('historySelect').addEventListener('change',e=>{if(e.target.value)pick(e.target.value)});
+function setStage(index){
+ const list=load();const o=list.find(x=>x.id===chosen);if(!o)return;
+ o.status=steps[index].code;if(save(list))render();
+}
+$('advanceBtn').addEventListener('click',()=>{const o=load().find(x=>x.id===chosen);if(o)setStage(Math.min(steps.length-1,stateIndex(o)+1))});
+$('resetBtn').addEventListener('click',()=>setStage(0));
+render();
+})();
+</script>
+</body>
+</html>
