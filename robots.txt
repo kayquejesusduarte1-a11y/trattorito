@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /perfil.html
+Disallow: /pagamento.html
+Disallow: /login.html
+Disallow: /cadastro.html
+Sitemap: https://kayquejesusduarte1-a11y.github.io/trattorito/sitemap.xml
