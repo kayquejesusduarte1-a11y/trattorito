@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Painel demonstrativo | Trattoria D'Elite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20261008"><link rel="stylesheet" href="elite-extras.css?v=20261008">
+<script defer src="elite-extras.js?v=20261008"></script>
+</head>
+<body class="elite-page">
+<header class="elite-top"><a class="elite-brand" href="index.html">TRATTORIA D'ELITE</a><nav>
+<a href="index.html">Início</a><a href="pratos.html">Cardápio</a><a href="favoritos.html">Favoritos</a><a href="combos.html">Combos</a><a href="avaliacoes.html">Avaliações</a><a href="pedido.html">Pedidos</a></nav></header>
+<main class="elite-main"><h1>Painel administrativo — demonstração</h1>
+<p class="elite-lead">Área de testes para organizar pedidos e cadastrar produtos sem alterar o banco de dados.</p>
+<div class="elite-notice"><strong>Atenção:</strong> esta página é pública e demonstrativa, não é um painel administrativo protegido. As alterações de pedidos e produtos funcionam apenas neste navegador. Para uso real, será necessário login de administrador, backend e SQL Server.</div>
+<div class="elite-panel"><h2>Pedidos registrados <span class="elite-badge" id="eliteOrderCount">0</span></h2>
+<p class="elite-small">Escolha uma etapa de demonstração para testar o acompanhamento no mesmo aparelho.</p>
+<div id="eliteAdminOrders"></div></div>
+<div class="elite-panel"><h2>Cadastrar produto de demonstração</h2>
+<form id="eliteAdminForm">
+<label for="eliteAdminName">Nome do produto</label><input id="eliteAdminName" maxlength="80" required placeholder="Ex.: Massa especial da casa">
+<label for="eliteAdminCategory">Categoria</label>
+<select id="eliteAdminCategory" required><option value="Pratos Principais">Pratos Principais</option><option value="Sobremesas">Sobremesas</option><option value="Bebidas">Bebidas</option></select>
+<label for="eliteAdminDescription">Descrição</label><textarea id="eliteAdminDescription" maxlength="200" required placeholder="Descrição do prato..." rows="3"></textarea>
+<label for="eliteAdminPrice">Preço (R$)</label><input id="eliteAdminPrice" type="number" min="0.01" max="9999" step="0.01" required placeholder="39.90">
+<button class="elite-btn" type="submit">Cadastrar no navegador</button><p id="eliteAdminMessage" role="status" class="elite-small"></p>
+</form></div>
+<div class="elite-panel"><h2>Produtos adicionais cadastrados</h2><div id="eliteAdminProducts"></div></div>
+<a class="elite-btn" href="pedido.html">Ver acompanhamento →</a></main>
+<footer class="elite-footer">TRATTORIA D'ELITE · TRADIÇÃO E SABOR ITALIANO</footer>
+</body></html>
