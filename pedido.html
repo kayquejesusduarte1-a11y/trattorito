@@ -59,6 +59,28 @@ button:hover,.button:hover{filter:brightness(1.13)}button:disabled{opacity:.5;cu
 .demo-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .demo-actions button{background:var(--verde);font-size:11px;padding:11px 14px}.demo-actions .outline{background:transparent;border:1px solid var(--vinho);color:var(--vinho)}
 .footer{background:var(--vinho);color:var(--creme);text-align:center;padding:20px 12px;font-size:10px;letter-spacing:.08em}
+
+/* Lista de pedidos com filtros; mantém o restante do layout */
+.orders-overview{padding:23px 26px;margin-bottom:20px}
+.orders-overview-head h2{font-family:Cinzel,Georgia,serif;color:var(--vinho);font-size:17px;margin:0 0 7px}
+.orders-overview-head p{font-size:11px;color:var(--cinza);line-height:1.6;margin:0 0 17px}
+.status-tabs{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:16px}
+.status-tabs .status-tab{background:#f2e8dc;color:var(--vinho);border:1px solid #e3cfb7;border-radius:999px;padding:10px 15px;font-size:11px;gap:8px}
+.status-tabs .status-tab.active{background:var(--vinho);color:#fff;border-color:var(--vinho)}
+.status-tabs .status-tab .status-count{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;background:#fff4;color:inherit;border-radius:99px;font-size:10px}
+.orders-collection{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.orders-collection .order-mini{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;background:#fff;color:var(--texto);border:1px solid #e4d4c1;border-radius:13px;padding:15px;text-align:left;font-weight:400;min-width:0}
+.orders-collection .order-mini:hover{border-color:var(--ouro);filter:none}
+.orders-collection .order-mini.selected{border-color:var(--vinho);box-shadow:0 0 0 2px #65000616}
+.order-mini .mini-main{min-width:0;display:flex;flex-direction:column;gap:6px}
+.order-mini .mini-number{font-size:11px;font-weight:700;color:var(--vinho);overflow-wrap:anywhere}
+.order-mini .mini-date{font-size:10px;color:var(--cinza)}
+.order-mini .mini-status{font-size:10px;color:var(--verde);font-weight:700}
+.order-mini .mini-right{display:flex;flex-direction:column;align-items:end;gap:8px;white-space:nowrap}
+.order-mini .mini-total{font-size:12px;font-weight:700}
+.order-mini .mini-open{color:var(--vinho);font-size:10px}
+.orders-none{grid-column:1/-1;padding:20px 14px;background:#f8f1e7;border-radius:12px;font-size:12px;color:var(--cinza);text-align:center;line-height:1.5}
+@media(max-width:760px){.orders-overview{padding:18px}.orders-collection{grid-template-columns:1fr}.status-tabs{gap:7px}.status-tabs .status-tab{flex:1;padding:10px 8px;font-size:10px}}
 @media(max-width:760px){.topbar{flex-direction:column;padding:15px 12px}.nav{justify-content:center;gap:14px}.nav a{font-size:10px}.banner{padding:36px 18px 48px}.wrap{width:calc(100% - 22px);margin-top:-23px}.lookup{padding:18px}.lookup-row input{flex-basis:100%}.lookup-row button,.lookup-row select{flex:1}.columns{grid-template-columns:1fr;gap:14px}.timeline-card,.details-card{padding:20px}.order-meta{padding:0 4px}.card{border-radius:17px}}
 @media(max-width:380px){.nav{gap:9px}.nav a{font-size:9px}}
 </style>
@@ -85,6 +107,18 @@ button:hover,.button:hover{filter:brightness(1.13)}button:disabled{opacity:.5;cu
 </div>
 <p class="help">Seus pedidos de demonstração ficam salvos somente neste navegador. Não é necessário entrar na conta.</p>
 <p class="message" id="searchMessage" role="status" aria-live="polite"></p>
+</section>
+<section class="card orders-overview" aria-labelledby="ordersHeading">
+<div class="orders-overview-head">
+<h2 id="ordersHeading">Meus pedidos</h2>
+<p>Selecione um pedido para acompanhar ou filtre pelo andamento. Apenas pedidos de demonstração deste navegador.</p>
+</div>
+<div class="status-tabs" role="group" aria-label="Filtrar pedidos por situação">
+<button type="button" class="status-tab active" data-order-filter="todos" aria-pressed="true">Todos <span class="status-count" data-count="todos">0</span></button>
+<button type="button" class="status-tab" data-order-filter="preparo" aria-pressed="false">Em preparo <span class="status-count" data-count="preparo">0</span></button>
+<button type="button" class="status-tab" data-order-filter="entregue" aria-pressed="false">Finalizados <span class="status-count" data-count="entregue">0</span></button>
+</div>
+<div id="statusOrders" class="orders-collection" aria-live="polite"></div>
 </section>
 <section class="card empty" id="empty">
 <div class="symbol" aria-hidden="true">🍝</div><h2>Nenhum pedido selecionado</h2>
@@ -122,6 +156,44 @@ const steps=[
 ];
 const $=id=>document.getElementById(id);
 let chosen='';
+let statusFilter='todos';
+function drawOrderList(list){
+ const totals={todos:list.length,preparo:list.filter(o=>o.status==='preparo').length,entregue:list.filter(o=>o.status==='entregue').length};
+ document.querySelectorAll('[data-count]').forEach(el=>{el.textContent=totals[el.dataset.count]||0});
+ document.querySelectorAll('[data-order-filter]').forEach(btn=>{
+  const active=btn.dataset.orderFilter===statusFilter;
+  btn.classList.toggle('active',active);
+  btn.setAttribute('aria-pressed',String(active));
+ });
+ const root=$('statusOrders');root.replaceChildren();
+ const filtered=list.filter(o=>statusFilter==='todos'||o.status===statusFilter);
+ if(!filtered.length){
+  const no=document.createElement('div');no.className='orders-none';
+  no.textContent=statusFilter==='preparo'?'Não há pedidos na etapa Em preparo.':'';
+  if(statusFilter==='entregue')no.textContent='Nenhum pedido foi finalizado nesta demonstração.';
+  if(statusFilter==='todos')no.textContent='Ainda não existem pedidos salvos. Finalize uma compra de demonstração para começar.';
+  root.appendChild(no);return;
+ }
+ filtered.forEach(o=>{
+  const btn=document.createElement('button');btn.type='button';btn.className='order-mini';
+  if(o.id===chosen)btn.classList.add('selected');
+  btn.setAttribute('aria-label','Ver detalhes do pedido '+o.id);
+  const main=document.createElement('span');main.className='mini-main';
+  const number=document.createElement('span');number.className='mini-number';number.textContent='Pedido '+o.id;
+  const date=document.createElement('span');date.className='mini-date';
+  const parsed=new Date(o.createdAt);
+  date.textContent=Number.isFinite(parsed.getTime())?parsed.toLocaleString('pt-BR'):'Data indisponível';
+  const state=document.createElement('span');state.className='mini-status';state.textContent=steps[stateIndex(o)].name;
+  main.append(number,date,state);
+  const right=document.createElement('span');right.className='mini-right';
+  const total=document.createElement('span');total.className='mini-total';total.textContent=money(o.total);
+  const open=document.createElement('span');open.className='mini-open';open.textContent='Ver detalhes →';
+  right.append(total,open);
+  btn.append(main,right);
+  btn.addEventListener('click',()=>pick(o.id));
+  root.appendChild(btn);
+ });
+}
 function load(){
  try{const list=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(list)?list.filter(x=>x&&typeof x.id==='string'):[]}catch(e){return []}
 }
@@ -137,6 +209,7 @@ function render(){
  const list=load();fillHistory(list);
  if(!chosen){chosen=new URLSearchParams(location.search).get('pedido')||localStorage.getItem(LAST)||''}
  const o=list.find(x=>x.id.toUpperCase()===chosen.toUpperCase());
+ drawOrderList(list);
  if(!o){
   $('content').style.display='none';$('empty').style.display='block';
   $('searchMessage').textContent=chosen?'Pedido não encontrado neste navegador. Confira o número ou escolha um pedido salvo.':'';
@@ -175,6 +248,12 @@ function render(){
  $('advanceBtn').textContent=current===steps.length-1?'Simulação concluída':'Simular próxima etapa';
 }
 function pick(value){chosen=value.trim().toUpperCase();render()}
+document.querySelectorAll('[data-order-filter]').forEach(btn=>{
+ btn.addEventListener('click',()=>{
+  statusFilter=btn.dataset.orderFilter;
+  drawOrderList(load());
+ });
+});
 $('findBtn').addEventListener('click',() => pick($('orderSearch').value));
 $('orderSearch').addEventListener('keydown',e=>{if(e.key==='Enter')pick($('orderSearch').value)});
 $('historySelect').addEventListener('change',e=>{if(e.target.value)pick(e.target.value)});
