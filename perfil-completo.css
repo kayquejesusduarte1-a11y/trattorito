@@ -1,0 +1,55 @@
+/* Trattoria D'Elite — Meu Perfil, modo demonstrativo */
+.pf-wrap{max-width:1200px;margin:0 auto;padding:32px 15px 80px;font-family:Montserrat,Arial,sans-serif}
+.pf-layout{display:grid;grid-template-columns:265px minmax(0,1fr);border-radius:24px;overflow:hidden;border:1px solid #e7ccb0;background:#fffaf3;box-shadow:0 20px 60px #41160528}
+.pf-side{background:linear-gradient(150deg,#42000a,#7e1020);color:#fff1de;padding:29px 22px;display:flex;flex-direction:column;gap:13px}
+.pf-side-label{font:700 10px Montserrat,Arial,sans-serif;letter-spacing:.18em;color:#eac38d}
+.pf-side h1{font:600 28px/1.2 Cinzel,Georgia,serif;color:#fff5e4;margin:4px 0}
+.pf-side p{font:400 12px/1.8 Montserrat,Arial,sans-serif;color:#ebd2c2;margin:0 0 14px}
+.pf-tabs{display:grid;gap:8px;margin:0 0 22px}
+.pf-tabs button{border:1px solid #edcf9f6b;background:#ffffff0b;color:#fff7eb;border-radius:11px;padding:13px 11px;text-align:left;cursor:pointer;font:700 12px Montserrat,Arial,sans-serif}
+.pf-tabs button[aria-selected=true],.pf-tabs button:hover{background:#fff4e4;color:#650006}
+.pf-side a{color:#ffe6bf;font:700 12px Montserrat,Arial,sans-serif}
+.pf-main{padding:clamp(20px,4vw,38px);min-width:0}
+.pf-kicker{display:block;font:700 10px Montserrat,Arial,sans-serif;letter-spacing:.2em;color:#9f7749;margin-bottom:8px}
+.pf-main h2{color:#650006;font:700 clamp(22px,3vw,31px) Cinzel,Georgia,serif;margin:0 0 15px}
+.pf-identity{display:flex;gap:16px;align-items:center;border-bottom:1px solid #e9d7c3;padding-bottom:20px}
+.pf-avatar{width:64px;height:64px;flex:none;display:grid;place-items:center;border-radius:50%;background:#650006;color:#fff5e4;font:600 26px Cinzel,Georgia,serif}
+.pf-identity strong{color:#650006;font-size:17px;display:block;overflow-wrap:anywhere}
+.pf-identity small{display:block;color:#846d5b;font-size:12px;margin-top:5px;overflow-wrap:anywhere}
+.pf-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:20px 0}
+.pf-stat{background:#f5e6d5;border:1px solid #ead1b3;padding:13px 11px;border-radius:12px;display:grid;gap:7px}
+.pf-stat strong{font:700 21px Cinzel,Georgia,serif;color:#650006;overflow-wrap:anywhere}
+.pf-stat small{font:500 10px/1.5 Montserrat,Arial,sans-serif;color:#7d6755}
+.pf-notice{background:#f9ecdb;border-left:4px solid #b28a50;color:#79503c;padding:14px;margin:18px 0;border-radius:9px;font:500 11px/1.7 Montserrat,Arial,sans-serif}
+.pf-panel h3{color:#650006;font:700 22px Cinzel,Georgia,serif;margin:20px 0 8px}
+.pf-panel[hidden]{display:none!important}
+.pf-subtitle{font:400 12px/1.75 Montserrat,Arial,sans-serif;color:#7d6657}
+.pf-row{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid #e6d5c0;font:500 12px Montserrat,Arial,sans-serif}
+.pf-row span{color:#806b58}
+.pf-row strong{color:#50312a;overflow-wrap:anywhere;text-align:right}
+.pf-form{display:grid;gap:12px;margin:20px 0}
+.pf-form label{display:grid;gap:7px;font:700 12px Montserrat,Arial,sans-serif;color:#5b3a31}
+.pf-form input{width:100%;border:1px solid #d8bea2;border-radius:11px;padding:13px;background:#fff;color:#3e2e29;font:500 13px Montserrat,Arial,sans-serif}
+.pf-form button,.pf-button{border:1px solid #650006;border-radius:11px;background:#650006;color:#fff;cursor:pointer;font:700 12px Montserrat,Arial,sans-serif;padding:12px 17px;text-decoration:none;text-align:center}
+.pf-button.alt{background:#fff;color:#650006}
+.pf-form button:disabled,.pf-button:disabled{opacity:.5}
+.pf-link-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}
+.pf-link-grid a{border:1px solid #d6bba4;padding:10px 13px;border-radius:10px;font:700 11px Montserrat,Arial,sans-serif;color:#650006;text-decoration:none}
+.pf-order{border:1px solid #e8d4bd;border-radius:12px;background:#fff;padding:15px;margin:10px 0}
+.pf-order-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:9px;font:700 12px Montserrat,Arial,sans-serif;color:#650006}
+.pf-order p{font-size:11px;line-height:1.7;color:#776557;margin:8px 0}
+.pf-order a{color:#650006;font-size:12px;font-weight:700}
+.pf-empty{font:500 12px/1.7 Montserrat,Arial,sans-serif;color:#77624f;background:#f7ecdf;padding:15px;border-radius:12px}
+.pf-danger{border:1px solid #e2b6b5;background:#fff5f3;border-radius:12px;padding:15px;margin-top:18px}
+.pf-danger h4{color:#8c1f21;margin:0 0 6px;font-size:14px}
+.pf-danger p{color:#745752;font-size:11px}
+.pf-danger button{width:100%;background:#fff;border:1px solid #b75b59;border-radius:10px;padding:11px;color:#822525;font-weight:700;cursor:pointer}
+.pf-toggle{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:600;margin:16px 0}
+.pf-toggle input{width:18px;height:18px;accent-color:#650006}
+.pf-large .pf-panel{font-size:116%}
+.pf-large .pf-panel p,.pf-large .pf-panel label{font-size:1.05em}
+.pf-status{font:600 12px/1.7 Montserrat,Arial,sans-serif;min-height:18px;margin:15px 0;color:#28613c}
+.pf-status.error{color:#a12835}
+.pf-eye{padding:8px 14px;background:#f3e4d0;border:1px solid #d4b797;color:#650006;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;justify-self:start}
+@media(max-width:800px){.pf-layout{grid-template-columns:1fr}.pf-side{padding:24px 18px}.pf-tabs{grid-template-columns:repeat(4,max-content);overflow-x:auto;margin:8px 0 0}.pf-side h1{font-size:23px}.pf-side p{margin:0}.pf-side a{display:none}}
+@media(max-width:470px){.pf-stats{grid-template-columns:1fr 1fr}.pf-stat strong{font-size:17px}.pf-main{padding:20px 15px}.pf-identity{gap:10px}.pf-avatar{width:46px;height:46px;font-size:21px}.pf-row{flex-wrap:wrap}.pf-row strong{text-align:left}}
